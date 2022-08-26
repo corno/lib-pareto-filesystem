@@ -17,7 +17,7 @@
     "api-pareto-filesystem": "^0.1.0",
     "api-pareto-handledfilesystem": "^0.2.0",
     "pareto-core-async": "^0.2.0",
-    "pareto-core-lib": "^0.13.0"
+    "pareto-core-lib": "^0.4.0"
   },
   "interface-fingerprint": "a32007c978330756b5a1602f1e956199d05a69f7",
   "content-fingerprint": "770af043acb6ab6b81ff4a45c2224bdcf74836a9"

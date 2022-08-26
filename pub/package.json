@@ -12,7 +12,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "api-pareto-filesystem": "^0.1.0",
     "api-pareto-handledfilesystem": "^0.2.0",

@@ -1,0 +1,24 @@
+{
+  "author": "Corno",
+  "description": "filesystem functions for pareto",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "name": "lib-pareto-filesystem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corno/lib-pareto-filesystem.git"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "version": "0.38.0",
+  "dependencies": {
+    "api-pareto-filesystem": "^0.1.0",
+    "api-pareto-handledfilesystem": "^0.2.0",
+    "pareto-core-async": "^0.26.0",
+    "pareto-core-lib": "^0.13.0"
+  },
+  "interface-fingerprint": "a32007c978330756b5a1602f1e956199d05a69f7",
+  "content-fingerprint": "98c8934d396b81bb3ea88f8598989bd2ca455fc5"
+}

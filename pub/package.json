@@ -14,11 +14,11 @@
   ],
   "version": "0.1.2",
   "dependencies": {
-    "api-pareto-filesystem": "^0.1.0",
-    "api-pareto-handledfilesystem": "^0.2.0",
-    "pareto-core-async": "^0.2.0",
-    "pareto-core-lib": "^0.4.0"
+    "api-pareto-filesystem": "^0.1.1",
+    "api-pareto-handledfilesystem": "^0.2.1",
+    "pareto-core-async": "^0.3.0",
+    "pareto-core-lib": "^0.5.0"
   },
   "interface-fingerprint": "a32007c978330756b5a1602f1e956199d05a69f7",
-  "content-fingerprint": "5c58830dc66a8e4ed62860cc771d35d0766e3b42"
+  "content-fingerprint": "01fbc535d83c92ea75edd1b1fc844d619ee5f3c6"
 }

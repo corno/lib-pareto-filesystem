@@ -6,11 +6,11 @@ import * as rt from "../esc/implementation/runTests"
 
 pb.runProgram(
     ($) => {
-        if ($.argument === undefined) {
-            pl.panic("missing testDataDir")
-        }
-        rt.runTests(
-            $.argument,
-        )
+        // if ($.argument === undefined) {
+        //     pl.panic("missing testDataDir")
+        // }
+        // rt.runTests(
+        //     $.argument,
+        // )
     }
 )

@@ -15,10 +15,9 @@
   "version": "0.1.5",
   "dependencies": {
     "api-pareto-filesystem": "^0.1.1",
-    "api-pareto-handledfilesystem": "^0.2.1",
     "pareto-core-async": "^0.3.0",
-    "pareto-core-lib": "^0.7.0"
+    "pareto-core-lib": "^0.8.0"
   },
-  "interface-fingerprint": "a32007c978330756b5a1602f1e956199d05a69f7",
-  "content-fingerprint": "5a07c72680290ea7433dd6d32bbd36edbf264682"
+  "interface-fingerprint": "3f96db691d78878b3f2f8d80cef65d382383d74a",
+  "content-fingerprint": "fbcc6095ce73beb3d2ca2691e8fbb18da8c5cf59"
 }

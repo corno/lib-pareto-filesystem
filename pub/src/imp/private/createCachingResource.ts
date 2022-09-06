@@ -6,7 +6,9 @@
 
 // import * as inf from "../interface"
 
-// export function createCachingResource(
+
+
+// export function createCachingResource( //
 //     $: inf.CreateCachingResource_Data,
 //     $i: inf.CreateCachingResource_Algorithms
 // ): inf.Resource<api.Path, string> {

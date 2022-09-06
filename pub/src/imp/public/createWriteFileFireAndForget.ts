@@ -1,12 +1,11 @@
 
-import * as pa from "pareto-core-async"
 import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-export const createWriteFileFireAndForget: api.FCreateWriteFileFireAndForget = ($i, $d) => {
+export const createWriteFileFireAndForget: api.FCreateWriteFileFireAndForget = ($i, $d, $a) => {
     return ($) => {
-        return pa.processValue(
+        return $a(
             $d.writeFile(
                 $,
             ),
@@ -19,7 +18,7 @@ export const createWriteFileFireAndForget: api.FCreateWriteFileFireAndForget = (
                         })
                     case "success":
                         return pl.cc($[1], ($) => {
-                            return pa.value($)
+                            return pl.asyncValue($)
                         })
                     default: return pl.au($[0])
                 }

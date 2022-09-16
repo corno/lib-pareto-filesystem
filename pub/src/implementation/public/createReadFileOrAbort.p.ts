@@ -5,7 +5,7 @@ import * as api from "../../interface"
 
 export const f_createReadFileOrAbort: api.FCreateReadFileOrAbort = ($i, $d) => {
     return ($) => {
-        return $d.readFile(
+        return $d(
             $,
         ).setCondition(($) => {
             switch ($[0]) {

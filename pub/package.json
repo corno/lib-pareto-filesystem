@@ -14,9 +14,9 @@
   ],
   "version": "0.3.1",
   "dependencies": {
-    "api-pareto-filesystem": "^0.6.0",
-    "pareto-core-lib": "^0.12.0"
+    "api-pareto-filesystem": "^0.10.0",
+    "pareto-core-lib": "^0.13.0"
   },
-  "interface-fingerprint": "4c4deb3d1bc441724deaf7615a013213233de36c",
-  "content-fingerprint": "a76aeee7b9105636334afb38150f3e00784e20fd"
+  "interface-fingerprint": "d3de4371b67fa07edb92c9f7ddeea4bf28469ffe",
+  "content-fingerprint": "f4fc3eac3b0132c51607de7b56084101d95eca46"
 }

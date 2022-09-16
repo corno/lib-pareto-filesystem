@@ -5,7 +5,7 @@ import * as api from "../../interface"
 
 export const f_createReadDirectoryOrAbort: api.FCreateReadDirectoryOrAbort = ($i, $d) => {
     return ($) => {
-        return $d.readDirectory(
+        return $d(
             $,
         ).setCondition(($) => {
             switch ($[0]) {

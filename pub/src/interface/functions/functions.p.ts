@@ -1,6 +1,6 @@
 import * as api from "api-pareto-filesystem"
 import * as pt from "pareto-core-types"
-import { TDirNodeData } from "../types/DirNodeData"
+import { TDirNodeData } from "../types/DirNodeData.p"
 
 // export type CreateCachingResource = (
 //     $: {
@@ -46,9 +46,7 @@ export type FCreateReadOptionalFile = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TReadFileError>) => void
     },
-    $d: {
-        readonly "readFile": api.FReadFile
-    }
+    $d: api.FReadFile
 ) => FReadOptionalFile
 
 
@@ -60,9 +58,7 @@ export type FCreateReadFileOrAbort = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TReadFileError>) => void
     },
-    $d: {
-        readFile: api.FReadFile
-    }
+    $d: api.FReadFile
 ) => FReadFileOrAbort
 
 export type FReadOptionalDirectory = (
@@ -86,9 +82,7 @@ export type FCreateReadOptionalDirectory = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TReadDirError>) => void
     },
-    $d: {
-        readonly "readDirectory": api.FReadDirectory
-    }
+    $d: api.FReadDirectory
 ) => FReadOptionalDirectory
 
 
@@ -100,12 +94,10 @@ export type FCreateReadDirectoryOrAbort = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TReadDirError>) => void
     },
-    $d: {
-        readonly "readDirectory": api.FReadDirectory
-    }
+    $d: api.FReadDirectory
 ) => FReadDirectoryOrAbort
 
-export type PWriteFileFireAndForget = (
+export type FWriteFileFireAndForget = (
     $: api.TWriteFileData,
 ) => void
 
@@ -113,13 +105,11 @@ export type FCreateWriteFileFireAndForget = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TWriteFileError>) => void
     },
-    $d: {
-        readonly "writeFile": api.FWriteFile
-    },
+    $d: api.FWriteFile,
     $a: pt.ProcessAsyncValue,
-) => PWriteFileFireAndForget
+) => FWriteFileFireAndForget
 
-export type PUnlinkFireAndForget = (
+export type FUnlinkFireAndForget = (
     $: api.TUnlink_Data,
 ) => void
 
@@ -127,8 +117,6 @@ export type FCreateUnlinkFireAndForget = (
     $i: {
         readonly "onError": ($: api.TAnnotatedFSError<api.TUnlinkError>) => void
     },
-    $d: {
-        readonly "unlink": api.FUnlink
-    },
+    $d: api.FUnlink,
     $a: pt.ProcessAsyncValue
-) => PUnlinkFireAndForget
+) => FUnlinkFireAndForget

@@ -3,9 +3,9 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-export const createReadDirectoryOrAbort: api.FCreateReadDirectoryOrAbort = ($i, $d) => {
+export const f_createReadFileOrAbort: api.FCreateReadFileOrAbort = ($i, $d) => {
     return ($) => {
-        return $d.readDirectory(
+        return $d.readFile(
             $,
         ).setCondition(($) => {
             switch ($[0]) {
@@ -20,6 +20,8 @@ export const createReadDirectoryOrAbort: api.FCreateReadDirectoryOrAbort = ($i, 
                     })
                 default: return pl.au($[0])
             }
-        })
+        }
+        )
+
     }
 }

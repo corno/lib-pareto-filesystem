@@ -3,10 +3,10 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-export const createReadOptionalFile: api.FCreateReadOptionalFile = ($i, $d) => {
+export const f_createReadOptionalDirectory: api.FCreateReadOptionalDirectory = ($i, $d) => {
     return ($) => {
         const allow = $.allow
-        return $d.readFile(
+        return $d.readDirectory(
             $.fs,
         ).setCondition(($) => {
             switch ($[0]) {
@@ -14,9 +14,9 @@ export const createReadOptionalFile: api.FCreateReadOptionalFile = ($i, $d) => {
                     return pl.cc($[1], ($) => {
                         const err = $
                         switch ($.error[0]) {
-                            case "is directory":
+                            case "is not directory":
                                 return pl.cc($.error[1], ($) => {
-                                    if (allow.isDirectory) {
+                                    if (allow.isNotADirectory) {
                                         return pl.asyncValue(null)
                                     } else {
                                         $i.onError(err)
@@ -46,7 +46,8 @@ export const createReadOptionalFile: api.FCreateReadOptionalFile = ($i, $d) => {
                     })
                 default: return pl.au($[0])
             }
-        })
+        }
+        )
 
     }
 }

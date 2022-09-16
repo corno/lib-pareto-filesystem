@@ -3,10 +3,10 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-export const createWriteFileFireAndForget: api.FCreateWriteFileFireAndForget = ($i, $d, $a) => {
+export const f_createUnlinkFireAndForget: api.FCreateUnlinkFireAndForget = ($i, $d, $a) => {
     return ($) => {
         return $a(
-            $d.writeFile(
+            $d.unlink(
                 $,
             ),
             ($) => {

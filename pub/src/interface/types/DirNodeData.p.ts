@@ -2,7 +2,7 @@
 export type TDirNodeData = {
     readonly path: string
     readonly type:
-    | ["directory", {}]
-    | ["file", {}]
-    | ["unknown", {}]
+    | ["directory", null]
+    | ["file", null]
+    | ["unknown", null]
 }

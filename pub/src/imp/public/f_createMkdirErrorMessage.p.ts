@@ -2,21 +2,22 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-export const createWriteFileErrorMessage: api.FCreateWriteFileErrorMessage = ($) => {
+export const f_createMkdirErrorMessage: api.FCreateMkdirErrorMessage = ($) => {
+
     switch ($[0]) {
-        case "no entity":
+        case "exists":
             return pl.cc($[1], ($) => {
-                return `write file error: no entity`
+                return `mkdir error: exists`
 
             })
-        case "is directory":
+        case "no entity":
             return pl.cc($[1], ($) => {
-                return `write file error: is directory`
+                return `mkdir error: no entity`
 
             })
         case "unknown":
             return pl.cc($[1], ($) => {
-                return `unknown write file error: ${$.message}`
+                return `unknown mkdir error: ${$.message}`
             })
         default: return pl.au($[0])
     }

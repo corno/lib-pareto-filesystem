@@ -1,4 +1,6 @@
-import * as api from "api-pareto-filesystem"
+import * as fs from "api-pareto-filesystem"
+import * as async from "api-pareto-async"
+import * as tostring from "api-pareto-tostring"
 import * as pt from "pareto-core-types"
 import { TDirNodeData } from "../types/DirNodeData.p"
 
@@ -34,7 +36,7 @@ import { TDirNodeData } from "../types/DirNodeData.p"
 
 export type FReadOptionalFile = (
     $: {
-        readonly "fs": api.TReadFile_Data,
+        readonly "fs": fs.TReadFile_Data,
         readonly "allow": {
             readonly "noEntity"?: boolean
             readonly "isDirectory"?: boolean
@@ -44,26 +46,33 @@ export type FReadOptionalFile = (
 
 export type FCreateReadOptionalFile = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TReadFileError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
     },
-    $d: api.FReadFile
+    $d: {
+        getFile: fs.FGetFile
+        aggregate: async.FCreateAggregater
+        array2string: tostring.FGetArrayAsString
+    },
 ) => FReadOptionalFile
 
 
 export type FReadFileOrAbort = (
-    $: api.TReadFile_Data,
+    $: fs.TReadFile_Data,
 ) => pt.AsyncValue<string>
 
 export type FCreateReadFileOrAbort = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TReadFileError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
     },
-    $d: api.FReadFile
+    $d: {
+        getFile: fs.FGetFile
+        aggregate: async.FCreateAggregater
+    },
 ) => FReadFileOrAbort
 
 export type FReadOptionalDirectory = (
     $: {
-        readonly "fs": api.TReadDirectory_Data
+        readonly "fs": fs.TReadDirectory_Data
         readonly "allow": {
             readonly "noEntity"?: boolean
             readonly "isNotADirectory"?: boolean
@@ -80,43 +89,43 @@ export type FReadOptionalDirectory = (
 
 export type FCreateReadOptionalDirectory = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TReadDirError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
     },
-    $d: api.FReadDirectory
+    $d: fs.FReadDirectory
 ) => FReadOptionalDirectory
 
 
 export type FReadDirectoryOrAbort = (
-    $: api.TReadDirectory_Data,
+    $: fs.TReadDirectory_Data,
 ) => pt.AsyncValue<pt.Dictionary<TDirNodeData>>
 
 export type FCreateReadDirectoryOrAbort = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TReadDirError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
     },
-    $d: api.FReadDirectory
+    $d: fs.FReadDirectory
 ) => FReadDirectoryOrAbort
 
 export type FWriteFileFireAndForget = (
-    $: api.TWriteFileData,
+    $: fs.TWriteFileData,
 ) => void
 
 export type FCreateWriteFileFireAndForget = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TWriteFileError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TWriteFileError>) => void
     },
-    $d: api.FWriteFile,
+    $d: fs.FCreateWriteStream,
     $a: pt.ProcessAsyncValue,
 ) => FWriteFileFireAndForget
 
 export type FUnlinkFireAndForget = (
-    $: api.TUnlink_Data,
+    $: fs.TUnlink_Data,
 ) => void
 
 export type FCreateUnlinkFireAndForget = (
     $i: {
-        readonly "onError": ($: api.TAnnotatedFSError<api.TUnlinkError>) => void
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TUnlinkError>) => void
     },
-    $d: api.FUnlink,
+    $d: fs.FUnlink,
     $a: pt.ProcessAsyncValue
 ) => FUnlinkFireAndForget

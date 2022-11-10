@@ -48,11 +48,11 @@ export type FCreateReadOptionalFile = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
     },
-    $d: {
-        getFile: fs.FGetFile
-        aggregate: async.FCreateAggregater
-        array2string: tostring.FGetArrayAsString
-    },
+    // $d: {
+    //     getFile: fs.FGetFile
+    //     aggregate: async.FCreateAggregater
+    //     array2string: tostring.FGetArrayAsString
+    // },
 ) => FReadOptionalFile
 
 
@@ -64,10 +64,10 @@ export type FCreateReadFileOrAbort = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
     },
-    $d: {
-        getFile: fs.FGetFile
-        aggregate: async.FCreateAggregater
-    },
+    // $d: {
+    //     getFile: fs.FGetFile
+    //     aggregate: async.FCreateAggregater
+    // },
 ) => FReadFileOrAbort
 
 export type FReadOptionalDirectory = (
@@ -91,7 +91,7 @@ export type FCreateReadOptionalDirectory = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
     },
-    $d: fs.FReadDirectory
+    // $d: fs.FReadDirectory
 ) => FReadOptionalDirectory
 
 
@@ -103,7 +103,7 @@ export type FCreateReadDirectoryOrAbort = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
     },
-    $d: fs.FReadDirectory
+    // $d: fs.FReadDirectory
 ) => FReadDirectoryOrAbort
 
 export type FWriteFileFireAndForget = (
@@ -114,8 +114,8 @@ export type FCreateWriteFileFireAndForget = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TWriteFileError>) => void
     },
-    $d: fs.FCreateWriteStream,
-    $a: pt.ProcessAsyncValue,
+    // $d: fs.FCreateWriteStream,
+    // $a: pt.ProcessAsyncValue,
 ) => FWriteFileFireAndForget
 
 export type FUnlinkFireAndForget = (
@@ -126,6 +126,6 @@ export type FCreateUnlinkFireAndForget = (
     $i: {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TUnlinkError>) => void
     },
-    $d: fs.FUnlink,
-    $a: pt.ProcessAsyncValue
+    // $d: fs.FUnlink,
+    // $a: pt.ProcessAsyncValue
 ) => FUnlinkFireAndForget

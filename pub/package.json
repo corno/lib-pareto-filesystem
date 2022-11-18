@@ -19,6 +19,6 @@
     "res-pareto-filesystem": "^0.26.0",
     "res-pareto-tostring": "^0.4.0"
   },
-  "interface-fingerprint": "0f41d4f50fd79c5b8d7de62374dc752919f7abd1",
-  "content-fingerprint": "55fb31a371673322debce7fb2dfa021af2372b58"
+  "interface-fingerprint": "6e67b11f6ad85963baa6bd3ab7b3f8f7409559ed",
+  "content-fingerprint": "c98562d735dccc4d3bfac779053206ff4eff49a5"
 }

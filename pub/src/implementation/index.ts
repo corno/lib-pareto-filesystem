@@ -1,3 +1,14 @@
+import { API } from "../api/api"
+import { f_createMkdirErrorMessage } from "./public/createMkdirErrorMessage.p"
+import { f_createReadDirectoryOrAbort } from "./public/createReadDirectoryOrAbort.p"
+import { f_createReadDirErrorMessage } from "./public/createReadDirErrorMessage.p"
+import { f_createReadFileErrorMessage } from "./public/createReadFileErrorMessage.p"
+import { f_createReadOptionalDirectory } from "./public/createReadOptionalDirectory.p"
+import { f_createRmdirErrorMessage } from "./public/createRmdirErrorMessage.p"
+import { f_createUnlinkErrorMessage } from "./public/createUnlinkErrorMessage.p"
+import { f_createUnlinkFireAndForget } from "./public/createUnlinkFireAndForget.p"
+import { f_createWriteFileErrorMessage } from "./public/createWriteFileErrorMessage.p"
+import { f_createWriteFileFireAndForget } from "./public/createWriteFileFireAndForget.p"
 
 export * from "./public/createMkdirErrorMessage.p"
 export * from "./public/createReadDirErrorMessage.p"
@@ -12,3 +23,19 @@ export * from "./public/createReadOptionalDirectory.p"
 export * from "./public/createReadDirectoryOrAbort.p"
 export * from "./public/createWriteFileFireAndForget.p"
 export * from "./public/createUnlinkFireAndForget.p"
+
+export const $b: API = {
+    createMkdirErrorMessage: f_createMkdirErrorMessage,
+    createReadDirErrorMessage: f_createReadDirErrorMessage,
+    createReadFileErrorMessage: f_createReadFileErrorMessage,
+    createRmdirErrorMessage: f_createRmdirErrorMessage,
+    createUnlinkErrorMessage: f_createUnlinkErrorMessage,
+    createWriteFileErrorMessage: f_createWriteFileErrorMessage,
+
+    //createReadOptionalFile: readop,
+    //createReadFileOrAbort: createR,
+    createReadOptionalDirectory: f_createReadOptionalDirectory,
+    createReadDirectoryOrAbort: f_createReadDirectoryOrAbort,
+    createWriteFileFireAndForget: f_createWriteFileFireAndForget,
+    createUnlinkFireAndForget: f_createUnlinkFireAndForget,
+}

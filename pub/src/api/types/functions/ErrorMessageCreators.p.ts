@@ -1,3 +1,5 @@
+import * as pt from "pareto-core-types"
+
 import { TMkdirError, TReadDirError, TReadFileError, TRmdirError, TUnlinkError, TWriteFileError } from "api-pareto-filesystem"
 
 export type FCreateReadFileErrorMessage = ($: TReadFileError) => string

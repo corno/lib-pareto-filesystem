@@ -4,7 +4,7 @@ import * as pa from "api-pareto-async"
 
 import * as fsAPI from "api-pareto-filesystem"
 
-import * as api from "../../interface"
+import * as api from "../../api"
 
 // export const f_createReadFileOrAbort: api.FCreateReadFileOrAbort = ($i, $d) => {
 //     return ($) => {

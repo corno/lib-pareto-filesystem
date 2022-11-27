@@ -1,35 +1,25 @@
 import * as pt from "pareto-core-types"
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../interface"
+import * as api from "../../api"
 
 import * as fs from "api-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export function f_createWriteFileFireAndForget(
-    $d: fs.FCreateWriteStream,
-    $a: pt.ProcessAsyncValue,
-): api.FCreateWriteFileFireAndForget {
-    return ($i) => {
-        return ($) => {
-            $d(
-                {
-                    path: $.path,
-                    createContainingDirectories: $.createContainingDirectories,
-                },
-                ($i) => {
-                    $i($.data)
-                },
-                {
-                    onError: $i.onError,
-                },
-                $a
-            )
-        }
+export const f_createWriteFileFireAndForget: api.CCreateWriteFileFireAndForget = ($i, $a) => {
+    return ($) => {
+        $i.createWriteStream(
+            {
+                path: $.path,
+                createContainingDirectories: $.createContainingDirectories,
+            },
+            ($i) => {
+                $i($.data)
+            },
+            {
+                onError: $i.onError,
+            },
+            $a
+        )
     }
 }
-
-export const l_createWriteFileFireAndForget = f_createWriteFileFireAndForget(
-    fsRes.f_createWriteStream,
-    ($, $i) => $._execute($i)
-)

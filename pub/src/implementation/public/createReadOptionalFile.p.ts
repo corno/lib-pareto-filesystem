@@ -1,7 +1,7 @@
 
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../interface"
+import * as api from "../../api"
 
 // export const f_createReadOptionalFile: api.FCreateReadOptionalFile = ($i, $d) => {
 //     return ($) => {

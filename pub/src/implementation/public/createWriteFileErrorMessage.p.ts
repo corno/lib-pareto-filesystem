@@ -1,27 +1,23 @@
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../interface"
+import * as api from "../../api"
 
-export function f_createWriteFileErrorMessage(): api.FCreateWriteFileErrorMessage {
-    return ($) => {
-        switch ($[0]) {
-            case "no entity":
-                return pl.cc($[1], ($) => {
-                    return `write file error: no entity`
+export const f_createWriteFileErrorMessage: api.FCreateWriteFileErrorMessage = ($) => {
+    switch ($[0]) {
+        case "no entity":
+            return pl.cc($[1], ($) => {
+                return `write file error: no entity`
 
-                })
-            case "is directory":
-                return pl.cc($[1], ($) => {
-                    return `write file error: is directory`
+            })
+        case "is directory":
+            return pl.cc($[1], ($) => {
+                return `write file error: is directory`
 
-                })
-            case "unknown":
-                return pl.cc($[1], ($) => {
-                    return `unknown write file error: ${$.message}`
-                })
-            default: return pl.au($[0])
-        }
+            })
+        case "unknown":
+            return pl.cc($[1], ($) => {
+                return `unknown write file error: ${$.message}`
+            })
+        default: return pl.au($[0])
     }
 }
-
-export const l_createWriteFileErrorMessage = f_createWriteFileErrorMessage()

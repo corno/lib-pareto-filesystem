@@ -3,7 +3,7 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../../interface"
 
-import * as fs from "api-pareto-filesystem"
+import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
 export function f_createReadDirectoryOrAbort(

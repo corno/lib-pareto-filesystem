@@ -1,4 +1,4 @@
-import * as fs from "api-pareto-filesystem"
+import * as fs from "res-pareto-filesystem"
 import * as async from "api-pareto-async"
 import * as tostring from "api-pareto-tostring"
 import * as pt from "pareto-core-types"

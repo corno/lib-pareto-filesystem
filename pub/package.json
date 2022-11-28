@@ -12,7 +12,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.6.0",
+  "version": "0.6.2",
   "dependencies": {
     "pareto-core-lib": "^0.17.0",
     "pareto-core-raw": "^0.7.0",
@@ -21,6 +21,5 @@
     "res-pareto-filesystem": "^0.26.1",
     "res-pareto-tostring": "^0.4.0"
   },
-  "interface-fingerprint": "832a06ffcfc9cff1d42fff03b076f4008d9eaf52",
-  "content-fingerprint": "ba01357496110cb49ef7612bb2fd29f2b4b2bed1"
+  "content-fingerprint": "93c96e984ffc13d61d34c55aab9a2ff5a8ef18ba"
 }

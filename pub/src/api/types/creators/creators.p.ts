@@ -1,5 +1,11 @@
 import * as pt from "pareto-core-types"
 
+
+export type AsyncProcessingCreator<Dependencies, Algorithm> = (
+    $d: Dependencies,
+    $a: <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
+) => Algorithm
+
 import * as fs from "res-pareto-filesystem"
 import {
     FReadDirectoryOrAbort,
@@ -10,55 +16,54 @@ import {
     PWriteFileFireAndForget,
 } from "../functions/functions.p"
 
-export type CCreateReadOptionalFile = (
-    $d: {
-        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
-    }
-) => FReadOptionalFile
-
-
-export type CCreateReadFileOrAbort = (
-    $d: {
+export type CCreateReadOptionalFile = pt.Creator<
+    {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
     },
-    // $d: {
-    //     getFile: fs.FGetFile
-    //     aggregate: async.FCreateAggregater
-    // },
-) => FReadFileOrAbort
+    FReadOptionalFile
+>
 
-export type CCreateReadOptionalDirectory = (
-    $d: {
+
+export type CCreateReadFileOrAbort = pt.Creator<
+    {
+        readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadFileError>) => void
+    },
+    FReadFileOrAbort
+>
+
+export type CCreateReadOptionalDirectory = pt.Creator<
+    {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
         readonly "readDirectory": fs.FReadDirectory
 
     },
-    // $d: fs.FReadDirectory
-) => FReadOptionalDirectory
+    FReadOptionalDirectory
+>
 
 
-export type CCreateReadDirectoryOrAbort = (
-    $d: {
+export type CCreateReadDirectoryOrAbort = pt.Creator<
+    {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TReadDirError>) => void
         readonly "readDirectory": fs.FReadDirectory
     },
-) => FReadDirectoryOrAbort
+    FReadDirectoryOrAbort
+>
 
 
-export type CCreateWriteFileFireAndForget = (
-    $d: {
+export type CCreateWriteFileFireAndForget = AsyncProcessingCreator<
+    {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TWriteFileError>) => void
         readonly "createWriteStream": fs.FCreateWriteStream,
     },
-    $a: pt.ProcessAsyncValue,
-) => PWriteFileFireAndForget
+    PWriteFileFireAndForget
+>
 
 
-export type CCreateUnlinkFireAndForget = (
-    $d: {
+export type CCreateUnlinkFireAndForget = AsyncProcessingCreator<
+    {
         readonly "onError": ($: fs.TAnnotatedFSError<fs.TUnlinkError>) => void
         readonly "unlink": fs.FUnlink,
 
     },
-    $a: pt.ProcessAsyncValue,
-) => PUnlinkFireAndForget
+    PUnlinkFireAndForget
+>

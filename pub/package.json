@@ -12,14 +12,14 @@
   "files": [
     "dist"
   ],
-  "version": "0.6.2",
+  "version": "0.6.3",
   "dependencies": {
     "pareto-core-lib": "^0.17.0",
     "pareto-core-raw": "^0.7.0",
     "pareto-core-state": "^0.12.0",
-    "res-pareto-async": "^0.3.1",
+    "res-pareto-async": "^0.3.2",
     "res-pareto-filesystem": "^0.26.1",
-    "res-pareto-tostring": "^0.4.0"
+    "res-pareto-tostring": "^0.4.1"
   },
-  "content-fingerprint": "93c96e984ffc13d61d34c55aab9a2ff5a8ef18ba"
+  "content-fingerprint": "ad7ba958ab58799bc71c485a7e2ddc1f0e404a06"
 }

@@ -1,4 +1,4 @@
-import * as api from "api-pareto-filesystem"
+import * as api from "res-pareto-filesystem"
 
 
 export type THandledReadFileSystemError = {

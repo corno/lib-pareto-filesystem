@@ -1,4 +1,5 @@
-import * as fs from "api-pareto-filesystem"
+
+import * as fs from "res-pareto-filesystem"
 import * as pt from "pareto-core-types"
 import { TDirNodeData } from "../types/DirNodeData.p"
 

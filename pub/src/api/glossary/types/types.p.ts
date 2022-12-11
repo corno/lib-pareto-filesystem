@@ -1,3 +1,4 @@
+import * as fs from "res-pareto-filesystem"
 
 export type TDirNodeData = {
     readonly "path": string

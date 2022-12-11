@@ -1,12 +1,12 @@
 
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../api"
+import * as glo from "../glossary"
 
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const f_createReadOptionalDirectory: api.CCreateReadOptionalDirectory = ($i) => {
+export const f_createReadOptionalDirectory: glo.CCreateReadOptionalDirectory = ($i) => {
     return ($) => {
         const allow = $.allow
         return $i.readDirectory(

@@ -1,4 +1,17 @@
-import { CCreateReadDirectoryOrAbort, CCreateReadFileOrAbort, CCreateReadOptionalDirectory, CCreateReadOptionalFile, CCreateUnlinkFireAndForget, CCreateWriteFileFireAndForget, FCreateMkdirErrorMessage, FCreateReadDirErrorMessage, FCreateReadFileErrorMessage, FCreateRmdirErrorMessage, FCreateUnlinkErrorMessage, FCreateWriteFileErrorMessage } from "./types";
+import {
+    CCreateReadDirectoryOrAbort,
+    CCreateReadFileOrAbort,
+    CCreateReadOptionalDirectory,
+    CCreateReadOptionalFile,
+    CCreateUnlinkFireAndForget,
+    CCreateWriteFileFireAndForget,
+    FCreateMkdirErrorMessage,
+    FCreateReadDirErrorMessage,
+    FCreateReadFileErrorMessage,
+    FCreateRmdirErrorMessage,
+    FCreateUnlinkErrorMessage,
+    FCreateWriteFileErrorMessage,
+} from "./glossary";
 
 export type API = {
     createMkdirErrorMessage: FCreateMkdirErrorMessage,

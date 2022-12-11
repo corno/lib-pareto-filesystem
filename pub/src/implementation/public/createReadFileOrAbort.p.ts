@@ -1,12 +1,10 @@
 import * as pl from "pareto-core-lib"
 
-import * as pa from "res-pareto-async"
-
 import * as fsAPI from "res-pareto-filesystem"
 
-import * as api from "../../api"
+import * as glo from "../glossary"
 
-// export const f_createReadFileOrAbort: api.FCreateReadFileOrAbort = ($i, $d) => {
+// export const f_createReadFileOrAbort: glo.FCreateReadFileOrAbort = ($i, $d) => {
 //     return ($) => {
 //         return $d.aggregate<fsAPI.TReadFile_Data, string>(
 //             {

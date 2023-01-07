@@ -1,22 +1,25 @@
 import * as pt from "pareto-core-types"
 import * as pl from "pareto-core-lib"
 
-import * as glo from "../glossary"
+import * as api from "../api"
 
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const f_createUnlinkFireAndForget: glo.CCreateUnlinkFireAndForget = ($i, $a) => {
+export const icreateUnlinkFireAndForget: api.CcreateUnlinkFireAndForget = ($, $d) => {
+
+    type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
+    const $a: x = ($, $i) => $._execute($i)
     return ($) => {
         return $a(
-            $i.unlink(
+            $d.unlink(
                 $,
             ),
             ($) => {
                 switch ($[0]) {
                     case "error":
                         return pl.cc($[1], ($) => {
-                            $i.onError($)
+                            $d.onError($)
                             return undefined
                         })
                     case "success":

@@ -1,9 +1,9 @@
 
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../api"
+import * as api from "../api"
 
-// export const f_createReadOptionalFile: api.FCreateReadOptionalFile = ($i, $d) => {
+// export const icreateReadOptionalFile: api.CcreateReadOptionalFile = ($i, $d) => {
 //     return ($) => {
 //         const allow = $.allow
 //         return $d(

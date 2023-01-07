@@ -1,23 +1,22 @@
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../api"
+import * as api from "../api"
 
-export const f_createUnlinkErrorMessage: api.FCreateUnlinkErrorMessage = ($) => {
-
+export const icreateReadFileErrorMessage: api.CcreateReadFileErrorMessage = ($) => {
     switch ($[0]) {
         case "is directory":
             return pl.cc($[1], ($) => {
-                return `unlink error: is directory`
+                return `read error: is directory`
 
             })
         case "no entity":
             return pl.cc($[1], ($) => {
-                return `unlink error: no entity`
+                return `read error: no entity`
 
             })
         case "unknown":
             return pl.cc($[1], ($) => {
-                return `unknown unlink error: ${$.message}`
+                return `unknown read error: ${$.message}`
             })
         default: return pl.au($[0])
     }

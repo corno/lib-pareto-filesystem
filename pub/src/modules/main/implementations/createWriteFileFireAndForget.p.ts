@@ -1,14 +1,16 @@
 import * as pt from "pareto-core-types"
 import * as pl from "pareto-core-lib"
 
-import * as glo from "../glossary"
+import * as api from "../api"
 
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const f_createWriteFileFireAndForget: glo.CCreateWriteFileFireAndForget = ($i, $a) => {
+export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = ($, $d) => {
+    type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
+    const $a: x = ($, $i) => $._execute($i)
     return ($) => {
-        $i.createWriteStream(
+        $d.createWriteStream(
             {
                 path: $.path,
                 createContainingDirectories: $.createContainingDirectories,
@@ -17,7 +19,7 @@ export const f_createWriteFileFireAndForget: glo.CCreateWriteFileFireAndForget =
                 $i($.data)
             },
             {
-                onError: $i.onError,
+                onError: $d.onError,
             },
             $a
         )

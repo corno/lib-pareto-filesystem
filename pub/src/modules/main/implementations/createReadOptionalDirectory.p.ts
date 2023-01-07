@@ -1,15 +1,15 @@
 
 import * as pl from "pareto-core-lib"
 
-import * as glo from "../glossary"
+import * as api from "../api"
 
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const f_createReadOptionalDirectory: glo.CCreateReadOptionalDirectory = ($i) => {
+export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($c, $d) => {
     return ($) => {
         const allow = $.allow
-        return $i.readDirectory(
+        return $d.readDirectory(
             $.fs,
         ).setCondition(($) => {
             switch ($[0]) {
@@ -22,7 +22,7 @@ export const f_createReadOptionalDirectory: glo.CCreateReadOptionalDirectory = (
                                     if (allow.isNotADirectory) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $i.onError(err)
+                                        $d.onError(err)
                                         return undefined
                                     }
                                 })
@@ -31,13 +31,13 @@ export const f_createReadOptionalDirectory: glo.CCreateReadOptionalDirectory = (
                                     if (allow.noEntity) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $i.onError(err)
+                                        $d.onError(err)
                                         return undefined
                                     }
                                 })
                             case "unknown":
                                 return pl.cc($.error[1], ($) => {
-                                    $i.onError(err)
+                                    $d.onError(err)
                                     return undefined
                                 })
                             default: return pl.au($.error[0])

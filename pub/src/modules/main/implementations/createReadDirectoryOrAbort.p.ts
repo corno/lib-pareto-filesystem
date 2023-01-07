@@ -1,9 +1,9 @@
 
 import * as pl from "pareto-core-lib"
 
-import * as glo from "../glossary"
+import * as api from "../api"
 
-export const f_createReadDirectoryOrAbort: glo.CCreateReadDirectoryOrAbort = ($d) => {
+export const icreateReadDirectoryOrAbort: api.CcreateReadDirectoryOrAbort = ($c, $d) => {
     return ($) => {
         return $d.readDirectory(
             $,

@@ -1,23 +1,22 @@
 import * as pl from "pareto-core-lib"
 
-import * as api from "../../api"
+import * as api from "../api"
 
-export const f_createRmdirErrorMessage: api.FCreateRmdirErrorMessage = ($) => {
-
+export const icreateMkdirErrorMessage: api.CcreateMkdirErrorMessage = ($) => {
     switch ($[0]) {
-        case "not empty":
+        case "exists":
             return pl.cc($[1], ($) => {
-                return `rmdir error: not empty`
+                return `mkdir error: exists`
 
             })
         case "no entity":
             return pl.cc($[1], ($) => {
-                return `rmdir error: no entity`
+                return `mkdir error: no entity`
 
             })
         case "unknown":
             return pl.cc($[1], ($) => {
-                return `unknown rmdir error: ${$.message}`
+                return `unknown mkdir error: ${$.message}`
             })
         default: return pl.au($[0])
     }

@@ -7,8 +7,8 @@ import * as mfs from "res-pareto-filesystem"
 export type CcreateMkdirErrorMessage = glo.FCreateMkdirErrorMessage
 
 export type CcreateReadDirectoryOrAbort = ($d: {
-    readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
-    readonly "readDirectory": mfs.FReadDirectory
+    readonly "freadDirectory": mfs.FReadDirectory
+    readonly "seonError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
 }) => glo.AReadDirectoryOrAbort
 
 export type CcreateReadDirErrorMessage = glo.FCreateReadDirErrorMessage
@@ -16,8 +16,8 @@ export type CcreateReadDirErrorMessage = glo.FCreateReadDirErrorMessage
 export type CcreateReadFileErrorMessage = glo.FCreateReadFileErrorMessage
 
 export type CcreateReadOptionalDirectory = ($d: {
-    readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
-    readonly "readDirectory": mfs.FReadDirectory
+    readonly "freadDirectory": mfs.FReadDirectory
+    readonly "seonError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
 }) => glo.AReadOptionalDirectory
 
 export type CcreateRmdirErrorMessage = glo.FCreateRmdirErrorMessage
@@ -25,15 +25,15 @@ export type CcreateRmdirErrorMessage = glo.FCreateRmdirErrorMessage
 export type CcreateUnlinkErrorMessage = glo.FCreateUnlinkErrorMessage
 
 export type CcreateUnlinkFireAndForget = ($d: {
-    readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TUnlinkError>>
-    readonly "unlink": mfs.FUnlink
+    readonly "funlink": mfs.FUnlink
+    readonly "donError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TUnlinkError>>
 }) => pt.Procedure<mfs.TUnlink_Data>
 
 export type CcreateWriteFileErrorMessage = glo.FCreateWriteFileErrorMessage
 
 export type CcreateWriteFileFireAndForget = ($d: {
-    readonly "createWriteStream": mfs.FCreateWriteStream
-    readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TWriteFileError>>
+    readonly "fcreateWriteStream": mfs.FCreateWriteStream
+    readonly "donError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TWriteFileError>>
 }) => pt.Procedure<mfs.TWriteFileData>
 
 export type API = {

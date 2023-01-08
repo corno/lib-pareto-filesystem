@@ -10,7 +10,7 @@ export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = 
     type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
     const $a: x = ($, $i) => $._execute($i)
     return ($) => {
-        $d.createWriteStream(
+        $d.fcreateWriteStream(
             {
                 path: $.path,
                 createContainingDirectories: $.createContainingDirectories,
@@ -19,7 +19,7 @@ export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = 
                 $i($.data)
             },
             {
-                onError: $d.onError,
+                onError: $d.donError,
             },
             $a
         )

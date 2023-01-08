@@ -3,7 +3,7 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../api"
 
-export const icreateReadDirectoryOrAbort: api.CcreateReadDirectoryOrAbort = ($c, $d) => {
+export const icreateReadDirectoryOrAbort: api.CcreateReadDirectoryOrAbort = ($d) => {
     return ($) => {
         return $d.readDirectory(
             $,

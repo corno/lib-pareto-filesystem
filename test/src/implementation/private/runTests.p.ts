@@ -9,10 +9,10 @@
 // //import * as asyncAPI from "pareto-async-api"
 
 // type TestNode =
-//     | ["test", {
+//     | ['test', {
 //         success: boolean
 //     }]
-//     | ["set", {
+//     | ['set', {
 //         children: pa.Dictionary<TestNode>
 //     }]
 
@@ -57,18 +57,18 @@
 //     //                     }
 //     //                 ),
 //     //                 ($) => {
-//     //                     return ["set", {
+//     //                     return ['set', {
 //     //                         children: pl.createDictionary({})
 //     //                     }]
 //     //                 }
 //     //             ),
-//     //             "b": async.value(["test", {
+//     //             "b": async.value(['test', {
 //     //                 success: false,
 //     //             }])
 //     //         }
 //     //     ),
 //     //     ($) => {
-//     //         return ["set", {
+//     //         return ['set', {
 //     //             children: $
 //     //         }]
 //     //     }
@@ -144,7 +144,7 @@
 //     //                                                                             onNotExists: () => {
 //     //                                                                                 writeCallback(
 //     //                                                                                     {
-//     //                                                                                         fileName: pr.join(["tmp", filePath]),
+//     //                                                                                         fileName: pr.join(['tmp', filePath]),
 //     //                                                                                     }
 //     //                                                                                 )
 //     //                                                                             },
@@ -218,7 +218,7 @@
 //     //                                                             {
 
 //     //                                                                 path: "a dir",
-//     //                                                                 idStyle: ["name only", null],
+//     //                                                                 idStyle: ['name only', null],
 //     //                                                             },
 //     //                                                             {
 //     //                                                                 callbacks: {
@@ -236,7 +236,7 @@
 //     //                                                                     const files: string[] = []
 //     //                                                                     $i.readRecursively(
 //     //                                                                         {
-//     //                                                                             idStyle: ["relative from root", null],
+//     //                                                                             idStyle: ['relative from root', null],
 //     //                                                                             directoriesToExclude: [
 //     //                                                                                 "excludedDir"
 //     //                                                                             ]

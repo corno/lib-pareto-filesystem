@@ -6,7 +6,7 @@ import * as api from "../api"
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = ($, $d) => {
+export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = ($d) => {
     type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
     const $a: x = ($, $i) => $._execute($i)
     return ($) => {

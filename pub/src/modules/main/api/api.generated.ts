@@ -6,7 +6,7 @@ import * as mfs from "res-pareto-filesystem"
 
 export type CcreateMkdirErrorMessage = glo.FCreateMkdirErrorMessage
 
-export type CcreateReadDirectoryOrAbort = ($: null, $d: {
+export type CcreateReadDirectoryOrAbort = ($d: {
     readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
     readonly "readDirectory": mfs.FReadDirectory
 }) => glo.AReadDirectoryOrAbort
@@ -15,7 +15,7 @@ export type CcreateReadDirErrorMessage = glo.FCreateReadDirErrorMessage
 
 export type CcreateReadFileErrorMessage = glo.FCreateReadFileErrorMessage
 
-export type CcreateReadOptionalDirectory = ($: null, $d: {
+export type CcreateReadOptionalDirectory = ($d: {
     readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TReadDirError>>
     readonly "readDirectory": mfs.FReadDirectory
 }) => glo.AReadOptionalDirectory
@@ -24,14 +24,14 @@ export type CcreateRmdirErrorMessage = glo.FCreateRmdirErrorMessage
 
 export type CcreateUnlinkErrorMessage = glo.FCreateUnlinkErrorMessage
 
-export type CcreateUnlinkFireAndForget = ($: null, $d: {
+export type CcreateUnlinkFireAndForget = ($d: {
     readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TUnlinkError>>
     readonly "unlink": mfs.FUnlink
 }) => pt.Procedure<mfs.TUnlink_Data>
 
 export type CcreateWriteFileErrorMessage = glo.FCreateWriteFileErrorMessage
 
-export type CcreateWriteFileFireAndForget = ($: null, $d: {
+export type CcreateWriteFileFireAndForget = ($d: {
     readonly "createWriteStream": mfs.FCreateWriteStream
     readonly "onError": pt.Procedure<mfs.TAnnotatedFSError<mfs.TWriteFileError>>
 }) => pt.Procedure<mfs.TWriteFileData>

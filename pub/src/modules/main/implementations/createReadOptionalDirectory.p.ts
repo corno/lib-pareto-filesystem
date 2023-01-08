@@ -6,7 +6,7 @@ import * as api from "../api"
 import * as fs from "res-pareto-filesystem"
 import * as fsRes from "res-pareto-filesystem"
 
-export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($c, $d) => {
+export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         const allow = $.allow
         return $d.readDirectory(

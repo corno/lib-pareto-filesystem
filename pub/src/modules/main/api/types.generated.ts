@@ -38,5 +38,3 @@ export type AReadDirectoryOrAbort = ($: mfs.TReadDirectory_Data) => pt.AsyncValu
 export type AReadFileOrAbort = ($: mfs.TReadFile_Data) => pt.AsyncValue<string>
 
 export type AReadOptionalDirectory = ($: TReadOptionalDirectoryData) => pt.AsyncValue<TReadOptionalDirectoryResult>
-
-export type FXX = ($: mfs.TMkdirError) => number

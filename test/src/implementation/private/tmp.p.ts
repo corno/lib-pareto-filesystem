@@ -3,7 +3,7 @@
 
 // res.$.createCachingResource(
 //     {
-//         contextPath: ["data", "cache"]
+//         contextPath: ['data', "cache"]
 //     },
 //     {
 //         onReadError: ($) => {
@@ -17,7 +17,7 @@
 //         },
 //         source: res.$.createFileResource(
 //             {
-//                 contextPath: ["data", "source"]
+//                 contextPath: ['data', "source"]
 //             },
 //             {
 //                 onError: ($) => {

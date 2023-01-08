@@ -2,24 +2,24 @@ import * as pr from "pareto-core-raw"
 import {
     externalReference as er,
     string as str,
-    _null as nll,
     reference as ref,
     boolean as bln,
     number as nr,
     array,
     optional,
+    nullType,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 
-import { string, _null, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/api/api/shorthands.p"
+import { string, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/api/api/shorthands.p"
 import * as NProject from "lib-pareto-typescript-project/dist/modules/project"
 const wd = pr.wrapRawDictionary
 export const project: NProject.TProject = {
-    modules: wd({
+    'modules': wd({
         "main": {
-            definition: {
-                "glossary": {
+            'definition': {
+                'glossary': {
                     'imports': wd({
                         "fs": "res-pareto-filesystem"
                     }),
@@ -29,9 +29,9 @@ export const project: NProject.TProject = {
                         "DirNodeData": group({
                             "path": member(str()),
                             "type": member(taggedUnion({
-                                "directory": nll(),
-                                "file": nll(),
-                                "unknown": nll(),
+                                "directory": nullType(),
+                                "file": nullType(),
+                                "unknown": nullType(),
                             }))
                         }),
                         "ReadOptionalDirectoryData": group({
@@ -41,9 +41,6 @@ export const project: NProject.TProject = {
                                 "isNotADirectory": member(bln(), true),
                             })),
                         }),
-
-
-
                         // readonly "fs": fs.TReadDirectory_Data
                         // readonly "allow": {
                         //     readonly "noEntity"?: boolean
@@ -75,10 +72,6 @@ export const project: NProject.TProject = {
                             'data': externalReference("fs", "UnlinkError"),
                             'return value': string()
                         },
-                        "XX": {
-                            'data': externalReference("fs", "MkdirError"),
-                            'return value': number()
-                        },
                         "ReadFileOrAbort": {
                             'async': true,
                             'data': externalReference("fs", "ReadFile_Data"),
@@ -101,198 +94,145 @@ export const project: NProject.TProject = {
                     }),
                     'interfaces': wd({}),
                 },
-                "api": {
-                    "imports": wd({
+                'api': {
+                    'imports': wd({
                         "fs": "res-pareto-filesystem",
                     }),
-                    "algorithms": wd({
-
-                        //     export type CCreateReadOptionalFile = pt.Creator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TReadFileError>>
-                        //     },
-                        //     api.FReadOptionalFile
-                        // >
-
-
-                        // export type CCreateReadFileOrAbort = pt.Creator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TReadFileError>>
-                        //     },
-                        //     api.FReadFileOrAbort
-                        // >
-
-                        // export type CCreateReadOptionalDirectory = pt.Creator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TReadDirError>>
-                        //         readonly "readDirectory": fs.FReadDirectory
-
-                        //     },
-                        //     api.FReadOptionalDirectory
-                        // >
-
-
-                        // export type CCreateReadDirectoryOrAbort = pt.Creator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TReadDirError>>
-                        //         readonly "readDirectory": fs.FReadDirectory
-                        //     },
-                        //     api.FReadDirectoryOrAbort
-                        // >
-
-
-                        // export type CCreateWriteFileFireAndForget = AsyncProcessingCreator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TWriteFileError>>
-                        //         readonly "createWriteStream": fs.FCreateWriteStream,
-                        //     },
-                        //     api.PWriteFileFireAndForget
-                        // >
-
-
-                        // export type CCreateUnlinkFireAndForget = AsyncProcessingCreator<
-                        //     {
-                        //         readonly "onError": pt.Procedure<fs.TAnnotatedFSError<fs.TUnlinkError>>
-                        //         readonly "unlink": fs.FUnlink,
-
-                        //     },
-                        //     api.PUnlinkFireAndForget
-                        // >
-
-                        "createMkdirErrorMessage": ["algorithm", {
-                            type: ["function", {
+                    'algorithms': wd({
+                        "createMkdirErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateMkdirErrorMessage"
                             }],
                         }],
-                        "createReadDirectoryOrAbort": ["constructor", {
-                            data: ["null", null],
-                            dependencies: wd({
+                        "createReadDirectoryOrAbort": ['constructor', {
+                            'data': ['null', null],
+                            'dependencies': wd({
                                 "onError": {
-                                    type: ["procedure", externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")],
+                                    'type': ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
 
                                 },
                                 "readDirectory": {
-                                    type: ["function", {
+                                    'type': ['function', {
                                         'context': ['import', "fs"],
                                         'function': "ReadDirectory"
                                     }]
                                 },
                             }),
-                            result: {
-                                type: ["function", {
-                                    function: "ReadDirectoryOrAbort",
-                                    async: true,
+                            'result': {
+                                'type': ['function', {
+                                    'function': "ReadDirectoryOrAbort",
+                                    'async': true,
                                 }],
                             }
                         }],
-                        "createReadDirErrorMessage": ["algorithm", {
-                            type: ["function", {
+                        "createReadDirErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateReadDirErrorMessage"
                             }],
                         }],
-                        "createReadFileErrorMessage": ["algorithm", {
-                            type: ["function", {
+                        "createReadFileErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateReadFileErrorMessage"
                             }],
                         }],
-                        // "createReadFileOrAbort": ["constructor", {
-                        //     data: ["null", null],
+                        // "createReadFileOrAbort": ['constructor', {
+                        //     data: ['null', null],
                         //     dependencies: wd({
                         //         "onError": {
-                        //             type: ["procedure", externalReference("fs", "AnnotatedFSError<mfs.TReadFileError>")],
+                        //             type: ['procedure', externalReference("fs", "AnnotatedFSError<mfs.TReadFileError>")],
 
                         //         },
                         //     }),
                         //     result: {
-                        //         type: ["function", {
+                        //         type: ['function', {
                         //             function: "ReadFileOrAbort",
                         //             async: true,
                         //         }],
                         //     }
                         // }],
-                        "createReadOptionalDirectory": ["constructor", {
-                            data: ["null", null],
-                            dependencies: wd({
+                        "createReadOptionalDirectory": ['constructor', {
+                            'data': ['null', null],
+                            'dependencies': wd({
                                 "onError": {
-                                    type: ["procedure", externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")],
+                                    type: ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
 
                                 },
                                 "readDirectory": {
-                                    type: ["function", {
+                                    type: ['function', {
                                         'context': ['import', "fs"],
                                         'function': "ReadDirectory"
                                     }]
                                 },
                             }),
-                            result: {
-                                type: ["function", {
-                                    function: "ReadOptionalDirectory",
-                                    async: true,
+                            'result': {
+                                'type': ['function', {
+                                    'function': "ReadOptionalDirectory",
+                                    'async': true,
                                 }],
                             }
                         }],
-                        // "createReadOptionalFile": ["algorithm", {
-                        //     type: ["function", {
+                        // "createReadOptionalFile": ['algorithm', {
+                        //     type: ['function', {
                         //         'function': "XX"
                         //     }],
                         // }],
-                        "createRmdirErrorMessage": ["algorithm", {
-                            type: ["function", {
+                        "createRmdirErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateRmdirErrorMessage"
                             }],
                         }],
-                        "createUnlinkErrorMessage": ["algorithm", {
-                            type: ["function", {
+                        "createUnlinkErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateUnlinkErrorMessage"
                             }],
                         }],
-                        "createUnlinkFireAndForget": ["constructor", {
-                            data: ["null", null],
-                            dependencies: wd({
+                        "createUnlinkFireAndForget": ['constructor', {
+                            'data': ['null', null],
+                            'dependencies': wd({
                                 "onError": {
-                                    type: ["procedure", externalReference("fs", "AnnotatedFSError<mfs.TUnlinkError>")],
+                                    'type': ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TUnlinkError>")]],
 
                                 },
                                 "unlink": {
-                                    type: ["function", {
+                                    'type': ['function', {
                                         'context': ['import', "fs"],
                                         'function': "Unlink"
                                     }]
                                 },
                             }),
-                            result: {
-                                type: ["procedure", externalReference("fs", "Unlink_Data")],
+                            'result': {
+                                'type': ['procedure', ['type', externalReference("fs", "Unlink_Data")]],
                             }
                         }],
-                        "createWriteFileErrorMessage": ["algorithm", {
-                            type: ["function", {
+                        "createWriteFileErrorMessage": ['algorithm', {
+                            'type': ['function', {
                                 'function': "CreateWriteFileErrorMessage"
                             }],
                         }],
-                        "createWriteFileFireAndForget": ["constructor", {
-                            data: ["null", null],
-                            dependencies: wd({
+                        "createWriteFileFireAndForget": ['constructor', {
+                            'data': ['null', null],
+                            'dependencies': wd({
                                 "onError": {
-                                    type: ["procedure", externalReference("fs", "AnnotatedFSError<mfs.TWriteFileError>")],
+                                    'type': ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TWriteFileError>")]],
 
                                 },
                                 "createWriteStream": {
-                                    type: ["function", {
+                                    'type': ['function', {
                                         'context': ['import', "fs"],
                                         'function': "CreateWriteStream"
                                     }]
                                 },
                             }),
-                            result: {
-                                type: ["procedure", externalReference("fs", "WriteFileData")],
+                            'result': {
+                                'type': ['procedure', ['type', externalReference("fs", "WriteFileData")]],
                             }
                         }],
                     })
                 },
             },
-            implementation: {}
+            'implementation': {}
 
         },
     }),
-    main: "main"
+    'main': "main"
 }

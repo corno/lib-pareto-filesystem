@@ -12,14 +12,14 @@ export const icreateUnlinkFireAndForget: api.CcreateUnlinkFireAndForget = ($d) =
     const $a: x = ($, $i) => $._execute($i)
     return ($) => {
         return $a(
-            $d.funlink(
+            $d.sf_unlink(
                 $,
             ),
             ($) => {
                 switch ($[0]) {
                     case "error":
                         return pl.cc($[1], ($) => {
-                            $d.donError($)
+                            $d.pr_onError($)
                             return undefined
                         })
                     case "success":

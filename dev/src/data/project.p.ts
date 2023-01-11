@@ -90,125 +90,130 @@ export const project: NProject.TProject = {
 
 
                     }),
-                    'callbacks': wd({
-                    }),
                     'interfaces': wd({}),
+                    'callbacks': wd({}),
+                    'pipes': wd({}),
                 },
                 'api': {
                     'imports': wd({
                         "fs": "res-pareto-filesystem",
                     }),
                     'algorithms': wd({
-                        "createMkdirErrorMessage": ['function', {
-                            'function': "CreateMkdirErrorMessage"
-                        }],
-                        "createReadDirectoryOrAbort": ['function constructor', {
-                            'configuration data': ['null', null],
-                            'dependencies': {
-                                'functions': wd({
-                                    "readDirectory": {
-                                        'context': ['import', "fs"],
-                                        'function': "ReadDirectory"
-                                    },
-                                }),
-                                'side effects': wd({
-                                    "onError": ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")],
-                                }),
-                            },
-                            'function': {
+                        "createMkdirErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateMkdirErrorMessage"
+                            }],
+                        },
+                        "createReadDirectoryOrAbort": {
+                            'definition': ['function', {
                                 'function': "ReadDirectoryOrAbort",
                                 'async': true,
-                            },
-                        }],
-                        "createReadDirErrorMessage": ['function', {
-                            'function': "CreateReadDirErrorMessage"
-                        }],
-                        "createReadFileErrorMessage": ['function', {
-                            'function': "CreateReadFileErrorMessage"
-                        }],
-                        // "createReadFileOrAbort": ['constructor', {
-                        //     data: ['null', null],
-                        //     dependencies: wd({
-                        //         "onError": {
-                        //             type: ['procedure', externalReference("fs", "AnnotatedFSError<mfs.TReadFileError>")],
-
-                        //         },
-                        //     }),
-                        //     result: {
-                        //         type: ['function', {
-                        //             function: "ReadFileOrAbort",
-                        //             async: true,
-                        //         }],
-                        //     }
-                        // }],
-                        "createReadOptionalDirectory": ['function constructor', {
-                            'configuration data': ['null', null],
-                            'dependencies': {
-                                'functions': wd({
-                                    "readDirectory": {
+                            }],
+                            'type': ['constructor', {
+                                'configuration data': ['null', null],
+                                'dependencies': wd({
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
+                                    "readDirectory": ['function', {
                                         'context': ['import', "fs"],
                                         'function': "ReadDirectory"
-                                    },
+                                    }]
                                 }),
-                                'side effects': wd({
-                                    "onError": ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")],
-                                }),
-                            },
-                            'function': {
+                            }]
+                        },
+                        "createReadDirErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateReadDirErrorMessage"
+                            }],
+                        },
+                        "createReadFileErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateReadFileErrorMessage"
+                            }],
+                        },
+                        // // "createReadFileOrAbort": ['constructor', {
+                        // //     data: ['null', null],
+                        // //     dependencies: wd({
+                        // //         "onError": {
+                        // //             type: ['procedure', externalReference("fs", "AnnotatedFSError<mfs.TReadFileError>")],
+
+                        // //         },
+                        // //     }),
+                        // //     result: {
+                        // //         type: ['function', {
+                        // //             function: "ReadFileOrAbort",
+                        // //             async: true,
+                        // //         }],
+                        // //     }
+                        // // }],
+                        "createReadOptionalDirectory": {
+                            'definition': ['function', {
                                 'function': "ReadOptionalDirectory",
                                 'async': true,
-                            },
-                            'result': {
-                                'type': ['function', {
-                                    'function': "ReadOptionalDirectory",
-                                    'async': true,
-                                }],
-                            }
-                        }],
-                        // "createReadOptionalFile": ['algorithm', {
-                        //     type: ['function', {
-                        //         'function': "XX"
-                        //     }],
-                        // }],
-                        "createRmdirErrorMessage": ['function', {
-                            'function': "CreateRmdirErrorMessage"
-                        }],
-                        "createUnlinkErrorMessage": ['function', {
-                            'function': "CreateUnlinkErrorMessage"
-                        }],
-                        "createUnlinkFireAndForget": ['procedure constructor', {
-                            'configuration data': ['null', null],
-                            'dependencies': {
-                                'downstreams': wd({
-                                    "onError": ['type', externalReference("fs", "AnnotatedFSError<mfs.TUnlinkError>")],
-                                }),
-                                'functions': wd({
-                                    "unlink": {
+                            }],
+                            'type': ['constructor', {
+                                'configuration data': ['null', null],
+                                'dependencies': wd({
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
+                                    "readDirectory": ['function', {
                                         'context': ['import', "fs"],
-                                        'function': "Unlink"
-                                    },
+                                        'function': "ReadDirectory"
+                                    }],
                                 }),
-                            },
-                            'type': ['type', externalReference("fs", "Unlink_Data")],
-                        }],
-                        "createWriteFileErrorMessage": ['function', {
-                            'function': "CreateWriteFileErrorMessage"
-                        }],
-                        "createWriteFileFireAndForget": ['procedure constructor', {
-                            'configuration data': ['null', null],
-                            'dependencies': {
-                                'downstreams': wd({
-                                    "onError": ['type', externalReference("fs", "AnnotatedFSError<mfs.TWriteFileError>")],
+                            }],
+                        },
+                        // // "createReadOptionalFile": ['algorithm', {
+                        // //     type: ['function', {
+                        // //         'function': "XX"
+                        // //     }],
+                        // // }],
+                        "createRmdirErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateRmdirErrorMessage"
+                            }],
+                        },
+                        "createUnlinkErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateUnlinkErrorMessage"
+                            }],
+                        },
+                        "createUnlinkFireAndForget": {
+                            'definition': ['procedure', ['type', externalReference("fs", "Unlink_Data")]],
+                            'type': ['constructor', {
+                                'configuration data': ['null', null],
+                                'dependencies': wd({
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TUnlinkError>")]],
+                                    "unlink": ['function', {
+                                        'context': ['import', "fs"],
+                                        'function': "Unlink",
+                                        //SHOULD BE ASYNC 'async': true,
+                                    }],
                                 }),
-                                'functions': wd({
-                                    "createWriteStream": {
+                            }]
+                        },
+                        "createWriteFileErrorMessage": {
+                            'type': ['reference', null],
+                            'definition': ['function', {
+                                'function': "CreateWriteFileErrorMessage"
+                            }],
+                        },
+                        "createWriteFileFireAndForget": {
+                            'definition': ['procedure', ['type', externalReference("fs", "WriteFileData")]],
+                            'type': ['constructor', {
+                                'configuration data': ['null', null],
+                                'dependencies': wd({
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TWriteFileError>")]],
+                                    "createWriteStream": ['function', {
                                         'context': ['import', "fs"],
                                         'function': "CreateWriteStream"
-                                    },
+                                    }],
                                 }),
-                            },
-                            'type': ['type', externalReference("fs", "WriteFileData")],
-                        }],
+                            }]
+                        },
                     })
                 },
             },

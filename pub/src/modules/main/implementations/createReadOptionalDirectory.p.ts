@@ -9,7 +9,7 @@ import * as fsRes from "res-pareto-filesystem"
 export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         const allow = $.allow
-        return $d.freadDirectory(
+        return $d.sf_readDirectory(
             $.fs,
         ).setCondition(($) => {
             switch ($[0]) {
@@ -22,7 +22,7 @@ export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($
                                     if (allow.isNotADirectory) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $d.seonError(err)
+                                        $d.pr_onError(err)
                                         return undefined
                                     }
                                 })
@@ -31,13 +31,13 @@ export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($
                                     if (allow.noEntity) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $d.seonError(err)
+                                        $d.pr_onError(err)
                                         return undefined
                                     }
                                 })
                             case "unknown":
                                 return pl.cc($.error[1], ($) => {
-                                    $d.seonError(err)
+                                    $d.pr_onError(err)
                                     return undefined
                                 })
                             default: return pl.au($.error[0])

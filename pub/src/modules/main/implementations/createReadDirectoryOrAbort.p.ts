@@ -5,7 +5,7 @@ import * as api from "../api"
 
 export const icreateReadDirectoryOrAbort: api.CcreateReadDirectoryOrAbort = ($d) => {
     return ($) => {
-        return $d.sf_readDirectory(
+        return $d.af_readDirectory(
             $,
         ).setCondition(($) => {
             switch ($[0]) {

@@ -12,7 +12,7 @@ export const icreateUnlinkFireAndForget: api.CcreateUnlinkFireAndForget = ($d) =
     const $a: x = ($, $i) => $._execute($i)
     return ($) => {
         return $a(
-            $d.sf_unlink(
+            $d.af_unlink(
                 $,
             ),
             ($) => {

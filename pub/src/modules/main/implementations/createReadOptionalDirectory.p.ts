@@ -3,13 +3,10 @@ import * as pl from "pareto-core-lib"
 
 import * as api from "../api"
 
-import * as fs from "res-pareto-filesystem"
-import * as fsRes from "res-pareto-filesystem"
-
 export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         const allow = $.allow
-        return $d.sf_readDirectory(
+        return $d.af_readDirectory(
             $.fs,
         ).setCondition(($) => {
             switch ($[0]) {

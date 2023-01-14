@@ -113,10 +113,11 @@ export const project: NProject.TProject = {
                             'type': ['constructor', {
                                 'configuration data': ['null', null],
                                 'dependencies': wd({
-                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedReadDirError")]],
                                     "readDirectory": ['function', {
                                         'context': ['import', "fs"],
-                                        'function': "ReadDirectory"
+                                        'function': "ReadDirectory",
+                                        'async': true,
                                     }]
                                 }),
                             }]
@@ -124,7 +125,7 @@ export const project: NProject.TProject = {
                         "createReadDirErrorMessage": {
                             'type': ['reference', null],
                             'definition': ['function', {
-                                'function': "CreateReadDirErrorMessage"
+                                'function': "CreateReadDirErrorMessage",
                             }],
                         },
                         "createReadFileErrorMessage": {
@@ -156,10 +157,11 @@ export const project: NProject.TProject = {
                             'type': ['constructor', {
                                 'configuration data': ['null', null],
                                 'dependencies': wd({
-                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TReadDirError>")]],
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedReadDirError")]],
                                     "readDirectory": ['function', {
                                         'context': ['import', "fs"],
-                                        'function': "ReadDirectory"
+                                        'function': "ReadDirectory",
+                                        'async': true,
                                     }],
                                 }),
                             }],
@@ -186,11 +188,11 @@ export const project: NProject.TProject = {
                             'type': ['constructor', {
                                 'configuration data': ['null', null],
                                 'dependencies': wd({
-                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TUnlinkError>")]],
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedUnlinkError")]],
                                     "unlink": ['function', {
                                         'context': ['import', "fs"],
                                         'function': "Unlink",
-                                        //SHOULD BE ASYNC 'async': true,
+                                        'async': true,
                                     }],
                                 }),
                             }]
@@ -206,10 +208,10 @@ export const project: NProject.TProject = {
                             'type': ['constructor', {
                                 'configuration data': ['null', null],
                                 'dependencies': wd({
-                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedFSError<mfs.TWriteFileError>")]],
-                                    "createWriteStream": ['function', {
+                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedWriteFileError")]],
+                                    "createWriteStream": ['interface', {
                                         'context': ['import', "fs"],
-                                        'function': "CreateWriteStream"
+                                        'interface': "CreateWriteStream",
                                     }],
                                 }),
                             }]

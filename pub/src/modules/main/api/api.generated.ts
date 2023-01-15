@@ -33,7 +33,6 @@ export type CcreateWriteFileErrorMessage = glo.FCreateWriteFileErrorMessage
 
 export type CcreateWriteFileFireAndForget = ($d: {
     readonly "if_createWriteStream": mfs.ICreateWriteStream
-    readonly "pr_onError": pt.Procedure<mfs.TAnnotatedWriteFileError>
 }) => pt.Procedure<mfs.TWriteFileData>
 
 export type API = {

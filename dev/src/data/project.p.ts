@@ -208,7 +208,6 @@ export const project: NProject.TProject = {
                             'type': ['constructor', {
                                 'configuration data': ['null', null],
                                 'dependencies': wd({
-                                    "onError": ['procedure', ['type', externalReference("fs", "AnnotatedWriteFileError")]],
                                     "createWriteStream": ['interface', {
                                         'context': ['import', "fs"],
                                         'interface': "CreateWriteStream",

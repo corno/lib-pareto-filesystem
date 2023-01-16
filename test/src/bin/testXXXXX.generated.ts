@@ -1,6 +1,7 @@
 import * as pt from "pareto-core-types"
 import * as pr from "pareto-core-raw"
 import * as pl from "pareto-core-lib"
+import * as tst from "lib-pareto-test"
 
 import { test as main_createMkdirErrorMessage } from "../modules/main/createMkdirErrorMessage.p"
 import { test as main_createReadDirectoryOrAbort } from "../modules/main/createReadDirectoryOrAbort.p"
@@ -13,7 +14,7 @@ import { test as main_createUnlinkFireAndForget } from "../modules/main/createUn
 import { test as main_createWriteFileErrorMessage } from "../modules/main/createWriteFileErrorMessage.p"
 import { test as main_createWriteFileFireAndForget } from "../modules/main/createWriteFileFireAndForget.p"
 
-const x = pr.wrapRawDictionary({
+const x = pr.wrapRawDictionary<pt.Dictionary<() => pt.AsyncValue<tst.TTestElement>>>({
     "main": pr.wrapRawDictionary({
         "createMkdirErrorMessage": main_createMkdirErrorMessage,
         "createReadDirectoryOrAbort": main_createReadDirectoryOrAbort,

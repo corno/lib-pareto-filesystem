@@ -1,4 +1,5 @@
 import * as pt from "pareto-core-types"
+import * as mcommon from "glo-pareto-common"
 import * as mfs from "res-pareto-filesystem"
 
 export type TDirNodeData = {
@@ -21,20 +22,20 @@ export type TReadOptionalDirectoryData = {
 
 export type TReadOptionalDirectoryResult = null | TReadDirectoryResult
 
-export type FCreateMkdirErrorMessage = ($: mfs.TMkdirError) => string
+export type FCreateMkdirErrorMessage = ($: mfs.TMkdirError) => mcommon.TString
 
-export type FCreateReadDirErrorMessage = ($: mfs.TReadDirError) => string
+export type FCreateReadDirErrorMessage = ($: mfs.TReadDirError) => mcommon.TString
 
-export type FCreateReadFileErrorMessage = ($: mfs.TReadFileError) => string
+export type FCreateReadFileErrorMessage = ($: mfs.TReadFileError) => mcommon.TString
 
-export type FCreateRmdirErrorMessage = ($: mfs.TRmdirError) => string
+export type FCreateRmdirErrorMessage = ($: mfs.TRmdirError) => mcommon.TString
 
-export type FCreateUnlinkErrorMessage = ($: mfs.TUnlinkError) => string
+export type FCreateUnlinkErrorMessage = ($: mfs.TUnlinkError) => mcommon.TString
 
-export type FCreateWriteFileErrorMessage = ($: mfs.TUnlinkError) => string
+export type FCreateWriteFileErrorMessage = ($: mfs.TUnlinkError) => mcommon.TString
 
 export type AReadDirectoryOrAbort = ($: mfs.TReadDirectory_Data) => pt.AsyncValue<TReadDirectoryResult>
 
-export type AReadFileOrAbort = ($: mfs.TReadFile_Data) => pt.AsyncValue<string>
+export type AReadFileOrAbort = ($: mfs.TReadFile_Data) => pt.AsyncValue<mcommon.TString>
 
 export type AReadOptionalDirectory = ($: TReadOptionalDirectoryData) => pt.AsyncValue<TReadOptionalDirectoryResult>

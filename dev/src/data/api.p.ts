@@ -2,13 +2,14 @@ import * as pr from "pareto-core-raw"
 import {
     externalReference as er,
     string as str,
-    nullType,
-    type,
+    null_,
     reference as ref,
     boolean as bln,
     number as nr,
     nested,
     optional,
+    externalTypeReference,
+    typeReference,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
@@ -22,7 +23,8 @@ const d = pr.wrapRawDictionary
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({
-            "fs": "res-pareto-filesystem"
+            "fs": "res-pareto-filesystem",
+            "common": "glo-pareto-common",
         }),
         'namespace': {
             'types': types({
@@ -31,9 +33,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 "DirNodeData": group({
                     "path": member(str()),
                     "type": member(taggedUnion({
-                        "directory": nullType(),
-                        "file": nullType(),
-                        "unknown": nullType(),
+                        "directory": null_(),
+                        "file": null_(),
+                        "unknown": null_(),
                     }))
                 }),
                 "ReadOptionalDirectoryData": group({
@@ -54,43 +56,43 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         },
         'functions': d({
             "CreateMkdirErrorMessage": {
-                'data': externalReference("fs", "MkdirError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "MkdirError"),
+                'return value': externalTypeReference("common", "String")
             },
             "CreateRmdirErrorMessage": {
-                'data': externalReference("fs", "RmdirError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "RmdirError"),
+                'return value': externalTypeReference("common", "String")
             },
             "CreateReadDirErrorMessage": {
-                'data': externalReference("fs", "ReadDirError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "ReadDirError"),
+                'return value': externalTypeReference("common", "String")
             },
             "CreateReadFileErrorMessage": {
-                'data': externalReference("fs", "ReadFileError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "ReadFileError"),
+                'return value': externalTypeReference("common", "String")
             },
             "CreateUnlinkErrorMessage": {
-                'data': externalReference("fs", "UnlinkError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "UnlinkError"),
+                'return value': externalTypeReference("common", "String")
             },
             "CreateWriteFileErrorMessage": {
-                'data': externalReference("fs", "UnlinkError"),
-                'return value': string()
+                'data': externalTypeReference("fs", "UnlinkError"),
+                'return value': externalTypeReference("common", "String")
             },
             "ReadFileOrAbort": {
                 'async': true,
-                'data': externalReference("fs", "ReadFile_Data"),
-                'return value': string()
+                'data': externalTypeReference("fs", "ReadFile_Data"),
+                'return value': externalTypeReference("common", "String")
             },
             "ReadDirectoryOrAbort": {
                 'async': true,
-                'data': externalReference("fs", "ReadDirectory_Data"),
-                'return value': reference("ReadDirectoryResult")
+                'data': externalTypeReference("fs", "ReadDirectory_Data"),
+                'return value': typeReference("ReadDirectoryResult")
             },
             "ReadOptionalDirectory": {
                 'async': true,
-                'data': reference("ReadOptionalDirectoryData"),
-                'return value': reference("ReadOptionalDirectoryResult")
+                'data': typeReference("ReadOptionalDirectoryData"),
+                'return value': typeReference("ReadOptionalDirectoryResult")
             },
 
 
@@ -115,9 +117,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                     'async': true,
                 }],
                 'type': ['constructor', {
-                    'configuration data': ['null', null],
+                    'configuration data': null,
                     'dependencies': d({
-                        "onError": ['procedure', ['type', externalReference("fs", "AnnotatedReadDirError")]],
+                        "onError": ['procedure', externalTypeReference("fs", "AnnotatedReadDirError")],
                         "readDirectory": ['function', {
                             'context': ['import', "fs"],
                             'function': "ReadDirectory",
@@ -159,9 +161,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                     'async': true,
                 }],
                 'type': ['constructor', {
-                    'configuration data': ['null', null],
+                    'configuration data': null,
                     'dependencies': d({
-                        "onError": ['procedure', ['type', externalReference("fs", "AnnotatedReadDirError")]],
+                        "onError": ['procedure', externalTypeReference("fs", "AnnotatedReadDirError")],
                         "readDirectory": ['function', {
                             'context': ['import', "fs"],
                             'function': "ReadDirectory",
@@ -188,11 +190,11 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 }],
             },
             "createUnlinkFireAndForget": {
-                'definition': ['procedure', ['type', externalReference("fs", "Unlink_Data")]],
+                'definition': ['procedure',  externalTypeReference("fs", "Unlink_Data")],
                 'type': ['constructor', {
-                    'configuration data': ['null', null],
+                    'configuration data': null,
                     'dependencies': d({
-                        "onError": ['procedure', ['type', externalReference("fs", "AnnotatedUnlinkError")]],
+                        "onError": ['procedure', externalTypeReference("fs", "AnnotatedUnlinkError")],
                         "unlink": ['function', {
                             'context': ['import', "fs"],
                             'function': "Unlink",
@@ -208,9 +210,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 }],
             },
             "createWriteFileFireAndForget": {
-                'definition': ['procedure', ['type', externalReference("fs", "WriteFileData")]],
+                'definition': ['procedure', externalTypeReference("fs", "WriteFileData")],
                 'type': ['constructor', {
-                    'configuration data': ['null', null],
+                    'configuration data': null,
                     'dependencies': d({
                         "createWriteStream": ['interface', {
                             'context': ['import', "fs"],

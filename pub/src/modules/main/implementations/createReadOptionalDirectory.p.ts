@@ -3,7 +3,7 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-export const icreateReadOptionalDirectory: api.CcreateReadOptionalDirectory = ($d) => {
+export const $$: api.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         const allow = $.allow
         return $d.af_readDirectory(

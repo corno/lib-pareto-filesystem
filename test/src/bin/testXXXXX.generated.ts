@@ -1,6 +1,6 @@
-import * as pt from "pareto-core-types"
-import * as pr from "pareto-core-raw"
-import * as pl from "pareto-core-lib"
+import * as pt from 'pareto-core-types'
+import * as pr from 'pareto-core-raw'
+import * as pl from 'pareto-core-lib'
 import * as tst from "lib-pareto-test"
 
 import { test as main_createMkdirErrorMessage } from "../modules/main/createMkdirErrorMessage.p"
@@ -15,16 +15,16 @@ import { test as main_createWriteFileErrorMessage } from "../modules/main/create
 import { test as main_createWriteFileFireAndForget } from "../modules/main/createWriteFileFireAndForget.p"
 
 const x = pr.wrapRawDictionary<pt.Dictionary<() => pt.AsyncValue<tst.TTestElement>>>({
-    "main": pr.wrapRawDictionary({
-        "createMkdirErrorMessage": main_createMkdirErrorMessage,
-        "createReadDirectoryOrAbort": main_createReadDirectoryOrAbort,
-        "createReadDirErrorMessage": main_createReadDirErrorMessage,
-        "createReadFileErrorMessage": main_createReadFileErrorMessage,
-        "createReadOptionalDirectory": main_createReadOptionalDirectory,
-        "createRmdirErrorMessage": main_createRmdirErrorMessage,
-        "createUnlinkErrorMessage": main_createUnlinkErrorMessage,
-        "createUnlinkFireAndForget": main_createUnlinkFireAndForget,
-        "createWriteFileErrorMessage": main_createWriteFileErrorMessage,
-        "createWriteFileFireAndForget": main_createWriteFileFireAndForget,
+    'main': pr.wrapRawDictionary({
+        'createMkdirErrorMessage': main_createMkdirErrorMessage,
+        'createReadDirectoryOrAbort': main_createReadDirectoryOrAbort,
+        'createReadDirErrorMessage': main_createReadDirErrorMessage,
+        'createReadFileErrorMessage': main_createReadFileErrorMessage,
+        'createReadOptionalDirectory': main_createReadOptionalDirectory,
+        'createRmdirErrorMessage': main_createRmdirErrorMessage,
+        'createUnlinkErrorMessage': main_createUnlinkErrorMessage,
+        'createUnlinkFireAndForget': main_createUnlinkFireAndForget,
+        'createWriteFileErrorMessage': main_createWriteFileErrorMessage,
+        'createWriteFileFireAndForget': main_createWriteFileFireAndForget,
     }),
 }).asyncMap(($, key) => $.asyncMap(($, key) => $()))

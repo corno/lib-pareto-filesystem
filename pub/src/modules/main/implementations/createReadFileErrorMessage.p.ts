@@ -2,7 +2,7 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-export const icreateReadFileErrorMessage: api.CcreateReadFileErrorMessage = ($) => {
+export const $$: api.CcreateReadFileErrorMessage = ($) => {
     switch ($[0]) {
         case 'is directory':
             return pl.cc($[1], ($) => {

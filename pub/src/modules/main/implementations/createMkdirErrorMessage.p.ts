@@ -2,7 +2,7 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-export const icreateMkdirErrorMessage: api.CcreateMkdirErrorMessage = ($) => {
+export const $$: api.CcreateMkdirErrorMessage = ($) => {
     switch ($[0]) {
         case 'exists':
             return pl.cc($[1], ($) => {

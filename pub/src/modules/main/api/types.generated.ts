@@ -1,23 +1,23 @@
-import * as pt from "pareto-core-types"
+import * as pt from 'pareto-core-types'
 import * as mcommon from "glo-pareto-common"
 import * as mfs from "res-pareto-filesystem"
 
 export type TDirNodeData = {
-    readonly "path": string
-    readonly "type": 
-        | ["directory", null]
-        | ["file", null]
-        | ["unknown", null]
+    readonly 'path': string
+    readonly 'type': 
+        | ['directory', null]
+        | ['file', null]
+        | ['unknown', null]
 }
 
 export type TReadDirectoryResult = null | pt.Dictionary<TDirNodeData>
 
 export type TReadOptionalDirectoryData = {
-    readonly "allow": {
-        readonly "isNotADirectory"?: boolean
-        readonly "noEntity"?: boolean
+    readonly 'allow': {
+        readonly 'isNotADirectory'?: boolean
+        readonly 'noEntity'?: boolean
     }
-    readonly "fs": mfs.TReadDirectory_Data
+    readonly 'fs': mfs.TReadDirectory_Data
 }
 
 export type TReadOptionalDirectoryResult = null | TReadDirectoryResult

@@ -2,7 +2,7 @@ import * as pt from 'pareto-core-types'
 
 import * as api from "../api"
 
-export const icreateWriteFileFireAndForget: api.CcreateWriteFileFireAndForget = ($d) => {
+export const $$: api.CcreateWriteFileFireAndForget = ($d) => {
     return ($) => {
         $d.if_createWriteStream(
             {

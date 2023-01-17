@@ -2,7 +2,7 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-export const icreateUnlinkErrorMessage: api.CcreateUnlinkErrorMessage = ($) => {
+export const $$: api.CcreateUnlinkErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'is directory':

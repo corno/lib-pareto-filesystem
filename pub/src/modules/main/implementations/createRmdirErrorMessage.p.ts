@@ -2,7 +2,7 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-export const icreateRmdirErrorMessage: api.CcreateRmdirErrorMessage = ($) => {
+export const $$: api.CcreateRmdirErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'not empty':

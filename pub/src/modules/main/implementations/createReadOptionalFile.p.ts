@@ -1,5 +1,5 @@
 
-import * as pl from "pareto-core-lib"
+import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
@@ -10,11 +10,11 @@ import * as api from "../api"
 //             $.fs,
 //         ).setCondition(($) => {
 //             switch ($[0]) {
-//                 case "error":
+//                 case 'error':
 //                     return pl.cc($[1], ($) => {
 //                         const err = $
 //                         switch ($.error[0]) {
-//                             case "is directory":
+//                             case 'is directory':
 //                                 return pl.cc($.error[1], ($) => {
 //                                     if (allow.isDirectory) {
 //                                         return pl.asyncValue(null)
@@ -23,7 +23,7 @@ import * as api from "../api"
 //                                         return undefined
 //                                     }
 //                                 })
-//                             case "no entity":
+//                             case 'no entity':
 //                                 return pl.cc($.error[1], ($) => {
 //                                     if (allow.noEntity) {
 //                                         return pl.asyncValue(null)
@@ -32,7 +32,7 @@ import * as api from "../api"
 //                                         return undefined
 //                                     }
 //                                 })
-//                             case "unknown":
+//                             case 'unknown':
 //                                 return pl.cc($.error[1], ($) => {
 //                                     $i.onError(err)
 //                                     return undefined
@@ -40,7 +40,7 @@ import * as api from "../api"
 //                             default: return pl.au($.error[0])
 //                         }
 //                     })
-//                 case "success":
+//                 case 'success':
 //                     return pl.cc($[1], ($) => {
 //                         return pl.asyncValue($)
 //                     })

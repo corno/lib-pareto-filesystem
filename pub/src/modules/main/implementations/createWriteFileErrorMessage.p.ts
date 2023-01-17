@@ -1,20 +1,20 @@
-import * as pl from "pareto-core-lib"
+import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
 export const icreateWriteFileErrorMessage: api.CcreateWriteFileErrorMessage = ($) => {
     switch ($[0]) {
-        case "no entity":
+        case 'no entity':
             return pl.cc($[1], ($) => {
                 return `write file error: no entity`
 
             })
-        case "is directory":
+        case 'is directory':
             return pl.cc($[1], ($) => {
                 return `write file error: is directory`
 
             })
-        case "unknown":
+        case 'unknown':
             return pl.cc($[1], ($) => {
                 return `unknown write file error: ${$.message}`
             })

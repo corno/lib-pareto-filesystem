@@ -1,21 +1,21 @@
-import * as pl from "pareto-core-lib"
+import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
 export const icreateUnlinkErrorMessage: api.CcreateUnlinkErrorMessage = ($) => {
 
     switch ($[0]) {
-        case "is directory":
+        case 'is directory':
             return pl.cc($[1], ($) => {
                 return `unlink error: is directory`
 
             })
-        case "no entity":
+        case 'no entity':
             return pl.cc($[1], ($) => {
                 return `unlink error: no entity`
 
             })
-        case "unknown":
+        case 'unknown':
             return pl.cc($[1], ($) => {
                 return `unknown unlink error: ${$.message}`
             })

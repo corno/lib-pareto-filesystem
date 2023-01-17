@@ -1,4 +1,4 @@
-import * as pl from "pareto-core-lib"
+import * as pl from 'pareto-core-lib'
 
 import * as fsAPI from "res-pareto-filesystem"
 
@@ -29,12 +29,12 @@ import * as api from "../api"
 //         //     $,
 //         // ).setCondition(($) => {
 //         //     switch ($[0]) {
-//         //         case "error":
+//         //         case 'error':
 //         //             return pl.cc($[1], ($) => {
 //         //                 $i.onError($)
 //         //                 return undefined
 //         //             })
-//         //         case "success":
+//         //         case 'success':
 //         //             return pl.cc($[1], ($) => {
 //         //                 return pl.asyncValue($)
 //         //             })

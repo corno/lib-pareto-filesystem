@@ -2,7 +2,7 @@
 // // import * as fsLib from "../../../../lib"
 // // import * as pt from "pareto-test-lib"
 // // import * as pl from "pareto-lang-lib"
-// import * as pa from "pareto-core-types"
+// import * as pa from 'pareto-core-types'
 // // import * as pr from "pareto-runtime"
 // // import * as diff from "pareto-diff-lib"
 // // import * as asyncLib from "pareto-async-lib"
@@ -21,7 +21,7 @@
 // //     $: TestNode, indentation: string
 // //     ) {
 // //     switch ($[0]) {
-// //         case "set":
+// //         case 'set':
 // //             pl.cc($[1], ($) => {
 // //                 console.log(`SET`)
 // //                 $.children.forEach((v, k) => {
@@ -30,7 +30,7 @@
 // //                 })
 // //             })
 // //             break
-// //         case "test":
+// //         case 'test':
 // //             pl.cc($[1], ($) => {
 // //                 console.log(`TEST`)
 

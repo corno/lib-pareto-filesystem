@@ -3,8 +3,8 @@ import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
 
-import * as fs from "res-pareto-filesystem"
-import * as fsRes from "res-pareto-filesystem"
+import * as mfs from "res-pareto-filesystem"
+import * as mfsRes from "res-pareto-filesystem"
 
 export const $$: api.CcreateUnlinkFireAndForget = ($d) => {
 

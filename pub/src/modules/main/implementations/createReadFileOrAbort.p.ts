@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import * as fsAPI from "res-pareto-filesystem"
+import * as mfsAPI from "res-pareto-filesystem"
 
 import * as api from "../api"
 

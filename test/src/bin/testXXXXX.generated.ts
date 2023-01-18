@@ -3,16 +3,16 @@ import * as pr from 'pareto-core-raw'
 import * as pl from 'pareto-core-lib'
 import * as tst from "lib-pareto-test"
 
-import { test as main_createMkdirErrorMessage } from "../modules/main/createMkdirErrorMessage.p"
-import { test as main_createReadDirectoryOrAbort } from "../modules/main/createReadDirectoryOrAbort.p"
-import { test as main_createReadDirErrorMessage } from "../modules/main/createReadDirErrorMessage.p"
-import { test as main_createReadFileErrorMessage } from "../modules/main/createReadFileErrorMessage.p"
-import { test as main_createReadOptionalDirectory } from "../modules/main/createReadOptionalDirectory.p"
-import { test as main_createRmdirErrorMessage } from "../modules/main/createRmdirErrorMessage.p"
-import { test as main_createUnlinkErrorMessage } from "../modules/main/createUnlinkErrorMessage.p"
-import { test as main_createUnlinkFireAndForget } from "../modules/main/createUnlinkFireAndForget.p"
-import { test as main_createWriteFileErrorMessage } from "../modules/main/createWriteFileErrorMessage.p"
-import { test as main_createWriteFileFireAndForget } from "../modules/main/createWriteFileFireAndForget.p"
+import { test as main_createMkdirErrorMessage } from "../modules/main/createMkdirErrorMessage.generated"
+import { test as main_createReadDirectoryOrAbort } from "../modules/main/createReadDirectoryOrAbort.generated"
+import { test as main_createReadDirErrorMessage } from "../modules/main/createReadDirErrorMessage.generated"
+import { test as main_createReadFileErrorMessage } from "../modules/main/createReadFileErrorMessage.generated"
+import { test as main_createReadOptionalDirectory } from "../modules/main/createReadOptionalDirectory.generated"
+import { test as main_createRmdirErrorMessage } from "../modules/main/createRmdirErrorMessage.generated"
+import { test as main_createUnlinkErrorMessage } from "../modules/main/createUnlinkErrorMessage.generated"
+import { test as main_createUnlinkFireAndForget } from "../modules/main/createUnlinkFireAndForget.generated"
+import { test as main_createWriteFileErrorMessage } from "../modules/main/createWriteFileErrorMessage.generated"
+import { test as main_createWriteFileFireAndForget } from "../modules/main/createWriteFileFireAndForget.generated"
 
 const x = pr.wrapRawDictionary<pt.Dictionary<() => pt.AsyncValue<tst.TTestElement>>>({
     'main': pr.wrapRawDictionary({

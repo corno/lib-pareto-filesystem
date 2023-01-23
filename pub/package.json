@@ -15,9 +15,9 @@
   "version": "0.16.0",
   "dependencies": {
     "pareto-core-lib": "^0.17.0",
-    "pareto-core-raw": "^0.7.0",
+    "pareto-core-raw": "^0.7.4",
     "pareto-core-state": "^0.12.0",
     "res-pareto-filesystem": "^0.30.0"
   },
-  "content-fingerprint": "6a19a82551f8df78c251bdf56c9b837b138963ab"
+  "content-fingerprint": "77184e1498e94c90c6bb49619ee8dee4b57468ac"
 }

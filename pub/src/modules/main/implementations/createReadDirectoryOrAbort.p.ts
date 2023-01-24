@@ -5,13 +5,13 @@ import * as api from "../api"
 
 export const $$: api.CcreateReadDirectoryOrAbort = ($d) => {
     return ($) => {
-        return $d.af_readDirectory(
+        return $d.readDirectory(
             $,
         ).setCondition(($) => {
             switch ($[0]) {
                 case 'error':
                     return pl.cc($[1], ($) => {
-                        $d.pr_onError($)
+                        $d.onError($)
                         return undefined
                     })
                 case 'success':

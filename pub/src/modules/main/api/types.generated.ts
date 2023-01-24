@@ -22,20 +22,28 @@ export type TReadOptionalDirectoryData = {
 
 export type TReadOptionalDirectoryResult = null | TReadDirectoryResult
 
-export type FCreateMkdirErrorMessage = ($: mfs.TMkdirError) => mcommon.TString
+export type FCreateMkdirErrorMessage = ($: mfs.TMkdirError,) => mcommon.TString
 
-export type FCreateReadDirErrorMessage = ($: mfs.TReadDirError) => mcommon.TString
+export type FCreateReadDirErrorMessage = ($: mfs.TReadDirError,) => mcommon.TString
 
-export type FCreateReadFileErrorMessage = ($: mfs.TReadFileError) => mcommon.TString
+export type FCreateReadFileErrorMessage = ($: mfs.TReadFileError,) => mcommon.TString
 
-export type FCreateRmdirErrorMessage = ($: mfs.TRmdirError) => mcommon.TString
+export type FCreateRmdirErrorMessage = ($: mfs.TRmdirError,) => mcommon.TString
 
-export type FCreateUnlinkErrorMessage = ($: mfs.TUnlinkError) => mcommon.TString
+export type FCreateUnlinkErrorMessage = ($: mfs.TUnlinkError,) => mcommon.TString
 
-export type FCreateWriteFileErrorMessage = ($: mfs.TUnlinkError) => mcommon.TString
+export type FCreateWriteFileErrorMessage = ($: mfs.TUnlinkError,) => mcommon.TString
 
-export type AReadDirectoryOrAbort = ($: mfs.TReadDirectory_Data) => pt.AsyncValue<TReadDirectoryResult>
+export type FHandleAnnotatedReadDirError = ($: mfs.TAnnotatedReadDirError,) => void
 
-export type AReadFileOrAbort = ($: mfs.TReadFile_Data) => pt.AsyncValue<mcommon.TString>
+export type FHandleAnnotatedUnlinkError = ($: mfs.TAnnotatedUnlinkError,) => void
 
-export type AReadOptionalDirectory = ($: TReadOptionalDirectoryData) => pt.AsyncValue<TReadOptionalDirectoryResult>
+export type FReadDirectoryOrAbort = ($: mfs.TReadDirectory_Data,) => pt.AsyncValue<TReadDirectoryResult>
+
+export type FReadFileOrAbort = ($: mfs.TReadFile_Data,) => pt.AsyncValue<mcommon.TString>
+
+export type FReadOptionalDirectory = ($: TReadOptionalDirectoryData,) => pt.AsyncValue<TReadOptionalDirectoryResult>
+
+export type FUnlinkFireAndForget = ($: mfs.TUnlink_Data,) => void
+
+export type FWriteFile = ($: mfs.TWriteFileData,) => void

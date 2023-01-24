@@ -4,7 +4,7 @@ import * as api from "../api"
 
 export const $$: api.CcreateWriteFileFireAndForget = ($d) => {
     return ($) => {
-        $d.if_createWriteStream(
+        $d.createWriteStream(
             {
                 path: $.path,
                 createContainingDirectories: $.createContainingDirectories,

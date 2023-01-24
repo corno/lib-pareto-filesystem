@@ -6,7 +6,7 @@ import * as api from "../api"
 export const $$: api.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         const allow = $.allow
-        return $d.af_readDirectory(
+        return $d.readDirectory(
             $.fs,
         ).setCondition(($) => {
             switch ($[0]) {
@@ -19,7 +19,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                                     if (allow.isNotADirectory) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $d.pr_onError(err)
+                                        $d.onError(err)
                                         return undefined
                                     }
                                 })
@@ -28,13 +28,13 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                                     if (allow.noEntity) {
                                         return pl.asyncValue(null)
                                     } else {
-                                        $d.pr_onError(err)
+                                        $d.onError(err)
                                         return undefined
                                     }
                                 })
                             case 'unknown':
                                 return pl.cc($.error[1], ($) => {
-                                    $d.pr_onError(err)
+                                    $d.onError(err)
                                     return undefined
                                 })
                             default: return pl.au($.error[0])

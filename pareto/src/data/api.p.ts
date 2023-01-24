@@ -27,6 +27,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "fs": "res-pareto-filesystem",
             "common": "glo-pareto-common",
         }),
+        'parameters': d({}),
         'namespace': {
             'types': types({
                 "ReadDirectoryResult": optional(dictionary(ref("DirNodeData"))),

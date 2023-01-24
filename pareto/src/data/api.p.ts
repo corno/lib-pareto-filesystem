@@ -15,7 +15,7 @@ import {
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 
-import {definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
@@ -57,19 +57,19 @@ export const $: mmoduleDefinition.TModuleDefinition = {
 
         },
         'functions': d({
-            "CreateMkdirErrorMessage": _function(externalTypeReference("fs", "MkdirError"),externalTypeReference("common", "String")),
-            "CreateRmdirErrorMessage": _function(externalTypeReference("fs", "RmdirError"),externalTypeReference("common", "String")),
-            "CreateReadDirErrorMessage": _function(externalTypeReference("fs", "ReadDirError"),externalTypeReference("common", "String")),
-            "CreateReadFileErrorMessage": _function(externalTypeReference("fs", "ReadFileError"),externalTypeReference("common", "String")),
-            "CreateUnlinkErrorMessage": _function(externalTypeReference("fs", "UnlinkError"),externalTypeReference("common", "String")),
-            "CreateWriteFileErrorMessage": _function(externalTypeReference("fs", "UnlinkError"),externalTypeReference("common", "String")),
-            
+            "CreateMkdirErrorMessage": _function(externalTypeReference("fs", "MkdirError"), externalTypeReference("common", "String")),
+            "CreateRmdirErrorMessage": _function(externalTypeReference("fs", "RmdirError"), externalTypeReference("common", "String")),
+            "CreateReadDirErrorMessage": _function(externalTypeReference("fs", "ReadDirError"), externalTypeReference("common", "String")),
+            "CreateReadFileErrorMessage": _function(externalTypeReference("fs", "ReadFileError"), externalTypeReference("common", "String")),
+            "CreateUnlinkErrorMessage": _function(externalTypeReference("fs", "UnlinkError"), externalTypeReference("common", "String")),
+            "CreateWriteFileErrorMessage": _function(externalTypeReference("fs", "UnlinkError"), externalTypeReference("common", "String")),
+
             "HandleAnnotatedReadDirError": procedure(externalTypeReference("fs", "AnnotatedReadDirError")),
             "HandleAnnotatedUnlinkError": procedure(externalTypeReference("fs", "AnnotatedUnlinkError")),
-            
-            "ReadFileOrAbort": _function(externalTypeReference("fs", "ReadFile_Data"),externalTypeReference("common", "String"), true),
-            "ReadDirectoryOrAbort": _function(externalTypeReference("fs", "ReadDirectory_Data"),typeReference("ReadDirectoryResult"), true),
-            "ReadOptionalDirectory": _function(typeReference("ReadOptionalDirectoryData"),typeReference("ReadOptionalDirectoryResult"), true),
+
+            "ReadFileOrAbort": _function(externalTypeReference("fs", "ReadFile_Data"), externalTypeReference("common", "String"), true),
+            "ReadDirectoryOrAbort": _function(externalTypeReference("fs", "ReadDirectory_Data"), typeReference("ReadDirectoryResult"), true),
+            "ReadOptionalDirectory": _function(typeReference("ReadOptionalDirectoryData"), typeReference("ReadOptionalDirectoryResult"), true),
 
             "UnlinkFireAndForget": procedure(externalTypeReference("fs", "Unlink_Data")),
             "WriteFile": procedure(externalTypeReference("fs", "WriteFileData")),
@@ -169,18 +169,15 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 'definition': {
                     'function': "UnlinkFireAndForget"
                 },
-                'type': ['constructor', {
-                    'configuration data': null,
-                    'dependencies': d({
-                        "onError": {
-                            'function': "HandleAnnotatedUnlinkError"
-                        },
-                        "unlink": {
-                            'context': ['import', "fs"],
-                            'function': "Unlink",
-                        },
-                    }),
-                }]
+                'type': constructor(null, {
+                    "onError": {
+                        'function': "HandleAnnotatedUnlinkError"
+                    },
+                    "unlink": {
+                        'context': ['import', "fs"],
+                        'function': "Unlink",
+                    },
+                }),
             },
             "createWriteFileErrorMessage": {
                 'type': ['reference', null],
@@ -192,15 +189,12 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 'definition': {
                     'function': "WriteFile"
                 },
-                'type': ['constructor', {
-                    'configuration data': null,
-                    'dependencies': d({
-                        "createWriteStream": {
-                            'context': ['import', "fs"],
-                            'function': "CreateWriteStream",
-                        },
-                    }),
-                }]
+                'type': constructor(null, {
+                    "createWriteStream": {
+                        'context': ['import', "fs"],
+                        'function': "CreateWriteStream",
+                    },
+                }),
             },
         })
     },

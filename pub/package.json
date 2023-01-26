@@ -17,7 +17,7 @@
     "pareto-core-lib": "^0.17.0",
     "pareto-core-raw": "^0.7.4",
     "pareto-core-state": "^0.12.0",
-    "res-pareto-filesystem": "^0.33.0"
+    "res-pareto-filesystem": "^0.34.0"
   },
-  "content-fingerprint": "a40dd7809eb3bf588a7c2cccf3fd614cc2732d6a"
+  "content-fingerprint": "3f57e7274eac96897848033b1cb4659249995967"
 }

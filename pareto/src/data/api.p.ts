@@ -28,34 +28,31 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'namespace': {
-            'types': types({
-                "ReadDirectoryResult": optional(dictionary(ref("DirNodeData"))),
-                "ReadOptionalDirectoryResult": optional(ref("ReadDirectoryResult")),
-                "DirNodeData": group({
-                    "path": member(str()),
-                    "type": member(taggedUnion({
-                        "directory": null_(),
-                        "file": null_(),
-                        "unknown": null_(),
-                    }))
-                }),
-                "ReadOptionalDirectoryData": group({
-                    "fs": member(er("fs", "ReadDirectory_Data")),
-                    "allow": member(group({
-                        "noEntity": member(bln(), true),
-                        "isNotADirectory": member(bln(), true),
-                    })),
-                }),
-                // readonly "fs": fs.TReadDirectory_Data
-                // readonly "allow": {
-                //     readonly "noEntity"?: boolean
-                //     readonly "isNotADirectory"?: boolean
-                // }
+        'types': types({
+            "ReadDirectoryResult": optional(dictionary(ref("DirNodeData"))),
+            "ReadOptionalDirectoryResult": optional(ref("ReadDirectoryResult")),
+            "DirNodeData": group({
+                "path": member(str()),
+                "type": member(taggedUnion({
+                    "directory": null_(),
+                    "file": null_(),
+                    "unknown": null_(),
+                }))
             }),
-            'interfaces': d({}),
-
-        },
+            "ReadOptionalDirectoryData": group({
+                "fs": member(er("fs", "ReadDirectory_Data")),
+                "allow": member(group({
+                    "noEntity": member(bln(), true),
+                    "isNotADirectory": member(bln(), true),
+                })),
+            }),
+            // readonly "fs": fs.TReadDirectory_Data
+            // readonly "allow": {
+            //     readonly "noEntity"?: boolean
+            //     readonly "isNotADirectory"?: boolean
+            // }
+        }),
+        'interfaces': d({}),
         'functions': d({
             "CreateMkdirErrorMessage": _function(externalTypeReference("fs", "MkdirError"), externalTypeReference("common", "String")),
             "CreateRmdirErrorMessage": _function(externalTypeReference("fs", "RmdirError"), externalTypeReference("common", "String")),

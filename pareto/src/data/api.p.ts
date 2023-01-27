@@ -28,6 +28,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
+        'templates': d({}),
         'types': types({
             "ReadDirectoryResult": optional(dictionary(ref("DirNodeData"))),
             "ReadOptionalDirectoryResult": optional(ref("ReadDirectoryResult")),

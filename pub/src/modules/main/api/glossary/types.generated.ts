@@ -3,6 +3,17 @@ import * as pt from 'pareto-core-types'
 import * as mcommon from "glo-pareto-common"
 import * as mfs from "res-pareto-filesystem"
 
+export namespace VOptional {
+    
+    export namespace Onot__set {}
+    export type Onot__set<AType> = {}
+}
+export type VOptional<AType> = 
+    | ['not set', VOptional.Onot__set<AType>]
+    | ['set', AType]
+
+export type MOptional<AType> = VOptional<AType>
+
 export namespace GDirNodeData {
     
     export namespace Ptype {}
@@ -17,12 +28,8 @@ export type GDirNodeData = {
 }
 export type UDirNodeData = GDirNodeData
 
-export namespace GReadDirectoryResult {
-    
-    export namespace O {}
-    export type O = pt.Dictionary<UDirNodeData>
-}
-export type GReadDirectoryResult = null | GReadDirectoryResult.O
+export namespace GReadDirectoryResult {}
+export type GReadDirectoryResult = pt.Dictionary<UDirNodeData>
 export type UReadDirectoryResult = GReadDirectoryResult
 
 export namespace GReadOptionalDirectoryData {
@@ -40,5 +47,5 @@ export type GReadOptionalDirectoryData = {
 export type UReadOptionalDirectoryData = GReadOptionalDirectoryData
 
 export namespace GReadOptionalDirectoryResult {}
-export type GReadOptionalDirectoryResult = null | UReadDirectoryResult
+export type GReadOptionalDirectoryResult = MOptional<UReadDirectoryResult>
 export type UReadOptionalDirectoryResult = GReadOptionalDirectoryResult

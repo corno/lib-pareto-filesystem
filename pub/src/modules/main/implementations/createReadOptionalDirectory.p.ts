@@ -1,4 +1,4 @@
-
+import * as pt from 'pareto-core-types'
 import * as pl from 'pareto-core-lib'
 
 import * as api from "../api"
@@ -17,7 +17,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                             case 'is not directory':
                                 return pl.cc($.error[1], ($) => {
                                     if (allow.isNotADirectory) {
-                                        return pl.asyncValue(null)
+                                        return pl.asyncValue(['not set', {}])
                                     } else {
                                         $d.onError(err)
                                         return undefined
@@ -26,7 +26,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                             case 'no entity':
                                 return pl.cc($.error[1], ($) => {
                                     if (allow.noEntity) {
-                                        return pl.asyncValue(null)
+                                        return pl.asyncValue(['not set', {}])
                                     } else {
                                         $d.onError(err)
                                         return undefined
@@ -42,7 +42,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                     })
                 case 'success':
                     return pl.cc($[1], ($) => {
-                        return pl.asyncValue($)
+                        return pl.asyncValue(['set', $])
                     })
                 default: return pl.au($[0])
             }

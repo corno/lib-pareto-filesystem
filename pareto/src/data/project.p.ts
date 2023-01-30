@@ -13,16 +13,20 @@ export const $: mproject.TProject = {
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
     'license': "ISC",
 
-    'type': ['library', {}],
-    'modules': d({
-        "main": {
-            'definition': api,
-
-        },
-    }),
-    'main': "main",
     'pubdependencies': d({
         "res-pareto-filesystem": {},
     }),
-    'testdependencies': d({}),
+    'type': ['library', {
+        'main': {
+            'definition': api,
+
+        },
+        'submodules': d({
+        }),
+        'test': {
+            'dependencies': d({
+                "res-pareto-tostring": {},
+            }),
+        }
+    }],
 }

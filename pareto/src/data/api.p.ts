@@ -6,13 +6,12 @@ import {
     reference,
     boolean,
     nested,
-    typeReference,
-    procedure, dictionary, group, member, taggedUnion, types, _function, template, parameter,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    typeReference, dictionary, group, member, taggedUnion, types, template, parameter, func, data,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -56,22 +55,22 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'interfaces': d({}),
         'functions': d({
-            "CreateMkdirErrorMessage": _function(typeReference("fs", "MkdirError"), typeReference("common", "String")),
-            "CreateRmdirErrorMessage": _function(typeReference("fs", "RmdirError"), typeReference("common", "String")),
-            "CreateReadDirErrorMessage": _function(typeReference("fs", "ReadDirError"), typeReference("common", "String")),
-            "CreateReadFileErrorMessage": _function(typeReference("fs", "ReadFileError"), typeReference("common", "String")),
-            "CreateUnlinkErrorMessage": _function(typeReference("fs", "UnlinkError"), typeReference("common", "String")),
-            "CreateWriteFileErrorMessage": _function(typeReference("fs", "UnlinkError"), typeReference("common", "String")),
+            "CreateMkdirErrorMessage": func(typeReference("fs", "MkdirError"), null, null, data(typeReference("common", "String"), false)),
+            "CreateRmdirErrorMessage": func(typeReference("fs", "RmdirError"), null, null, data(typeReference("common", "String"), false)),
+            "CreateReadDirErrorMessage": func(typeReference("fs", "ReadDirError"), null, null, data(typeReference("common", "String"), false)),
+            "CreateReadFileErrorMessage": func(typeReference("fs", "ReadFileError"), null, null, data(typeReference("common", "String"), false)),
+            "CreateUnlinkErrorMessage": func(typeReference("fs", "UnlinkError"), null, null, data(typeReference("common", "String"), false)),
+            "CreateWriteFileErrorMessage": func(typeReference("fs", "UnlinkError"), null, null, data(typeReference("common", "String"), false)),
 
-            "HandleAnnotatedReadDirError": procedure(typeReference("fs", "AnnotatedReadDirError")),
-            "HandleAnnotatedUnlinkError": procedure(typeReference("fs", "AnnotatedUnlinkError")),
+            "HandleAnnotatedReadDirError": func(typeReference("fs", "AnnotatedReadDirError"), null, null, null),
+            "HandleAnnotatedUnlinkError": func(typeReference("fs", "AnnotatedUnlinkError"), null, null, null),
 
-            "ReadFileOrAbort": _function(typeReference("fs", "ReadFile_Data"), typeReference("common", "String"), true),
-            "ReadDirectoryOrAbort": _function(typeReference("fs", "ReadDirectory_Data"), typeReference("ReadDirectoryResult"), true),
-            "ReadOptionalDirectory": _function(typeReference("ReadOptionalDirectoryData"), typeReference("ReadOptionalDirectoryResult"), true),
+            "ReadFileOrAbort": func(typeReference("fs", "ReadFile_Data"), null, null, data(typeReference("common", "String"), true)),
+            "ReadDirectoryOrAbort": func(typeReference("fs", "ReadDirectory_Data"), null, null, data(typeReference("ReadDirectoryResult"), true)),
+            "ReadOptionalDirectory": func(typeReference("ReadOptionalDirectoryData"), null, null, data(typeReference("ReadOptionalDirectoryResult"), true)),
 
-            "UnlinkFireAndForget": procedure(typeReference("fs", "Unlink_Data")),
-            "WriteFile": procedure(typeReference("fs", "WriteFileData")),
+            "UnlinkFireAndForget": func(typeReference("fs", "Unlink_Data"), null, null, null),
+            "WriteFile": func(typeReference("fs", "WriteFileData"), null, null, null),
         }),
     },
     'api': {

@@ -3,49 +3,71 @@ import * as pt from 'pareto-core-types'
 import * as mcommon from "glo-pareto-common"
 import * as mfs from "res-pareto-filesystem"
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
-}
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-
-export namespace GDirNodeData {
-    
-    export namespace Ptype {}
-    export type Ptype = 
-        | ['directory', null]
-        | ['file', null]
-        | ['unknown', null]
-}
-export type GDirNodeData = {
-    readonly 'path': string
-    readonly 'type': GDirNodeData.Ptype
-}
-export type UDirNodeData = GDirNodeData
-
-export namespace GReadDirectoryResult {}
-export type GReadDirectoryResult = pt.Dictionary<UDirNodeData>
-export type UReadDirectoryResult = GReadDirectoryResult
-
-export namespace GReadOptionalDirectoryData {
-    
-    export namespace Pallow {}
-    export type Pallow = {
-        readonly 'isNotADirectory'?: boolean
-        readonly 'noEntity'?: boolean
+    export namespace DirNodeData {
+        
+        export type path = string
+        
+        export namespace _ltype {
+            
+            export type directory = null
+            
+            export type file = null
+            
+            export type _lunknown = null
+        }
+        
+        export type _ltype = 
+            | ['directory', null]
+            | ['file', null]
+            | ['unknown', null]
     }
+    
+    export type DirNodeData = {
+        readonly 'path': string
+        readonly 'type': 
+            | ['directory', null]
+            | ['file', null]
+            | ['unknown', null]
+    }
+    
+    export namespace ReadDirectoryResult {
+        
+        export type D = T.DirNodeData
+    }
+    
+    export type ReadDirectoryResult = pt.Dictionary<T.DirNodeData>
+    
+    export namespace ReadOptionalDirectoryData {
+        
+        export namespace allow {
+            
+            export type isNotADirectory = boolean
+            
+            export type noEntity = boolean
+        }
+        
+        export type allow = {
+            readonly 'isNotADirectory'?: boolean
+            readonly 'noEntity'?: boolean
+        }
+        
+        export type fs = mfs.T.ReadDirectory_$Data
+    }
+    
+    export type ReadOptionalDirectoryData = {
+        readonly 'allow': {
+            readonly 'isNotADirectory'?: boolean
+            readonly 'noEntity'?: boolean
+        }
+        readonly 'fs': mfs.T.ReadDirectory_$Data
+    }
+    
+    export namespace ReadOptionalDirectoryResult {
+        
+        export type O = T.ReadDirectoryResult
+    }
+    
+    export type ReadOptionalDirectoryResult = [ false ] | [ true, T.ReadDirectoryResult]
 }
-export type GReadOptionalDirectoryData = {
-    readonly 'allow': GReadOptionalDirectoryData.Pallow
-    readonly 'fs': mfs.TReadDirectory_$Data
-}
-export type UReadOptionalDirectoryData = GReadOptionalDirectoryData
-
-export namespace GReadOptionalDirectoryResult {}
-export type GReadOptionalDirectoryResult = MOptional<UReadDirectoryResult>
-export type UReadOptionalDirectoryResult = GReadOptionalDirectoryResult

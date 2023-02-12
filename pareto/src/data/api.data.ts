@@ -6,7 +6,7 @@ import {
     reference,
     boolean,
     nested,
-    typeReference, dictionary, group, member, taggedUnion, types, template, parameter, func, data,
+    typeReference, dictionary, group, member, taggedUnion, types, func, data, type, optional,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -16,42 +16,31 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 const d = pr.wrapRawDictionary
 
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "fs": "res-pareto-filesystem",
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
-        }),
-        'types': types({
-            "ReadDirectoryResult": dictionary(reference("DirNodeData")),
-            "ReadOptionalDirectoryResult": template("Optional", {
-                "Type": reference("ReadDirectoryResult")
-            }),
-            "DirNodeData": group({
+        'types': d({
+            "ReadDirectoryResult": type(dictionary(reference("DirNodeData"))),
+            "ReadOptionalDirectoryResult": type(optional(reference("ReadDirectoryResult"))),
+            "DirNodeData": type( group({
                 "path": member(string()),
                 "type": member(taggedUnion({
                     "directory": null_(),
                     "file": null_(),
                     "unknown": null_(),
                 }))
-            }),
-            "ReadOptionalDirectoryData": group({
+            })),
+            "ReadOptionalDirectoryData": type(group({
                 "fs": member(reference("fs", "ReadDirectory_Data")),
                 "allow": member(group({
                     "noEntity": member(boolean(), true),
                     "isNotADirectory": member(boolean(), true),
                 })),
-            }),
+            })),
         }),
         'interfaces': d({}),
         'functions': d({
@@ -81,7 +70,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "createMkdirErrorMessage": algorithm(definitionReference("CreateMkdirErrorMessage")),
             "createReadDirectoryOrAbort": algorithm(definitionReference("ReadDirectoryOrAbort"), constructor(null, {
                 "onError": definitionReference("HandleAnnotatedReadDirError"),
-                "readDirectory": definitionReference("fs", "ReadDirectory"),
+                "readDirectory": definitionReference("fs", {}, "ReadDirectory"),
             })),
             "createReadDirErrorMessage": algorithm(definitionReference("CreateReadDirErrorMessage")),
             "createReadFileErrorMessage": algorithm(definitionReference("CreateReadFileErrorMessage")),
@@ -102,7 +91,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             // }],
             "createReadOptionalDirectory": algorithm(definitionReference("ReadOptionalDirectory"), constructor(null, {
                 "onError": definitionReference("HandleAnnotatedReadDirError"),
-                "readDirectory": definitionReference("fs", "ReadDirectory"),
+                "readDirectory": definitionReference("fs", {}, "ReadDirectory"),
             })),
             // "createReadOptionalFile": ['algorithm', {
             //     type: ['function', {
@@ -113,11 +102,11 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "createUnlinkErrorMessage": algorithm(definitionReference("CreateUnlinkErrorMessage")),
             "createUnlinkFireAndForget": algorithm(definitionReference("UnlinkFireAndForget"), constructor(null, {
                 "onError": definitionReference("HandleAnnotatedUnlinkError"),
-                "unlink": definitionReference("fs", "Unlink"),
+                "unlink": definitionReference("fs", {}, "Unlink"),
             })),
             "createWriteFileErrorMessage": algorithm(definitionReference("CreateWriteFileErrorMessage")),
             "createWriteFileFireAndForget": algorithm(definitionReference("WriteFile"), constructor(null, {
-                "createWriteStream": definitionReference("fs", "CreateWriteStream"),
+                "createWriteStream": definitionReference("fs", {}, "CreateWriteStream"),
             })),
 
         })

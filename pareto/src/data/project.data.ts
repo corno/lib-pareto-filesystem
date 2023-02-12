@@ -6,7 +6,7 @@ const d = pr.wrapRawDictionary
 
 import { $ as api } from "./api.data"
 
-export const $: mproject.TProject = {
+export const $: mproject.T.Project = {
     'author': "Corno",
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
     'license': "ISC",
@@ -21,6 +21,7 @@ export const $: mproject.TProject = {
         },
         'submodules': d({
         }),
+        'executables': d({}),
         'test': {
             'dependencies': d({
                 "res-pareto-tostring": {},

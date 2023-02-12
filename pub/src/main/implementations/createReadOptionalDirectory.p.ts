@@ -17,7 +17,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                             case 'is not directory':
                                 return pl.cc($.error[1], ($) => {
                                     if (allow.isNotADirectory) {
-                                        return pl.asyncValue(['not set', {}])
+                                        return pl.asyncValue([false])
                                     } else {
                                         $d.onError(err)
                                         return undefined
@@ -26,7 +26,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                             case 'no entity':
                                 return pl.cc($.error[1], ($) => {
                                     if (allow.noEntity) {
-                                        return pl.asyncValue(['not set', {}])
+                                        return pl.asyncValue([false])
                                     } else {
                                         $d.onError(err)
                                         return undefined
@@ -42,7 +42,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
                     })
                 case 'success':
                     return pl.cc($[1], ($) => {
-                        return pl.asyncValue(['set', $])
+                        return pl.asyncValue([true, $])
                     })
                 default: return pl.au($[0])
             }

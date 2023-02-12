@@ -1,40 +1,32 @@
 import * as pt from 'pareto-core-types'
 
-import * as t from './types.generated'
+import { T   } from './types.generated'
 
 import * as mcommon from "glo-pareto-common"
 import * as mfs from "res-pareto-filesystem"
 
-export type TDirNodeData = t.UDirNodeData
+export type FCreateMkdirErrorMessage = ($: mfs.T.MkdirError,) => mcommon.T.String
 
-export type TReadDirectoryResult = t.UReadDirectoryResult
+export type FCreateReadDirErrorMessage = ($: mfs.T.ReadDirError,) => mcommon.T.String
 
-export type TReadOptionalDirectoryData = t.UReadOptionalDirectoryData
+export type FCreateReadFileErrorMessage = ($: mfs.T.ReadFileError,) => mcommon.T.String
 
-export type TReadOptionalDirectoryResult = t.UReadOptionalDirectoryResult
+export type FCreateRmdirErrorMessage = ($: mfs.T.RmdirError,) => mcommon.T.String
 
-export type FCreateMkdirErrorMessage = ($: mfs.TMkdirError,) => mcommon.TString
+export type FCreateUnlinkErrorMessage = ($: mfs.T.UnlinkError,) => mcommon.T.String
 
-export type FCreateReadDirErrorMessage = ($: mfs.TReadDirError,) => mcommon.TString
+export type FCreateWriteFileErrorMessage = ($: mfs.T.UnlinkError,) => mcommon.T.String
 
-export type FCreateReadFileErrorMessage = ($: mfs.TReadFileError,) => mcommon.TString
+export type FHandleAnnotatedReadDirError = ($: mfs.T.AnnotatedReadDirError,) => void
 
-export type FCreateRmdirErrorMessage = ($: mfs.TRmdirError,) => mcommon.TString
+export type FHandleAnnotatedUnlinkError = ($: mfs.T.AnnotatedUnlinkError,) => void
 
-export type FCreateUnlinkErrorMessage = ($: mfs.TUnlinkError,) => mcommon.TString
+export type FReadDirectoryOrAbort = ($: mfs.T.ReadDirectory_$Data,) => pt.AsyncValue<T.ReadDirectoryResult>
 
-export type FCreateWriteFileErrorMessage = ($: mfs.TUnlinkError,) => mcommon.TString
+export type FReadFileOrAbort = ($: mfs.T.ReadFile_$Data,) => pt.AsyncValue<mcommon.T.String>
 
-export type FHandleAnnotatedReadDirError = ($: mfs.TAnnotatedReadDirError,) => void
+export type FReadOptionalDirectory = ($: T.ReadOptionalDirectoryData,) => pt.AsyncValue<T.ReadOptionalDirectoryResult>
 
-export type FHandleAnnotatedUnlinkError = ($: mfs.TAnnotatedUnlinkError,) => void
+export type FUnlinkFireAndForget = ($: mfs.T.Unlink_$Data,) => void
 
-export type FReadDirectoryOrAbort = ($: mfs.TReadDirectory_$Data,) => pt.AsyncValue<TReadDirectoryResult>
-
-export type FReadFileOrAbort = ($: mfs.TReadFile_$Data,) => pt.AsyncValue<mcommon.TString>
-
-export type FReadOptionalDirectory = ($: TReadOptionalDirectoryData,) => pt.AsyncValue<TReadOptionalDirectoryResult>
-
-export type FUnlinkFireAndForget = ($: mfs.TUnlink_$Data,) => void
-
-export type FWriteFile = ($: mfs.TWriteFileData,) => void
+export type FWriteFile = ($: mfs.T.WriteFileData,) => void

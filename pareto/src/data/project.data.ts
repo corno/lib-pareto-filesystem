@@ -11,7 +11,7 @@ export const $: mproject.T.Project = {
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
     'license': "ISC",
 
-    'pubdependencies': d({
+    'dependencies': d({
         "res-pareto-filesystem": {},
     }),
     'type': ['library', {
@@ -26,6 +26,13 @@ export const $: mproject.T.Project = {
             'dependencies': d({
                 "res-pareto-tostring": {},
             }),
+            'glossary': {
+                'functions': d({}),
+                'imports': d({}),
+                'parameters': d({}),
+                'types': d({}),
+                'interfaces': d({}),
+            },
         }
     }],
 }

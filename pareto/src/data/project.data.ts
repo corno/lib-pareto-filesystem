@@ -2,11 +2,11 @@ import * as pd from 'pareto-core-data'
 
 import * as mproject from "lib-pareto-typescript-project/dist/submodules/project"
 
-const d = pd.wrapRawDictionary
+const d = pd.d
 
 import { $ as api } from "./api.data"
 
-export const $: mproject.T.Project = {
+export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
     'license': "ISC",

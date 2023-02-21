@@ -9,7 +9,7 @@ import * as mfsRes from "res-pareto-filesystem"
 export const $$: api.CcreateUnlinkFireAndForget = ($d) => {
 
     type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
-    const $a: x = ($, $i) => $._execute($i)
+    const $a: x = ($, $i) => $.__execute($i)
     return ($) => {
         return $a(
             $d.unlink(

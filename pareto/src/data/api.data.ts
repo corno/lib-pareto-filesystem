@@ -11,12 +11,12 @@ import {
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
+import * as gmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pd.d
 
 
-export const $: mmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
+export const $: gmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
     'glossary': {
         'imports': d({
             "fs": "res-pareto-filesystem",
@@ -78,7 +78,7 @@ export const $: mmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
             //     data: ['null', null],
             //     dependencies: d({
             //         "onError": {
-            //             type: ['procedure', externalReference("fs", "AnnotatedFSError<mfs.TReadFileError>")],
+            //             type: ['procedure', externalReference("fs", "AnnotatedFSError<gfs.TReadFileError>")],
 
             //         },
             //     }),

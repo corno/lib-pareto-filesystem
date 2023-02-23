@@ -1,8 +1,10 @@
 import * as pl from 'pareto-core-lib'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateUnlinkErrorMessage = ($) => {
+
+import { CcreateUnlinkErrorMessage } from "../api"
+
+export const $$:CcreateUnlinkErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'is directory':

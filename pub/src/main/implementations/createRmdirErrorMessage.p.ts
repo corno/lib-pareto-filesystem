@@ -1,8 +1,10 @@
 import * as pl from 'pareto-core-lib'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateRmdirErrorMessage = ($) => {
+
+import { CcreateRmdirErrorMessage } from "../api"
+
+export const $$:CcreateRmdirErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'not empty':

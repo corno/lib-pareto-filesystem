@@ -1,8 +1,8 @@
 import * as pa from 'pareto-core-async'
 
-import * as mfsAPI from "res-pareto-filesystem"
+import * as gfsAPI from "res-pareto-filesystem"
 
-import * as mapi from "../api"
+
 
 // export const icreateReadFileOrAbort: glo.FCreateReadFileOrAbort = ($i, $d) => {
 //     return ($) => {

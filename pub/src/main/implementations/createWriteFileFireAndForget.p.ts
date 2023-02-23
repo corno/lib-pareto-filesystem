@@ -1,6 +1,8 @@
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateWriteFileFireAndForget = ($d) => {
+
+import { CcreateWriteFileFireAndForget } from "../api"
+
+export const $$:CcreateWriteFileFireAndForget = ($d) => {
     return ($) => {
         $d.createWriteStream(
             {

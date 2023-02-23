@@ -1,8 +1,10 @@
 import * as pl from 'pareto-core-lib'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateWriteFileErrorMessage = ($) => {
+
+import { CcreateWriteFileErrorMessage } from "../api"
+
+export const $$:CcreateWriteFileErrorMessage = ($) => {
     switch ($[0]) {
         case 'no entity':
             return pl.cc($[1], ($) => {

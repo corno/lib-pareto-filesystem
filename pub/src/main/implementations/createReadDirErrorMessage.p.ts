@@ -1,8 +1,10 @@
 import * as pl from 'pareto-core-lib'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateReadDirErrorMessage = ($) => {
+
+import { CcreateReadDirErrorMessage } from "../api"
+
+export const $$:CcreateReadDirErrorMessage = ($) => {
     switch ($[0]) {
         case 'is not directory':
             return pl.cc($[1], ($) => {

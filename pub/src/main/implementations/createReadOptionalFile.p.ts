@@ -1,7 +1,7 @@
 
 import * as pl from 'pareto-core-lib'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
 // export const $$: api.CcreateReadOptionalFile = ($i, $d) => {
 //     return ($) => {
@@ -17,7 +17,7 @@ import * as api from "../api"
 //                             case 'is directory':
 //                                 return pl.cc($.error[1], ($) => {
 //                                     if (allow.isDirectory) {
-//                                         return pl.asyncValue(null)
+//                                         return pa.asyncValue(null)
 //                                     } else {
 //                                         $i.onError(err)
 //                                         return undefined
@@ -26,7 +26,7 @@ import * as api from "../api"
 //                             case 'no entity':
 //                                 return pl.cc($.error[1], ($) => {
 //                                     if (allow.noEntity) {
-//                                         return pl.asyncValue(null)
+//                                         return pa.asyncValue(null)
 //                                     } else {
 //                                         $i.onError(err)
 //                                         return undefined
@@ -42,7 +42,7 @@ import * as api from "../api"
 //                     })
 //                 case 'success':
 //                     return pl.cc($[1], ($) => {
-//                         return pl.asyncValue($)
+//                         return pa.asyncValue($)
 //                     })
 //                 default: return pl.au($[0])
 //             }

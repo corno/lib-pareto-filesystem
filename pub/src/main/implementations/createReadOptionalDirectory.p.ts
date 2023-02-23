@@ -1,9 +1,8 @@
-import * as pt from 'pareto-core-types'
 import * as pi from 'pareto-core-internals'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CcreateReadOptionalDirectory = ($d) => {
+export const $$: mapi.CcreateReadOptionalDirectory = ($d) => {
     return ($) => {
         pi.panic("IMPLEMENT ME!!!!!")
         // const allow = $.allow
@@ -18,7 +17,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
         //                     case 'is not directory':
         //                         return pl.cc($.error[1], ($) => {
         //                             if (allow.isNotADirectory) {
-        //                                 return pl.asyncValue([false])
+        //                                 return pa.asyncValue([false])
         //                             } else {
         //                                 $d.onError(err)
         //                                 return undefined
@@ -27,7 +26,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
         //                     case 'no entity':
         //                         return pl.cc($.error[1], ($) => {
         //                             if (allow.noEntity) {
-        //                                 return pl.asyncValue([false])
+        //                                 return pa.asyncValue([false])
         //                             } else {
         //                                 $d.onError(err)
         //                                 return undefined
@@ -43,7 +42,7 @@ export const $$: api.CcreateReadOptionalDirectory = ($d) => {
         //             })
         //         case 'success':
         //             return pl.cc($[1], ($) => {
-        //                 return pl.asyncValue([true, $])
+        //                 return pa.asyncValue([true, $])
         //             })
         //         default: return pl.au($[0])
         //     }

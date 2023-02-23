@@ -1,8 +1,8 @@
-import * as pl from 'pareto-core-lib'
+import * as pa from 'pareto-core-async'
 
 import * as mfsAPI from "res-pareto-filesystem"
 
-import * as api from "../api"
+import * as mapi from "../api"
 
 // export const icreateReadFileOrAbort: glo.FCreateReadFileOrAbort = ($i, $d) => {
 //     return ($) => {
@@ -13,7 +13,7 @@ import * as api from "../api"
 //                 }
 //             }
 //         )($).map(($) => {
-//             return pl.asyncValue("FOOO")
+//             return pa.asyncValue("FOOO")
 //         })
 //         // $d(
 //         //     $.path,
@@ -36,7 +36,7 @@ import * as api from "../api"
 //         //             })
 //         //         case 'success':
 //         //             return pl.cc($[1], ($) => {
-//         //                 return pl.asyncValue($)
+//         //                 return pa.asyncValue($)
 //         //             })
 //         //         default: return pl.au($[0])
 //         //     }

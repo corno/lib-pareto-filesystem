@@ -4,9 +4,7 @@
 // // import * as pl from "pareto-lang-lib"
 // import * as pa from 'pareto-core-types'
 // // import * as pr from "pareto-runtime"
-// // import * as diff from "pareto-diff-lib"
-// // import * as asyncLib from "pareto-async-lib"
-// //import * as asyncAPI from "pareto-async-api"
+// // import * as mdiff from "pareto-diff-lib"
 
 // type TestNode =
 //     | ['test', {

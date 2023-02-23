@@ -1,9 +1,9 @@
 import * as pt from 'pareto-core-types'
 import * as pi from 'pareto-core-internals'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CcreateReadDirectoryOrAbort = ($d) => {
+export const $$: mapi.CcreateReadDirectoryOrAbort = ($d) => {
     return ($) => {
         pi.panic("IMPLEMENT ME!!!!!!!")
         // function setCondition<T>($: pt.AsyncValue<T>, $v: () => XXXX) {

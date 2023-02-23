@@ -1,12 +1,10 @@
 import * as pt from 'pareto-core-types'
 import * as pl from 'pareto-core-lib'
+import * as pa from 'pareto-core-async'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-import * as mfs from "res-pareto-filesystem"
-import * as mfsRes from "res-pareto-filesystem"
-
-export const $$: api.CcreateUnlinkFireAndForget = ($d) => {
+export const $$: mapi.CcreateUnlinkFireAndForget = ($d) => {
 
     type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
     const $a: x = ($, $i) => $.__execute($i)
@@ -24,7 +22,7 @@ export const $$: api.CcreateUnlinkFireAndForget = ($d) => {
                         })
                     case 'success':
                         return pl.cc($[1], ($) => {
-                            return pl.asyncValue($)
+                            return pa.asyncValue($)
                         })
                     default: return pl.au($[0])
                 }

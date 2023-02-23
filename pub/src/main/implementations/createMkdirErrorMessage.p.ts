@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CcreateMkdirErrorMessage = ($) => {
+export const $$: mapi.CcreateMkdirErrorMessage = ($) => {
     switch ($[0]) {
         case 'exists':
             return pl.cc($[1], ($) => {

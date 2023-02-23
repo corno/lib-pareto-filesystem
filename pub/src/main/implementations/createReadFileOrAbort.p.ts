@@ -2,8 +2,6 @@ import * as pa from 'pareto-core-async'
 
 import * as gfsAPI from "res-pareto-filesystem"
 
-
-
 // export const icreateReadFileOrAbort: glo.FCreateReadFileOrAbort = ($i, $d) => {
 //     return ($) => {
 //         return $d.aggregate<fsAPI.TReadFile_Data, string>(

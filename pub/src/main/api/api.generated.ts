@@ -1,39 +1,39 @@
 import * as pt from 'pareto-core-types'
 
-import * as glo from "./glossary"
+import * as gglo from "./glossary"
 
-import * as mfs from "res-pareto-filesystem"
+import * as gfs from "res-pareto-filesystem"
 
-export type CcreateMkdirErrorMessage = glo.FCreateMkdirErrorMessage
+export type CcreateMkdirErrorMessage = gglo.FCreateMkdirErrorMessage
 
 export type CcreateReadDirectoryOrAbort = ($d: {
-    readonly 'onError': glo.FHandleAnnotatedReadDirError
-    readonly 'readDirectory': mfs.FReadDirectory
-}) => glo.FReadDirectoryOrAbort
+    readonly 'onError': gglo.FHandleAnnotatedReadDirError
+    readonly 'readDirectory': gfs.FReadDirectory
+}) => gglo.FReadDirectoryOrAbort
 
-export type CcreateReadDirErrorMessage = glo.FCreateReadDirErrorMessage
+export type CcreateReadDirErrorMessage = gglo.FCreateReadDirErrorMessage
 
-export type CcreateReadFileErrorMessage = glo.FCreateReadFileErrorMessage
+export type CcreateReadFileErrorMessage = gglo.FCreateReadFileErrorMessage
 
 export type CcreateReadOptionalDirectory = ($d: {
-    readonly 'onError': glo.FHandleAnnotatedReadDirError
-    readonly 'readDirectory': mfs.FReadDirectory
-}) => glo.FReadOptionalDirectory
+    readonly 'onError': gglo.FHandleAnnotatedReadDirError
+    readonly 'readDirectory': gfs.FReadDirectory
+}) => gglo.FReadOptionalDirectory
 
-export type CcreateRmdirErrorMessage = glo.FCreateRmdirErrorMessage
+export type CcreateRmdirErrorMessage = gglo.FCreateRmdirErrorMessage
 
-export type CcreateUnlinkErrorMessage = glo.FCreateUnlinkErrorMessage
+export type CcreateUnlinkErrorMessage = gglo.FCreateUnlinkErrorMessage
 
 export type CcreateUnlinkFireAndForget = ($d: {
-    readonly 'onError': glo.FHandleAnnotatedUnlinkError
-    readonly 'unlink': mfs.FUnlink
-}) => glo.FUnlinkFireAndForget
+    readonly 'onError': gglo.FHandleAnnotatedUnlinkError
+    readonly 'unlink': gfs.FUnlink
+}) => gglo.FUnlinkFireAndForget
 
-export type CcreateWriteFileErrorMessage = glo.FCreateWriteFileErrorMessage
+export type CcreateWriteFileErrorMessage = gglo.FCreateWriteFileErrorMessage
 
 export type CcreateWriteFileFireAndForget = ($d: {
-    readonly 'createWriteStream': mfs.FCreateWriteStream
-}) => glo.FWriteFile
+    readonly 'createWriteStream': gfs.FCreateWriteStream
+}) => gglo.FWriteFile
 
 export type API = {
     createMkdirErrorMessage: CcreateMkdirErrorMessage

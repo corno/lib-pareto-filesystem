@@ -1,7 +1,7 @@
 import * as pt from 'pareto-core-types'
 
-import * as mcommon from "glo-pareto-common"
-import * as mfs from "res-pareto-filesystem"
+import * as gcommon from "glo-pareto-common"
+import * as gfs from "res-pareto-filesystem"
 
 export namespace T {
     
@@ -53,7 +53,7 @@ export namespace T {
             readonly 'noEntity'?: boolean
         }
         
-        export type fs = mfs.T.ReadDirectory_$Data
+        export type fs = gfs.T.ReadDirectory_$Data
     }
     
     export type ReadOptionalDirectoryData = {
@@ -61,7 +61,7 @@ export namespace T {
             readonly 'isNotADirectory'?: boolean
             readonly 'noEntity'?: boolean
         }
-        readonly 'fs': mfs.T.ReadDirectory_$Data
+        readonly 'fs': gfs.T.ReadDirectory_$Data
     }
     
     export namespace ReadOptionalDirectoryResult {

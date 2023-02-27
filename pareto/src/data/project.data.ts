@@ -9,7 +9,7 @@ import { $ as api } from "./api.data"
 export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({
         "res-pareto-filesystem": {},
@@ -17,7 +17,7 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
     'type': ['library', {
         'main': {
             'definition': api,
-
+            'implementation': ['manual', {}],
         },
         'submodules': d({
         }),

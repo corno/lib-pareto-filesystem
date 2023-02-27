@@ -49,8 +49,8 @@ export namespace T {
         }
         
         export type allow = {
-            readonly 'isNotADirectory'?: boolean
-            readonly 'noEntity'?: boolean
+            readonly 'isNotADirectory': boolean
+            readonly 'noEntity': boolean
         }
         
         export type fs = gfs.T.ReadDirectory_$Data
@@ -58,8 +58,8 @@ export namespace T {
     
     export type ReadOptionalDirectoryData = {
         readonly 'allow': {
-            readonly 'isNotADirectory'?: boolean
-            readonly 'noEntity'?: boolean
+            readonly 'isNotADirectory': boolean
+            readonly 'noEntity': boolean
         }
         readonly 'fs': gfs.T.ReadDirectory_$Data
     }

@@ -37,8 +37,8 @@ export const $: gmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
             "ReadOptionalDirectoryData": type(group({
                 "fs": member(reference("fs", "ReadDirectory_Data")),
                 "allow": member(group({
-                    "noEntity": member(boolean(), true),
-                    "isNotADirectory": member(boolean(), true),
+                    "noEntity": member(boolean()),
+                    "isNotADirectory": member(boolean()),
                 })),
             })),
         }),

@@ -1,39 +1,38 @@
 import * as pt from 'pareto-core-types'
 
-import * as gglo from "./glossary"
-
 import * as gfs from "res-pareto-filesystem"
+import * as gthis from "./glossary"
 
-export type CcreateMkdirErrorMessage = gglo.FCreateMkdirErrorMessage
+export type CcreateMkdirErrorMessage = gthis.FCreateMkdirErrorMessage
 
 export type CcreateReadDirectoryOrAbort = ($d: {
-    readonly 'onError': gglo.FHandleAnnotatedReadDirError
+    readonly 'onError': gthis.FHandleAnnotatedReadDirError
     readonly 'readDirectory': gfs.FReadDirectory
-}) => gglo.FReadDirectoryOrAbort
+}) => gthis.FReadDirectoryOrAbort
 
-export type CcreateReadDirErrorMessage = gglo.FCreateReadDirErrorMessage
+export type CcreateReadDirErrorMessage = gthis.FCreateReadDirErrorMessage
 
-export type CcreateReadFileErrorMessage = gglo.FCreateReadFileErrorMessage
+export type CcreateReadFileErrorMessage = gthis.FCreateReadFileErrorMessage
 
 export type CcreateReadOptionalDirectory = ($d: {
-    readonly 'onError': gglo.FHandleAnnotatedReadDirError
+    readonly 'onError': gthis.FHandleAnnotatedReadDirError
     readonly 'readDirectory': gfs.FReadDirectory
-}) => gglo.FReadOptionalDirectory
+}) => gthis.FReadOptionalDirectory
 
-export type CcreateRmdirErrorMessage = gglo.FCreateRmdirErrorMessage
+export type CcreateRmdirErrorMessage = gthis.FCreateRmdirErrorMessage
 
-export type CcreateUnlinkErrorMessage = gglo.FCreateUnlinkErrorMessage
+export type CcreateUnlinkErrorMessage = gthis.FCreateUnlinkErrorMessage
 
 export type CcreateUnlinkFireAndForget = ($d: {
-    readonly 'onError': gglo.FHandleAnnotatedUnlinkError
+    readonly 'onError': gthis.FHandleAnnotatedUnlinkError
     readonly 'unlink': gfs.FUnlink
-}) => gglo.FUnlinkFireAndForget
+}) => gthis.FUnlinkFireAndForget
 
-export type CcreateWriteFileErrorMessage = gglo.FCreateWriteFileErrorMessage
+export type CcreateWriteFileErrorMessage = gthis.FCreateWriteFileErrorMessage
 
 export type CcreateWriteFileFireAndForget = ($d: {
     readonly 'createWriteStream': gfs.FCreateWriteStream
-}) => gglo.FWriteFile
+}) => gthis.FWriteFile
 
 export type API = {
     createMkdirErrorMessage: CcreateMkdirErrorMessage

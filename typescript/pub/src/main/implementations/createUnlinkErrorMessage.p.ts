@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateUnlinkErrorMessage } from "../api"
+import { CcreateUnlinkErrorMessage } from "../definition/api.generated"
 
 export const $$:CcreateUnlinkErrorMessage = ($) => {
 

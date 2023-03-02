@@ -1,7 +1,7 @@
 import * as pt from 'pareto-core-types'
 import * as pi from 'pareto-core-internals'
 
-import { CcreateReadDirectoryOrAbort } from "../api"
+import { CcreateReadDirectoryOrAbort } from "../definition/api.generated"
 
 export const $$:CcreateReadDirectoryOrAbort = ($d) => {
     return ($) => {

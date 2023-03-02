@@ -1,6 +1,6 @@
 
 
-import { CcreateWriteFileFireAndForget } from "../api"
+import { CcreateWriteFileFireAndForget } from "../definition/api.generated"
 
 export const $$:CcreateWriteFileFireAndForget = ($d) => {
     return ($) => {

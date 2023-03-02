@@ -1,4 +1,4 @@
-import { API } from "./api"
+import { API } from "./definition/api.generated"
 import { $$ as icreateMkdirErrorMessage } from "./implementations/createMkdirErrorMessage.p"
 import { $$ as icreateReadDirectoryOrAbort } from "./implementations/createReadDirectoryOrAbort.p"
 import { $$ as icreateReadDirErrorMessage } from "./implementations/createReadDirErrorMessage.p"

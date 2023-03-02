@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateRmdirErrorMessage } from "../api"
+import { CcreateRmdirErrorMessage } from "../definition/api.generated"
 
 export const $$:CcreateRmdirErrorMessage = ($) => {
 

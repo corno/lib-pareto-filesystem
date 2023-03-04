@@ -15,7 +15,7 @@ export type FCreateRmdirErrorMessage = ($: gfs.T.RmdirError,) => gcommon.T.Strin
 
 export type FCreateUnlinkErrorMessage = ($: gfs.T.UnlinkError,) => gcommon.T.String
 
-export type FCreateWriteFileErrorMessage = ($: gfs.T.UnlinkError,) => gcommon.T.String
+export type FCreateWriteFileErrorMessage = ($: gfs.T.WriteFileError,) => gcommon.T.String
 
 export type FHandleAnnotatedReadDirError = ($: gfs.T.AnnotatedReadDirError,) => void
 

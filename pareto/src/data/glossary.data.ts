@@ -20,10 +20,6 @@ import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossa
 const d = pd.d
 
 export const $: gglossary.T.Glossary<pd.SourceLocation> = {
-    'imports': d({
-        "fs": "res-pareto-filesystem",
-        "common": "glo-pareto-common",
-    }),
     'parameters': d({}),
     'types': d({
         "ReadDirectoryResult": type(dictionary(reference("DirNodeData"))),
@@ -51,7 +47,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "CreateReadDirErrorMessage": func(typeReference("fs", "ReadDirError"), null, null, data(typeReference("common", "String"), false)),
         "CreateReadFileErrorMessage": func(typeReference("fs", "ReadFileError"), null, null, data(typeReference("common", "String"), false)),
         "CreateUnlinkErrorMessage": func(typeReference("fs", "UnlinkError"), null, null, data(typeReference("common", "String"), false)),
-        "CreateWriteFileErrorMessage": func(typeReference("fs", "UnlinkError"), null, null, data(typeReference("common", "String"), false)),
+        "CreateWriteFileErrorMessage": func(typeReference("fs", "WriteFileError"), null, null, data(typeReference("common", "String"), false)),
 
         "HandleAnnotatedReadDirError": func(typeReference("fs", "AnnotatedReadDirError"), null, null, null),
         "HandleAnnotatedUnlinkError": func(typeReference("fs", "AnnotatedUnlinkError"), null, null, null),

@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateUnlinkErrorMessage } from "../definition/api.generated"
+import {createUnlinkErrorMessage } from "../definition/api.generated"
 
-export const $$:CcreateUnlinkErrorMessage = ($) => {
+export const $$: createUnlinkErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'is directory':

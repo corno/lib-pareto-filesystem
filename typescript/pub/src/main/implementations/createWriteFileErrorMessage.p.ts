@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateWriteFileErrorMessage } from "../definition/api.generated"
+import {createWriteFileErrorMessage } from "../definition/api.generated"
 
-export const $$:CcreateWriteFileErrorMessage = ($) => {
+export const $$: createWriteFileErrorMessage = ($) => {
     switch ($[0]) {
         case 'no entity':
             return pl.cc($[1], ($) => {

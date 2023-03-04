@@ -1,8 +1,8 @@
 import * as pi from 'pareto-core-internals'
 
-import { CcreateReadOptionalDirectory } from "../definition/api.generated"
+import {createReadOptionalDirectory } from "../definition/api.generated"
 
-export const $$:CcreateReadOptionalDirectory = ($d) => {
+export const $$: createReadOptionalDirectory = ($d) => {
     return ($) => {
         pi.panic("IMPLEMENT ME!!!!!")
         // const allow = $.allow

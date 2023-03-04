@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateRmdirErrorMessage } from "../definition/api.generated"
+import {createRmdirErrorMessage } from "../definition/api.generated"
 
-export const $$:CcreateRmdirErrorMessage = ($) => {
+export const $$: createRmdirErrorMessage = ($) => {
 
     switch ($[0]) {
         case 'not empty':

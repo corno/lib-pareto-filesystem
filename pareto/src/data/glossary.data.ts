@@ -40,6 +40,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             })),
         })),
     }),
+    'builders': d({}),
     'interfaces': d({}),
     'functions': d({
         "CreateMkdirErrorMessage": func(typeReference("fs", "MkdirError"), null, null, data(typeReference("common", "String"), false)),

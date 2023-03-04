@@ -1,48 +1,48 @@
 import * as pt from 'pareto-core-types'
 
-import * as gfs from "res-pareto-filesystem"
-import * as gthis from "./glossary"
+import * as g_fs from "res-pareto-filesystem"
+import * as g_this from "./glossary"
 
-export type CcreateMkdirErrorMessage = gthis.FCreateMkdirErrorMessage
+export type createMkdirErrorMessage = g_this.F.CreateMkdirErrorMessage
 
-export type CcreateReadDirectoryOrAbort = ($d: {
-    readonly 'onError': gthis.FHandleAnnotatedReadDirError
-    readonly 'readDirectory': gfs.FReadDirectory
-}) => gthis.FReadDirectoryOrAbort
+export type createReadDirectoryOrAbort = ($d: {
+    readonly 'onError': g_this.F.HandleAnnotatedReadDirError
+    readonly 'readDirectory': g_fs.F.ReadDirectory
+}) => g_this.F.ReadDirectoryOrAbort
 
-export type CcreateReadDirErrorMessage = gthis.FCreateReadDirErrorMessage
+export type createReadDirErrorMessage = g_this.F.CreateReadDirErrorMessage
 
-export type CcreateReadFileErrorMessage = gthis.FCreateReadFileErrorMessage
+export type createReadFileErrorMessage = g_this.F.CreateReadFileErrorMessage
 
-export type CcreateReadOptionalDirectory = ($d: {
-    readonly 'onError': gthis.FHandleAnnotatedReadDirError
-    readonly 'readDirectory': gfs.FReadDirectory
-}) => gthis.FReadOptionalDirectory
+export type createReadOptionalDirectory = ($d: {
+    readonly 'onError': g_this.F.HandleAnnotatedReadDirError
+    readonly 'readDirectory': g_fs.F.ReadDirectory
+}) => g_this.F.ReadOptionalDirectory
 
-export type CcreateRmdirErrorMessage = gthis.FCreateRmdirErrorMessage
+export type createRmdirErrorMessage = g_this.F.CreateRmdirErrorMessage
 
-export type CcreateUnlinkErrorMessage = gthis.FCreateUnlinkErrorMessage
+export type createUnlinkErrorMessage = g_this.F.CreateUnlinkErrorMessage
 
-export type CcreateUnlinkFireAndForget = ($d: {
-    readonly 'onError': gthis.FHandleAnnotatedUnlinkError
-    readonly 'unlink': gfs.FUnlink
-}) => gthis.FUnlinkFireAndForget
+export type createUnlinkFireAndForget = ($d: {
+    readonly 'onError': g_this.F.HandleAnnotatedUnlinkError
+    readonly 'unlink': g_fs.F.Unlink
+}) => g_this.F.UnlinkFireAndForget
 
-export type CcreateWriteFileErrorMessage = gthis.FCreateWriteFileErrorMessage
+export type createWriteFileErrorMessage = g_this.F.CreateWriteFileErrorMessage
 
-export type CcreateWriteFileFireAndForget = ($d: {
-    readonly 'createWriteStream': gfs.FCreateWriteStream
-}) => gthis.FWriteFile
+export type createWriteFileFireAndForget = ($d: {
+    readonly 'createWriter': g_fs.F.CreateWriter
+}) => g_this.F.WriteFile
 
 export type API = {
-    createMkdirErrorMessage: CcreateMkdirErrorMessage
-    createReadDirectoryOrAbort: CcreateReadDirectoryOrAbort
-    createReadDirErrorMessage: CcreateReadDirErrorMessage
-    createReadFileErrorMessage: CcreateReadFileErrorMessage
-    createReadOptionalDirectory: CcreateReadOptionalDirectory
-    createRmdirErrorMessage: CcreateRmdirErrorMessage
-    createUnlinkErrorMessage: CcreateUnlinkErrorMessage
-    createUnlinkFireAndForget: CcreateUnlinkFireAndForget
-    createWriteFileErrorMessage: CcreateWriteFileErrorMessage
-    createWriteFileFireAndForget: CcreateWriteFileFireAndForget
+    createMkdirErrorMessage: createMkdirErrorMessage
+    createReadDirectoryOrAbort: createReadDirectoryOrAbort
+    createReadDirErrorMessage: createReadDirErrorMessage
+    createReadFileErrorMessage: createReadFileErrorMessage
+    createReadOptionalDirectory: createReadOptionalDirectory
+    createRmdirErrorMessage: createRmdirErrorMessage
+    createUnlinkErrorMessage: createUnlinkErrorMessage
+    createUnlinkFireAndForget: createUnlinkFireAndForget
+    createWriteFileErrorMessage: createWriteFileErrorMessage
+    createWriteFileFireAndForget: createWriteFileFireAndForget
 }

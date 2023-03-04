@@ -44,10 +44,11 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
                 "res-pareto-tostring": null,
             }),
             'glossary': {
-                'functions': d({}),
                 'parameters': d({}),
                 'types': d({}),
+                'builders': d({}),
                 'interfaces': d({}),
+                'functions': d({}),
             },
             'imports': d({}),
 

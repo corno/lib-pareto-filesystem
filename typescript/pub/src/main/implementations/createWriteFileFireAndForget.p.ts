@@ -1,10 +1,10 @@
 
 
-import { CcreateWriteFileFireAndForget } from "../definition/api.generated"
+import {createWriteFileFireAndForget } from "../definition/api.generated"
 
-export const $$:CcreateWriteFileFireAndForget = ($d) => {
+export const $$: createWriteFileFireAndForget = ($d) => {
     return ($) => {
-        $d.createWriteStream(
+        $d.createWriter(
             {
                 path: $.path,
                 createContainingDirectories: $.createContainingDirectories,

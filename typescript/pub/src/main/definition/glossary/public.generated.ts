@@ -1,32 +1,39 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
-import * as gfs from "res-pareto-filesystem"
+import * as g_common from "glo-pareto-common"
+import * as g_fs from "res-pareto-filesystem"
 
-export type FCreateMkdirErrorMessage = ($: gfs.T.MkdirError,) => gcommon.T.String
+export namespace I {}
 
-export type FCreateReadDirErrorMessage = ($: gfs.T.ReadDirError,) => gcommon.T.String
+export namespace B {}
 
-export type FCreateReadFileErrorMessage = ($: gfs.T.ReadFileError,) => gcommon.T.String
-
-export type FCreateRmdirErrorMessage = ($: gfs.T.RmdirError,) => gcommon.T.String
-
-export type FCreateUnlinkErrorMessage = ($: gfs.T.UnlinkError,) => gcommon.T.String
-
-export type FCreateWriteFileErrorMessage = ($: gfs.T.WriteFileError,) => gcommon.T.String
-
-export type FHandleAnnotatedReadDirError = ($: gfs.T.AnnotatedReadDirError,) => void
-
-export type FHandleAnnotatedUnlinkError = ($: gfs.T.AnnotatedUnlinkError,) => void
-
-export type FReadDirectoryOrAbort = ($: gfs.T.ReadDirectory_$Data,) => pt.AsyncValue<T.ReadDirectoryResult>
-
-export type FReadFileOrAbort = ($: gfs.T.ReadFile_$Data,) => pt.AsyncValue<gcommon.T.String>
-
-export type FReadOptionalDirectory = ($: T.ReadOptionalDirectoryData,) => pt.AsyncValue<T.ReadOptionalDirectoryResult>
-
-export type FUnlinkFireAndForget = ($: gfs.T.Unlink_$Data,) => void
-
-export type FWriteFile = ($: gfs.T.WriteFileData,) => void
+export namespace F {
+    
+    export type CreateMkdirErrorMessage = ($: g_fs.T.MkdirError,) => g_common.T.String
+    
+    export type CreateReadDirErrorMessage = ($: g_fs.T.ReadDirError,) => g_common.T.String
+    
+    export type CreateReadFileErrorMessage = ($: g_fs.T.ReadFileError,) => g_common.T.String
+    
+    export type CreateRmdirErrorMessage = ($: g_fs.T.RmdirError,) => g_common.T.String
+    
+    export type CreateUnlinkErrorMessage = ($: g_fs.T.UnlinkError,) => g_common.T.String
+    
+    export type CreateWriteFileErrorMessage = ($: g_fs.T.WriteFileError,) => g_common.T.String
+    
+    export type HandleAnnotatedReadDirError = ($: g_fs.T.AnnotatedReadDirError,) => void
+    
+    export type HandleAnnotatedUnlinkError = ($: g_fs.T.AnnotatedUnlinkError,) => void
+    
+    export type ReadDirectoryOrAbort = ($: g_fs.T.ReadDirectory_$Data,) => pt.AsyncValue<T.ReadDirectoryResult>
+    
+    export type ReadFileOrAbort = ($: g_fs.T.ReadFile_$Data,) => pt.AsyncValue<g_common.T.String>
+    
+    export type ReadOptionalDirectory = ($: T.ReadOptionalDirectoryData,) => pt.AsyncValue<T.ReadOptionalDirectoryResult>
+    
+    export type UnlinkFireAndForget = ($: g_fs.T.Unlink_$Data,) => void
+    
+    export type WriteFile = ($: g_fs.T.WriteFileData,) => void
+}

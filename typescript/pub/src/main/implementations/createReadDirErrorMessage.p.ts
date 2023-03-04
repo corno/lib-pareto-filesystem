@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateReadDirErrorMessage } from "../definition/api.generated"
+import {createReadDirErrorMessage } from "../definition/api.generated"
 
-export const $$:CcreateReadDirErrorMessage = ($) => {
+export const $$: createReadDirErrorMessage = ($) => {
     switch ($[0]) {
         case 'is not directory':
             return pl.cc($[1], ($) => {

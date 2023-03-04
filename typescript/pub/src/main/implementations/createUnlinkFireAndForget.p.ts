@@ -2,9 +2,9 @@ import * as pt from 'pareto-core-types'
 import * as pl from 'pareto-core-lib'
 import * as pa from 'pareto-core-async'
 
-import { CcreateUnlinkFireAndForget } from "../definition/api.generated"
+import {createUnlinkFireAndForget } from "../definition/api.generated"
 
-export const $$:CcreateUnlinkFireAndForget = ($d) => {
+export const $$: createUnlinkFireAndForget = ($d) => {
 
     type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
     const $a: x = ($, $i) => $.__execute($i)

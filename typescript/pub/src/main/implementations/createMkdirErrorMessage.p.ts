@@ -1,8 +1,8 @@
 import * as pl from 'pareto-core-lib'
 
-import { CcreateMkdirErrorMessage } from "../definition/api.generated"
+import {createMkdirErrorMessage } from "../definition/api.generated"
 
-export const $$:CcreateMkdirErrorMessage = ($) => {
+export const $$: createMkdirErrorMessage = ($) => {
     switch ($[0]) {
         case 'exists':
             return pl.cc($[1], ($) => {

@@ -48,5 +48,5 @@ export const $: gapi.T.API<pd.SourceLocation> = {
         "createWriteFileFireAndForget": algorithm(functionReference("this", {}, "WriteFile"), constructor(null, {
             "createWriter": functionReference("fs", {}, "CreateWriter"),
         })),
-    })
+    }),
 }

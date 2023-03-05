@@ -30,7 +30,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
                 "directory": null_(),
                 "file": null_(),
                 "unknown": null_(),
-            }))
+            })),
         })),
         "ReadOptionalDirectoryData": type(group({
             "fs": member(reference("fs", "ReadDirectory_Data")),

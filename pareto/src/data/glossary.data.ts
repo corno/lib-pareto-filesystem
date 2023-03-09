@@ -52,6 +52,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
 
         "HandleAnnotatedReadDirError": func(typeReference("fs", "AnnotatedReadDirError"), null, null, null),
         "HandleAnnotatedUnlinkError": func(typeReference("fs", "AnnotatedUnlinkError"), null, null, null),
+        "HandleAnnotatedWriteFileError": func(typeReference("fs", "AnnotatedWriteFileError"), null, null, null),
 
         "ReadFileOrAbort": func(typeReference("fs", "ReadFile_Data"), null, null, data(typeReference("common", "String"), true)),
         "ReadDirectoryOrAbort": func(typeReference("fs", "ReadDirectory_Data"), null, null, data(typeReference("ReadDirectoryResult"), true)),

@@ -27,6 +27,8 @@ export namespace F {
     
     export type HandleAnnotatedUnlinkError = ($: g_fs.T.AnnotatedUnlinkError,) => void
     
+    export type HandleAnnotatedWriteFileError = ($: g_fs.T.AnnotatedWriteFileError,) => void
+    
     export type ReadDirectoryOrAbort = ($: g_fs.T.ReadDirectory_$Data,) => pt.AsyncValue<T.ReadDirectoryResult>
     
     export type ReadFileOrAbort = ($: g_fs.T.ReadFile_$Data,) => pt.AsyncValue<g_common.T.String>

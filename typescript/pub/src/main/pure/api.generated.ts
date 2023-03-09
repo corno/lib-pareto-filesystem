@@ -1,7 +1,7 @@
 import * as pt from 'pareto-core-types'
 
 import * as g_fs from "res-pareto-filesystem"
-import * as g_this from "./glossary"
+import * as g_this from "../glossary"
 
 export type createMkdirErrorMessage = g_this.F.CreateMkdirErrorMessage
 
@@ -31,7 +31,8 @@ export type createUnlinkFireAndForget = ($d: {
 export type createWriteFileErrorMessage = g_this.F.CreateWriteFileErrorMessage
 
 export type createWriteFileFireAndForget = ($d: {
-    readonly 'createWriter': g_fs.F.CreateWriter
+    readonly 'onError': g_this.F.HandleAnnotatedWriteFileError
+    readonly 'writeFile': g_fs.F.WriteFile
 }) => g_this.F.WriteFile
 
 export type API = {

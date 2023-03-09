@@ -5,7 +5,8 @@ import * as gproject from "lib-pareto-typescript-project/dist/submodules/project
 
 const d = pd.d
 
-import { $ as api } from "./api.data"
+import { $ as bindings } from "./bindings.api.data"
+import { $ as pure } from "./pure.api.data"
 import { $ as glossary } from "./glossary.data"
 
 export const $: gproject.T.Project<pd.SourceLocation> = {
@@ -18,23 +19,35 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
     }),
     'type': ['library', {
         'main': {
-            'definition': {
-                'glossary': {
-                    'root': glossary,
-                    'imports': d({
-                        "fs": external("res-pareto-filesystem"),
-                        "common": external("glo-pareto-common"),
-                    }),
-                },
+            'glossary': {
+                'root': glossary,
+                'imports': d({
+                    "fs": external("res-pareto-filesystem"),
+                    "common": external("glo-pareto-common"),
+                }),
+            },
+            'bindings': {
                 'api': {
-                    'root': api,
+                    'root': bindings,
                     'imports': d({
                         "fs": external("res-pareto-filesystem"),
                         "this": this_(),
                     }),
                 },
+                'implementation': ['typescript', null],
+
             },
-            'implementation': ['typescript', null],
+            'pure algorithms': {
+                'api': {
+                    'root': pure,
+                    'imports': d({
+                        "fs": external("res-pareto-filesystem"),
+                        "this": this_(),
+                    }),
+                },
+                'implementation': ['typescript', null],
+
+            },
         },
         'submodules': d({
         }),

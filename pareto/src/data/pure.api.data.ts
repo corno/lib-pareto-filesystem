@@ -46,7 +46,9 @@ export const $: gapi.T.API<pd.SourceLocation> = {
         })),
         "createWriteFileErrorMessage": algorithm(functionReference("this", {}, "CreateWriteFileErrorMessage")),
         "createWriteFileFireAndForget": algorithm(functionReference("this", {}, "WriteFile"), constructor(null, {
-            "createWriter": functionReference("fs", {}, "CreateWriter"),
+            "writeFile": functionReference("fs", {}, "WriteFile"),
+            "onError": functionReference("this", {}, "HandleAnnotatedWriteFileError"),
         })),
+
     }),
 }

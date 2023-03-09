@@ -1,4 +1,4 @@
-import { API } from "./definition/api.generated"
+import { API } from "./api.generated"
 import { $$ as icreateMkdirErrorMessage } from "./implementations/createMkdirErrorMessage.p"
 import { $$ as icreateReadDirectoryOrAbort } from "./implementations/createReadDirectoryOrAbort.p"
 import { $$ as icreateReadDirErrorMessage } from "./implementations/createReadDirErrorMessage.p"
@@ -10,7 +10,7 @@ import { $$ as icreateUnlinkFireAndForget } from "./implementations/createUnlink
 import { $$ as icreateWriteFileErrorMessage } from "./implementations/createWriteFileErrorMessage.p"
 import { $$ as icreateWriteFileFireAndForget } from "./implementations/createWriteFileFireAndForget.p"
 
-export const $a: API = {
+export const $api: API = {
     'createMkdirErrorMessage': icreateMkdirErrorMessage,
     'createReadDirectoryOrAbort': icreateReadDirectoryOrAbort,
     'createReadDirErrorMessage': icreateReadDirErrorMessage,

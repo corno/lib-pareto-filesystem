@@ -1,6 +1,6 @@
 import * as pi from 'pareto-core-internals'
 
-import {createReadOptionalDirectory } from "../definition/api.generated"
+import {createReadOptionalDirectory } from "../api.generated"
 
 export const $$: createReadOptionalDirectory = ($d) => {
     return ($) => {

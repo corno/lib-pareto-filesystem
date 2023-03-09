@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import {createReadFileErrorMessage } from "../api.generated"
+import { createReadFileErrorMessage } from "../api.generated"
 
 export const $$: createReadFileErrorMessage = ($) => {
     switch ($[0]) {

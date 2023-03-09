@@ -1,6 +1,6 @@
 
 
-import {createWriteFileFireAndForget } from "../api.generated"
+import { createWriteFileFireAndForget } from "../api.generated"
 
 export const $$: createWriteFileFireAndForget = ($d) => {
     return ($) => {

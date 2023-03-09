@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import {createMkdirErrorMessage } from "../api.generated"
+import { createMkdirErrorMessage } from "../api.generated"
 
 export const $$: createMkdirErrorMessage = ($) => {
     switch ($[0]) {

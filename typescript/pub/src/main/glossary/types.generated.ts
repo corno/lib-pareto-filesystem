@@ -5,40 +5,6 @@ import * as g_fs from "res-pareto-filesystem"
 
 export namespace T {
     
-    export namespace DirNodeData {
-        
-        export type path = string
-        
-        export namespace _ltype {
-            
-            export type directory = null
-            
-            export type file = null
-            
-            export type _lunknown = null
-        }
-        
-        export type _ltype = 
-            | ['directory', null]
-            | ['file', null]
-            | ['unknown', null]
-    }
-    
-    export type DirNodeData = {
-        readonly 'path': string
-        readonly 'type': 
-            | ['directory', null]
-            | ['file', null]
-            | ['unknown', null]
-    }
-    
-    export namespace ReadDirectoryResult {
-        
-        export type D = T.DirNodeData
-    }
-    
-    export type ReadDirectoryResult = pt.Dictionary<T.DirNodeData>
-    
     export namespace ReadOptionalDirectoryData {
         
         export namespace allow {
@@ -66,10 +32,10 @@ export namespace T {
     
     export namespace ReadOptionalDirectoryResult {
         
-        export type O = T.ReadDirectoryResult
+        export type O = g_fs.T.ReadDirectory_$Success
     }
     
-    export type ReadOptionalDirectoryResult = [ false ] | [ true, T.ReadDirectoryResult]
+    export type ReadOptionalDirectoryResult = [ false ] | [ true, g_fs.T.ReadDirectory_$Success]
     
     export namespace WriteFileData {
         

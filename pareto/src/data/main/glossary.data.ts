@@ -22,16 +22,7 @@ const d = pd.d
 export const $: gglossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
     'types': d({
-        "ReadDirectoryResult": type(dictionary(reference("DirNodeData"))),
-        "ReadOptionalDirectoryResult": type(optional(reference("ReadDirectoryResult"))),
-        "DirNodeData": type(group({
-            "path": member(string()),
-            "type": member(taggedUnion({
-                "directory": null_(),
-                "file": null_(),
-                "unknown": null_(),
-            })),
-        })),
+        "ReadOptionalDirectoryResult": type(optional(reference("fs", "ReadDirectory_Success"))),
         "ReadOptionalDirectoryData": type(group({
             "fs": member(reference("fs", "ReadDirectory_Data")),
             "allow": member(group({
@@ -52,7 +43,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "HandleAnnotatedWriteFileError": afunc(typeReference("fs", "AnnotatedWriteFileError"), null, null),
 
             "ReadFileOrAbort": afunc(typeReference("fs", "ReadFile_Data"), null, adata(typeReference("common", "String"))),
-            "ReadDirectoryOrAbort": afunc(typeReference("fs", "ReadDirectory_Data"), null, adata(typeReference("ReadDirectoryResult"))),
+            "ReadDirectoryOrAbort": afunc(typeReference("fs", "ReadDirectory_Data"), null, adata(typeReference("fs", "ReadDirectory_Success"))),
             "ReadOptionalDirectory": afunc(typeReference("ReadOptionalDirectoryData"), null, adata(typeReference("ReadOptionalDirectoryResult"))),
 
             "UnlinkFireAndForget": afunc(typeReference("fs", "Unlink_Data"), null, null),

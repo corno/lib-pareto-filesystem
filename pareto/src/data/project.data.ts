@@ -1,13 +1,17 @@
 import * as pd from 'pareto-core-data'
 
 import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+
+import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 import * as gproject from "lib-pareto-typescript-project/dist/submodules/project"
 
 const d = pd.d
 
-import { $ as bindings } from "./bindings.api.data"
-import { $ as pure } from "./pure.api.data"
-import { $ as glossary } from "./glossary.data"
+import { $ as errormessages } from "./submodules/errorMessages/module.data"
+
+import { $ as bindings } from "./main/bindings.api.data"
+import { $ as pure } from "./main/pure.api.data"
+import { $ as glossary } from "./main/glossary.data"
 
 export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
@@ -50,6 +54,7 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             },
         },
         'submodules': d({
+            "errormessages": errormessages,
         }),
         'executables': d({}),
         'test': {
@@ -59,9 +64,10 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             'glossary': {
                 'parameters': d({}),
                 'types': d({}),
-                'builders': d({}),
-                'interfaces': d({}),
-                'functions': d({}),
+                'type': ['synchronous', {
+                    'builders': d({}),
+                    'functions': d<gglossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
+                }],
             },
             'imports': d({}),
 

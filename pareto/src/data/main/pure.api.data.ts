@@ -7,13 +7,6 @@ const d = pd.d
 
 export const $: gapi.T.API<pd.SourceLocation> = {
     'algorithms': d({
-        "createMkdirErrorMessage": algorithm(functionReference("this", {}, "CreateMkdirErrorMessage")),
-        "createReadDirectoryOrAbort": algorithm(functionReference("this", {}, "ReadDirectoryOrAbort"), constructor(null, {
-            "onError": functionReference("this", {}, "HandleAnnotatedReadDirError"),
-            "readDirectory": functionReference("fs", {}, "ReadDirectory"),
-        })),
-        "createReadDirErrorMessage": algorithm(functionReference("this", {}, "CreateReadDirErrorMessage")),
-        "createReadFileErrorMessage": algorithm(functionReference("this", {}, "CreateReadFileErrorMessage")),
         // "createReadFileOrAbort": ['foo', {
         //     data: ['null', null],
         //     dependencies: d({
@@ -38,15 +31,16 @@ export const $: gapi.T.API<pd.SourceLocation> = {
         //         'function': "XX"
         //     }],
         // }],
-        "createRmdirErrorMessage": algorithm(functionReference("this", {}, "CreateRmdirErrorMessage")),
-        "createUnlinkErrorMessage": algorithm(functionReference("this", {}, "CreateUnlinkErrorMessage")),
         "createUnlinkFireAndForget": algorithm(functionReference("this", {}, "UnlinkFireAndForget"), constructor(null, {
             "onError": functionReference("this", {}, "HandleAnnotatedUnlinkError"),
             "unlink": functionReference("fs", {}, "Unlink"),
         })),
-        "createWriteFileErrorMessage": algorithm(functionReference("this", {}, "CreateWriteFileErrorMessage")),
+        "createReadDirectoryOrAbort": algorithm(functionReference("this", {}, "ReadDirectoryOrAbort"), constructor(null, {
+            "onError": functionReference("this", {}, "HandleAnnotatedReadDirError"),
+            "readDirectory": functionReference("fs", {}, "ReadDirectory"),
+        })),
         "createWriteFileFireAndForget": algorithm(functionReference("this", {}, "WriteFile"), constructor(null, {
-            "writeFile": functionReference("fs", {}, "WriteFile"),
+            "createFileWriter": functionReference("fs", {}, "CreateFileWriter"),
             "onError": functionReference("this", {}, "HandleAnnotatedWriteFileError"),
         })),
 

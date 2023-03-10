@@ -7,21 +7,7 @@ import * as g_fs from "res-pareto-filesystem"
 
 export namespace I {}
 
-export namespace B {}
-
 export namespace F {
-    
-    export type CreateMkdirErrorMessage = ($: g_fs.T.MkdirError,) => g_common.T.String
-    
-    export type CreateReadDirErrorMessage = ($: g_fs.T.ReadDirError,) => g_common.T.String
-    
-    export type CreateReadFileErrorMessage = ($: g_fs.T.ReadFileError,) => g_common.T.String
-    
-    export type CreateRmdirErrorMessage = ($: g_fs.T.RmdirError,) => g_common.T.String
-    
-    export type CreateUnlinkErrorMessage = ($: g_fs.T.UnlinkError,) => g_common.T.String
-    
-    export type CreateWriteFileErrorMessage = ($: g_fs.T.WriteFileError,) => g_common.T.String
     
     export type HandleAnnotatedReadDirError = ($: g_fs.T.AnnotatedReadDirError,) => void
     
@@ -37,5 +23,5 @@ export namespace F {
     
     export type UnlinkFireAndForget = ($: g_fs.T.Unlink_$Data,) => void
     
-    export type WriteFile = ($: g_fs.T.WriteFileData,) => void
+    export type WriteFile = ($: T.WriteFileData,) => void
 }

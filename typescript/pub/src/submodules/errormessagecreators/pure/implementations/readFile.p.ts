@@ -1,23 +1,22 @@
 import * as pl from 'pareto-core-lib'
 
-import { createRmdirErrorMessage } from "../api.generated"
+import { readFile } from "../api.generated"
 
-export const $$: createRmdirErrorMessage = ($) => {
-
+export const $$: readFile = ($) => {
     switch ($[0]) {
-        case 'not empty':
+        case 'is directory':
             return pl.cc($[1], ($) => {
-                return `rmdir error: not empty`
+                return `read error: is directory`
 
             })
         case 'no entity':
             return pl.cc($[1], ($) => {
-                return `rmdir error: no entity`
+                return `read error: no entity`
 
             })
         case 'unknown':
             return pl.cc($[1], ($) => {
-                return `unknown rmdir error: ${$.message}`
+                return `unknown read error: ${$.message}`
             })
         default: return pl.au($[0])
     }

@@ -1,23 +1,23 @@
 import * as pl from 'pareto-core-lib'
 
-import { createUnlinkErrorMessage } from "../api.generated"
+import { rmdir } from "../api.generated"
 
-export const $$: createUnlinkErrorMessage = ($) => {
+export const $$: rmdir = ($) => {
 
     switch ($[0]) {
-        case 'is directory':
+        case 'not empty':
             return pl.cc($[1], ($) => {
-                return `unlink error: is directory`
+                return `rmdir error: not empty`
 
             })
         case 'no entity':
             return pl.cc($[1], ($) => {
-                return `unlink error: no entity`
+                return `rmdir error: no entity`
 
             })
         case 'unknown':
             return pl.cc($[1], ($) => {
-                return `unknown unlink error: ${$.message}`
+                return `unknown rmdir error: ${$.message}`
             })
         default: return pl.au($[0])
     }

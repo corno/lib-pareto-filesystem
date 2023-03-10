@@ -7,7 +7,8 @@ import * as gproject from "lib-pareto-typescript-project/dist/submodules/project
 
 const d = pd.d
 
-import { $ as errormessages } from "./submodules/errorMessages/module.data"
+import { $ as errormessagecreators } from "./submodules/ErrorMessagesCreators/module.data"
+import { $ as errorhandlers } from "./submodules/ErrorHandlers/module.data"
 
 import { $ as bindings } from "./main/bindings.api.data"
 import { $ as pure } from "./main/pure.api.data"
@@ -54,7 +55,8 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             },
         },
         'submodules': d({
-            "errormessages": errormessages,
+            "errormessagecreators": errormessagecreators,
+            "errorhandlers": errorhandlers,
         }),
         'executables': d({}),
         'test': {

@@ -1,22 +1,22 @@
 import * as pl from 'pareto-core-lib'
 
-import { createMkdirErrorMessage } from "../api.generated"
+import { readDir } from "../api.generated"
 
-export const $$: createMkdirErrorMessage = ($) => {
+export const $$: readDir = ($) => {
     switch ($[0]) {
-        case 'exists':
+        case 'is not directory':
             return pl.cc($[1], ($) => {
-                return `mkdir error: exists`
+                return `readdir error: is not directory`
 
             })
         case 'no entity':
             return pl.cc($[1], ($) => {
-                return `mkdir error: no entity`
+                return `readdir error: no entity`
 
             })
         case 'unknown':
             return pl.cc($[1], ($) => {
-                return `unknown mkdir error: ${$.message}`
+                return `other readdir error: ${$.message}`
             })
         default: return pl.au($[0])
     }

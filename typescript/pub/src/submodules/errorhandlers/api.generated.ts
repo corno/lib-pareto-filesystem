@@ -1,6 +1,6 @@
 import * as pt from 'pareto-core-types'
 
-import * as g_this from "../glossary"
+import * as g_this from "./glossary"
 
 export type mkdir = g_this.F.Mkdir
 

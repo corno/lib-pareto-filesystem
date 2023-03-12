@@ -1,6 +1,6 @@
 import * as pl from 'pareto-core-lib'
 
-import * as g_creators from "../../../errormessagecreators"
+import * as g_creators from "../../errormessagecreators"
 
 import { readDir } from "../api.generated"
 

@@ -10,7 +10,6 @@ const d = pd.d
 import { $ as errormessagecreators } from "./submodules/ErrorMessagesCreators/module.data"
 import { $ as errorhandlers } from "./submodules/ErrorHandlers/module.data"
 
-import { $ as bindings } from "./main/bindings.api.data"
 import { $ as pure } from "./main/pure.api.data"
 import { $ as glossary } from "./main/glossary.data"
 
@@ -31,29 +30,17 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
                     "common": external("glo-pareto-common"),
                 }),
             },
-            'bindings': {
-                'api': {
-                    'root': bindings,
-                    'imports': d({
-                        "fs": external("res-pareto-filesystem"),
-                        "this": this_(),
-                    }),
-                },
-                'implementation': ['typescript', null],
-
+            'api': {
+                'root': pure,
+                'imports': d({
+                    "fs": external("res-pareto-filesystem"),
+                    "this": this_(),
+                }),
             },
-            'pure algorithms': {
-                'api': {
-                    'root': pure,
-                    'imports': d({
-                        "fs": external("res-pareto-filesystem"),
-                        "this": this_(),
-                    }),
-                },
-                'implementation': ['typescript', null],
+            'implementation': ['typescript', null],
 
-            },
         },
+        'bindings': [false],
         'submodules': d({
             "errormessagecreators": errormessagecreators,
             "errorhandlers": errorhandlers,

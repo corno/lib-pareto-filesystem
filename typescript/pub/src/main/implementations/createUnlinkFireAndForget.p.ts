@@ -1,15 +1,11 @@
-import * as pt from 'pareto-core-types'
 import * as pl from 'pareto-core-lib'
 import * as pa from 'pareto-core-async'
 
 import { createUnlinkFireAndForget } from "../api.generated"
 
 export const $$: createUnlinkFireAndForget = ($d) => {
-
-    type x = <T>($: pt.AsyncValue<T>, $i: ($: T) => void) => void
-    const $a: x = ($, $i) => $.__execute($i)
     return ($) => {
-        return $a(
+        pl.processAsyncValue(
             $d.unlink(
                 $,
             ),

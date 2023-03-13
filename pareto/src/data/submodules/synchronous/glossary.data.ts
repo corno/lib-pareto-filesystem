@@ -6,10 +6,12 @@ import {
     boolean,
     type,
     optional,
-    reference,
     sfunc,
     builderMethod,
     builderReference,
+    ref,
+    externalTypeReference,
+    imp,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -17,40 +19,44 @@ const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({
+        "common": imp({}),
+        "fs": imp({}),
+    }),
     'types': d({
-        "ReadOptionalDirectoryResult": type(optional(reference("fs", "ReadDirectory_Success"))),
+        "ReadOptionalDirectoryResult": type(optional(ref(externalTypeReference("fs", "ReadDirectory_Success")))),
         "ReadOptionalDirectoryData": type(group({
-            "fs": member(reference("fs", "ReadDirectory_Data")),
+            "fs": member(ref(externalTypeReference("fs", "ReadDirectory_Data"))),
             "allow": member(group({
                 "noEntity": member(boolean()),
                 "isNotADirectory": member(boolean()),
             })),
         })),
         "WriteFileData": type(group({
-            "settings": member(reference("fs", "WriteFileData")),
+            "settings": member(ref(externalTypeReference("fs", "WriteFileData"))),
             "data": member(string()),
         }))
     }),
     'type': ['synchronous', {
         'builders': d({
-            "UnlinkFireAndForget": builderMethod(typeReference("fs", "Unlink_Data"), null),
+            "UnlinkFireAndForget": builderMethod(externalTypeReference("fs", "Unlink_Data"), null),
             "WriteFile": builderMethod(typeReference("WriteFileData"), null),
 
 
-            "HandleAnnotatedUnlinkError": builderMethod(typeReference("fs", "AnnotatedUnlinkError"), null),
-            "HandleAnnotatedWriteFileError": builderMethod(typeReference("fs", "AnnotatedWriteFileError"), null),
+            "HandleAnnotatedUnlinkError": builderMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
+            "HandleAnnotatedWriteFileError": builderMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
         }),
         'functions': d({
 
 
-            "TempHandleAnnotatedUnlinkError": sfunc(typeReference("common", "Null"), builderReference("HandleAnnotatedUnlinkError"), null, null),
-            "TempHandleAnnotatedWriteFileError": sfunc(typeReference("common", "Null"), builderReference("HandleAnnotatedWriteFileError"), null, null),
+            "TempHandleAnnotatedUnlinkError": sfunc(externalTypeReference("common", "Null"), builderReference("HandleAnnotatedUnlinkError"), null, null),
+            "TempHandleAnnotatedWriteFileError": sfunc(externalTypeReference("common", "Null"), builderReference("HandleAnnotatedWriteFileError"), null, null),
 
-            "TempUnlinkFireAndForget": sfunc(typeReference("common", "Null"), builderReference("UnlinkFireAndForget"), null, null),
-            "TempWriteFile": sfunc(typeReference("common", "Null"), builderReference("WriteFile"), null, null),
+            "TempUnlinkFireAndForget": sfunc(externalTypeReference("common", "Null"), builderReference("UnlinkFireAndForget"), null, null),
+            "TempWriteFile": sfunc(externalTypeReference("common", "Null"), builderReference("WriteFile"), null, null),
 
 
-            "UnlinkFireAndForget": sfunc(typeReference("fs", "Unlink_Data"), null, null, null),
+            "UnlinkFireAndForget": sfunc(externalTypeReference("fs", "Unlink_Data"), null, null, null),
             "WriteFile": sfunc(typeReference("WriteFileData"), null, null, null),
         }),
 

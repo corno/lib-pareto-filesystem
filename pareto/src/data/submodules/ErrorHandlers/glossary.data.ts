@@ -5,6 +5,8 @@ import {
     sdata,
     sfunc,
     builderReference,
+    imp,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -13,18 +15,21 @@ const d = pd.d
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
     }),
+    'imports': d({
+        "fs": imp({}),
+    }),
     'types': d({
     }),
     'type': ['synchronous', {
         'builders': d({
         }),
         'functions': d({
-            "Mkdir": sfunc(typeReference("fs", "AnnotatedMkdirError"), null, builderReference("common", "StringBuilder"), null),
-            //"Rmdir": sfunc(typeReference("fs", "AnnotatedRmdirError"), null, builderReference("common", "StringBuilder"), null),
-            "ReadDir": sfunc(typeReference("fs", "AnnotatedReadDirError"), null, builderReference("common", "StringBuilder"), null),
-            "ReadFile": sfunc(typeReference("fs", "AnnotatedReadFileError"), null, builderReference("common", "StringBuilder"), null),
-            "Unlink": sfunc(typeReference("fs", "AnnotatedUnlinkError"), null, builderReference("common", "StringBuilder"), null),
-            "WriteFile": sfunc(typeReference("fs", "AnnotatedWriteFileError"), null, builderReference("common", "StringBuilder"), null),
+            "Mkdir": sfunc(externalTypeReference("fs", "AnnotatedMkdirError"), null, builderReference("common", "String"), null),
+            //"Rmdir": sfunc(typeReference("fs", "AnnotatedRmdirError"), null, builderReference("common", "String"), null),
+            "ReadDir": sfunc(externalTypeReference("fs", "AnnotatedReadDirError"), null, builderReference("common", "String"), null),
+            "ReadFile": sfunc(externalTypeReference("fs", "AnnotatedReadFileError"), null, builderReference("common", "String"), null),
+            "Unlink": sfunc(externalTypeReference("fs", "AnnotatedUnlinkError"), null, builderReference("common", "String"), null),
+            "WriteFile": sfunc(externalTypeReference("fs", "AnnotatedWriteFileError"), null, builderReference("common", "String"), null),
         }),
     }]
 }

@@ -25,7 +25,7 @@ export const $$: createReadDirectoryOrAbort = ($d) => {
                 switch ($[0]) {
                     case 'error':
                         return pi.cc($[1], ($) => {
-                            $d.onError($)
+                            $d.onError(null)($)
                             return pa.asyncValue([false])
                         })
                     case 'success':

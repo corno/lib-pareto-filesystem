@@ -2,18 +2,19 @@ import * as pd from 'pareto-core-data'
 
 import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
-import * as gproject from "lib-pareto-typescript-project/dist/submodules/project"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 
 const d = pd.d
 
 import { $ as errormessagecreators } from "./submodules/ErrorMessagesCreators/module.data"
 import { $ as errorhandlers } from "./submodules/ErrorHandlers/module.data"
+import { $ as synchronous } from "./submodules/synchronous/module.data"
 
 import { $ as pure } from "./main/pure.api.data"
 import { $ as glossary } from "./main/glossary.data"
 
-export const $: gproject.T.Project<pd.SourceLocation> = {
+export const $: g_project.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "helper functions to make working with the filesystem easier than the low level functionality of res-pareto-filesystem",
     'license': "TBD",
@@ -44,6 +45,7 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
         'submodules': d({
             "errormessagecreators": errormessagecreators,
             "errorhandlers": errorhandlers,
+            "synchronous": synchronous,
         }),
         'executables': d({}),
         'test': {
@@ -55,7 +57,7 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
                 'types': d({}),
                 'type': ['synchronous', {
                     'builders': d({}),
-                    'functions': d<gglossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
+                    'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
                 }],
             },
             'imports': d({}),

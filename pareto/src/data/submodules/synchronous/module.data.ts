@@ -21,7 +21,9 @@ export const $: g_project.T.Project._ltype.library.submodules.D<pd.SourceLocatio
         'root': pure,
         'imports': d({
             "this": this_(),
+            "fs": external("res-pareto-filesystem"),
         }),
     },
     'implementation': ['typescript', null],
+
 }

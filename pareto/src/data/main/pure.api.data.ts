@@ -11,7 +11,7 @@ export const $: g_project.T.Module.api.root<pd.SourceLocation> = {
         //     data: ['null', null],
         //     dependencies: d({
         //         "onError": {
-        //             type: ['procedure', externalReference("fs", "AnnotatedFSError<gfs.TReadFileError>")],
+        //             type: ['procedure', externalReference("fs", "AnnotatedFSError<g_fs.TReadFileError>")],
 
         //         },
         //     }),
@@ -23,7 +23,7 @@ export const $: g_project.T.Module.api.root<pd.SourceLocation> = {
         //     }
         // }],
         "createReadOptionalDirectory": algorithm(functionReference("this", {}, "ReadOptionalDirectory"), constructor(null, {
-            "onError": functionReference("this", {}, "HandleAnnotatedReadDirError"),
+            "onError": functionReference("this", {}, "TempHandleAnnotatedReadDirError"),
             "readDirectory": functionReference("fs", {}, "ReadDirectory"),
         })),
         // "createReadOptionalFile": ['algorithm', {
@@ -31,17 +31,9 @@ export const $: g_project.T.Module.api.root<pd.SourceLocation> = {
         //         'function': "XX"
         //     }],
         // }],
-        "createUnlinkFireAndForget": algorithm(functionReference("this", {}, "UnlinkFireAndForget"), constructor(null, {
-            "onError": functionReference("this", {}, "HandleAnnotatedUnlinkError"),
-            "unlink": functionReference("fs", {}, "Unlink"),
-        })),
         "createReadDirectoryOrAbort": algorithm(functionReference("this", {}, "ReadDirectoryOrAbort"), constructor(null, {
-            "onError": functionReference("this", {}, "HandleAnnotatedReadDirError"),
+            "onError": functionReference("this", {}, "TempHandleAnnotatedReadDirError"),
             "readDirectory": functionReference("fs", {}, "ReadDirectory"),
-        })),
-        "createWriteFileFireAndForget": algorithm(functionReference("this", {}, "WriteFile"), constructor(null, {
-            "createFileWriter": functionReference("fs", {}, "CreateFileWriter"),
-            "onError": functionReference("this", {}, "HandleAnnotatedWriteFileError"),
         })),
 
     }),

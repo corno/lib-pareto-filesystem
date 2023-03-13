@@ -14,12 +14,15 @@ import {
     optional,
     reference,
     number,
+    interfaceMethod,
+    interfaceReference,
+    inf,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
     'types': d({
         "ReadOptionalDirectoryResult": type(optional(reference("fs", "ReadDirectory_Success"))),
@@ -36,18 +39,20 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         }))
     }),
     'type': ['asynchronous', {
-        'interfaces': d({}),
+        'interfaces': d({
+            "HandleAnnotatedReadDirError": interfaceMethod(typeReference("fs", "AnnotatedReadDirError"), null),
+            "HandleAnnotatedUnlinkError": interfaceMethod(typeReference("fs", "AnnotatedUnlinkError"), null),
+            "HandleAnnotatedWriteFileError": interfaceMethod(typeReference("fs", "AnnotatedWriteFileError"), null),
+        }),
         'functions': d({
-            "HandleAnnotatedReadDirError": afunc(typeReference("fs", "AnnotatedReadDirError"), null, null),
-            "HandleAnnotatedUnlinkError": afunc(typeReference("fs", "AnnotatedUnlinkError"), null, null),
-            "HandleAnnotatedWriteFileError": afunc(typeReference("fs", "AnnotatedWriteFileError"), null, null),
+            "TempHandleAnnotatedReadDirError": afunc(typeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedReadDirError"))),
+            "TempHandleAnnotatedUnlinkError": afunc(typeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedUnlinkError"))),
+            "TempHandleAnnotatedWriteFileError": afunc(typeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedWriteFileError"))),
 
             "ReadFileOrAbort": afunc(typeReference("fs", "ReadFile_Data"), null, adata(typeReference("common", "String"))),
             "ReadDirectoryOrAbort": afunc(typeReference("fs", "ReadDirectory_Data"), null, adata(typeReference("fs", "ReadDirectory_Success"))),
             "ReadOptionalDirectory": afunc(typeReference("ReadOptionalDirectoryData"), null, adata(typeReference("ReadOptionalDirectoryResult"))),
 
-            "UnlinkFireAndForget": afunc(typeReference("fs", "Unlink_Data"), null, null),
-            "WriteFile": afunc(typeReference("WriteFileData"), null, null),
         }),
 
     }],

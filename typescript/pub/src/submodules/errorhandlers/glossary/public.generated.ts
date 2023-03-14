@@ -7,6 +7,8 @@ import * as g_fs from "res-pareto-filesystem"
 
 export namespace B {}
 
+export namespace C {}
+
 export namespace F {
     
     export type Mkdir = ($: g_fs.T.AnnotatedMkdirError, $b: g_common.B.String) => void

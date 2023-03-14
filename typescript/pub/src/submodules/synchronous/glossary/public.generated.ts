@@ -16,17 +16,4 @@ export namespace B {
     export type WriteFile = ($: T.WriteFileData, ) => void
 }
 
-export namespace F {
-    
-    export type TempHandleAnnotatedUnlinkError = ($: g_common.T.Null, $c: ($b: B.HandleAnnotatedUnlinkError) => void,) => void
-    
-    export type TempHandleAnnotatedWriteFileError = ($: g_common.T.Null, $c: ($b: B.HandleAnnotatedWriteFileError) => void,) => void
-    
-    export type TempUnlinkFireAndForget = ($: g_common.T.Null, $c: ($b: B.UnlinkFireAndForget) => void,) => void
-    
-    export type TempWriteFile = ($: g_common.T.Null, $c: ($b: B.WriteFile) => void,) => void
-    
-    export type UnlinkFireAndForget = ($: g_fs.T.Unlink_$Data,) => void
-    
-    export type WriteFile = ($: T.WriteFileData,) => void
-}
+export namespace F {}

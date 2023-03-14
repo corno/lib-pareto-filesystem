@@ -24,12 +24,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'builders': d({
         }),
         'functions': d({
-            "Mkdir": sfunc(externalTypeReference("fs", "MkdirError"), null, null, sdata(externalTypeReference("common", "String"))),
-            "Rmdir": sfunc(externalTypeReference("fs", "RmdirError"), null, null, sdata(externalTypeReference("common", "String"))),
-            "ReadDir": sfunc(externalTypeReference("fs", "ReadDirError"), null, null, sdata(externalTypeReference("common", "String"))),
-            "ReadFile": sfunc(externalTypeReference("fs", "ReadFileError"), null, null, sdata(externalTypeReference("common", "String"))),
-            "Unlink": sfunc(externalTypeReference("fs", "UnlinkError"), null, null, sdata(externalTypeReference("common", "String"))),
-            "WriteFile": sfunc(externalTypeReference("fs", "WriteFileError"), null, null, sdata(externalTypeReference("common", "String"))),
+            "Mkdir": sfunc(sdata(externalTypeReference("fs", "MkdirError")), sdata(externalTypeReference("common", "String"))),
+            "Rmdir": sfunc(sdata(externalTypeReference("fs", "RmdirError")), sdata(externalTypeReference("common", "String"))),
+            "ReadDir": sfunc(sdata(externalTypeReference("fs", "ReadDirError")), sdata(externalTypeReference("common", "String"))),
+            "ReadFile": sfunc(sdata(externalTypeReference("fs", "ReadFileError")), sdata(externalTypeReference("common", "String"))),
+            "Unlink": sfunc(sdata(externalTypeReference("fs", "UnlinkError")), sdata(externalTypeReference("common", "String"))),
+            "WriteFile": sfunc(sdata(externalTypeReference("fs", "WriteFileError")), sdata(externalTypeReference("common", "String"))),
         }),
 
     }]

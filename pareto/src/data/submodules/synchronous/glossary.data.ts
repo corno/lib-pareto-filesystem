@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string, member,group,
+    string, member, group,
     typeReference,
     boolean,
     type,
@@ -46,19 +46,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "HandleAnnotatedUnlinkError": builderMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
             "HandleAnnotatedWriteFileError": builderMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
         }),
-        'functions': d({
-
-
-            "TempHandleAnnotatedUnlinkError": sfunc(externalTypeReference("common", "Null"), builderReference("HandleAnnotatedUnlinkError"), null, null),
-            "TempHandleAnnotatedWriteFileError": sfunc(externalTypeReference("common", "Null"), builderReference("HandleAnnotatedWriteFileError"), null, null),
-
-            "TempUnlinkFireAndForget": sfunc(externalTypeReference("common", "Null"), builderReference("UnlinkFireAndForget"), null, null),
-            "TempWriteFile": sfunc(externalTypeReference("common", "Null"), builderReference("WriteFile"), null, null),
-
-
-            "UnlinkFireAndForget": sfunc(externalTypeReference("fs", "Unlink_Data"), null, null, null),
-            "WriteFile": sfunc(typeReference("WriteFileData"), null, null, null),
-        }),
+        'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
 
     }],
 }

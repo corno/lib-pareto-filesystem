@@ -11,7 +11,7 @@ import { $ as errormessagecreators } from "./submodules/ErrorMessagesCreators/mo
 import { $ as errorhandlers } from "./submodules/ErrorHandlers/module.data"
 import { $ as synchronous } from "./submodules/synchronous/module.data"
 
-import { $ as pure } from "./main/pure.api.data"
+import { $ as pure } from "./main/api.data"
 import { $ as glossary } from "./main/glossary.data"
 
 export const $: g_project.T.Project<pd.SourceLocation> = {

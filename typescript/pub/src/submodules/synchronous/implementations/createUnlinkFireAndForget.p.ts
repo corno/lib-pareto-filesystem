@@ -4,8 +4,8 @@ import * as pa from 'pareto-core-async'
 import { createUnlinkFireAndForget } from "../api.generated"
 
 export const $$: createUnlinkFireAndForget = ($d) => {
-    return ($, $c) => {
-        $c(($) => {
+    return ($b) => {
+        $b(($) => {
             pl.processAsyncValue(
                 $d.unlink(
                     $,
@@ -14,9 +14,7 @@ export const $$: createUnlinkFireAndForget = ($d) => {
                     switch ($[0]) {
                         case 'error':
                             return pl.cc($[1], ($) => {
-                                $d.temp_onError(null, ($i) => {
-                                    $i($)
-                                })
+                                $d.onError($)
                                 return undefined
                             })
                         case 'success':
@@ -27,8 +25,6 @@ export const $$: createUnlinkFireAndForget = ($d) => {
                     }
                 }
             )
-
         })
-
     }
 }

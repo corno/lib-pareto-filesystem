@@ -7,6 +7,7 @@ import {
     builderReference,
     imp,
     externalTypeReference,
+    bldr,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -24,12 +25,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'builders': d({
         }),
         'functions': d({
-            "Mkdir": sfunc(externalTypeReference("fs", "AnnotatedMkdirError"), null, builderReference("common", "String"), null),
-            //"Rmdir": sfunc(typeReference("fs", "AnnotatedRmdirError"), null, builderReference("common", "String"), null),
-            "ReadDir": sfunc(externalTypeReference("fs", "AnnotatedReadDirError"), null, builderReference("common", "String"), null),
-            "ReadFile": sfunc(externalTypeReference("fs", "AnnotatedReadFileError"), null, builderReference("common", "String"), null),
-            "Unlink": sfunc(externalTypeReference("fs", "AnnotatedUnlinkError"), null, builderReference("common", "String"), null),
-            "WriteFile": sfunc(externalTypeReference("fs", "AnnotatedWriteFileError"), null, builderReference("common", "String"), null),
+            "Mkdir": sfunc(sdata(externalTypeReference("fs", "AnnotatedMkdirError")), bldr(builderReference("common", "String"))),
+            //"Rmdir": sfunc(typeReference("fs", "AnnotatedRmdirError"), null, bldr(builderReference("common", "String"))),
+            "ReadDir": sfunc(sdata(externalTypeReference("fs", "AnnotatedReadDirError")), bldr(builderReference("common", "String"))),
+            "ReadFile": sfunc(sdata(externalTypeReference("fs", "AnnotatedReadFileError")), bldr(builderReference("common", "String"))),
+            "Unlink": sfunc(sdata(externalTypeReference("fs", "AnnotatedUnlinkError")), bldr(builderReference("common", "String"))),
+            "WriteFile": sfunc(sdata(externalTypeReference("fs", "AnnotatedWriteFileError")), bldr(builderReference("common", "String"))),
         }),
     }]
 }

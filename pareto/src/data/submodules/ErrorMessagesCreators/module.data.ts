@@ -3,7 +3,7 @@ import * as pd from 'pareto-core-data'
 import { external, main, sibling, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 
-import { $ as pure } from "./api.data"
+import { $ as api } from "./api.data"
 
 import { $ as glossary } from "./glossary.data"
 
@@ -18,7 +18,7 @@ export const $: g_project.T.Project._ltype.library.submodules.D<pd.SourceLocatio
         }),
     },
     'api': {
-        'root': pure,
+        'root': api,
         'imports': d({
             "this": this_(),
         }),

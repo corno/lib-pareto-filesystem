@@ -2,8 +2,8 @@ import * as pd from 'pareto-core-data'
 
 import {
     typeReference,
-    sdata,
-    sfunc,
+    data,
+    sfunction,
     externalTypeReference,
     imp,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
@@ -20,17 +20,19 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'types': d({
     }),
-    'type': ['synchronous', {
-        'builders': d({
+    'asynchronous': {
+        'interfaces': d({}),
+        'algorithms': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'algorithms': d({
+            "Mkdir": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "MkdirError"))),
+            "Rmdir": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "RmdirError"))),
+            "ReadDir": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "ReadDirError"))),
+            "ReadFile": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "ReadFileError"))),
+            "Unlink": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "UnlinkError"))),
+            "WriteFile": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "WriteFileError"))),
         }),
-        'functions': d({
-            "Mkdir": sfunc(sdata(externalTypeReference("fs", "MkdirError")), sdata(externalTypeReference("common", "String"))),
-            "Rmdir": sfunc(sdata(externalTypeReference("fs", "RmdirError")), sdata(externalTypeReference("common", "String"))),
-            "ReadDir": sfunc(sdata(externalTypeReference("fs", "ReadDirError")), sdata(externalTypeReference("common", "String"))),
-            "ReadFile": sfunc(sdata(externalTypeReference("fs", "ReadFileError")), sdata(externalTypeReference("common", "String"))),
-            "Unlink": sfunc(sdata(externalTypeReference("fs", "UnlinkError")), sdata(externalTypeReference("common", "String"))),
-            "WriteFile": sfunc(sdata(externalTypeReference("fs", "WriteFileError")), sdata(externalTypeReference("common", "String"))),
-        }),
-
-    }]
+    },
 }

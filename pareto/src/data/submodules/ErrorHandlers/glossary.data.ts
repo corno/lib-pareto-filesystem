@@ -1,13 +1,9 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    typeReference,
-    sdata,
-    sfunc,
-    builderReference,
+    data,
     imp,
     externalTypeReference,
-    bldr,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -22,16 +18,22 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'types': d({
     }),
-    'type': ['synchronous', {
-        'builders': d({
+    'asynchronous': {
+        'interfaces': d({
+            // "Mkdir": ainterface(data(externalTypeReference("fs", "AnnotatedMkdirError")), bldr(builderReference("common", "String"))),
+            // //"Rmdir": sfunction(typeReference("fs", "AnnotatedRmdirError"), null, bldr(builderReference("common", "String"))),
+            // "ReadDir": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedReadDirError"))),
+            // "ReadFile": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedReadFileError"))),
+            // "Unlink": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedUnlinkError"))),
+            // "WriteFile": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedWriteFileError"))),
         }),
-        'functions': d({
-            "Mkdir": sfunc(sdata(externalTypeReference("fs", "AnnotatedMkdirError")), bldr(builderReference("common", "String"))),
-            //"Rmdir": sfunc(typeReference("fs", "AnnotatedRmdirError"), null, bldr(builderReference("common", "String"))),
-            "ReadDir": sfunc(sdata(externalTypeReference("fs", "AnnotatedReadDirError")), bldr(builderReference("common", "String"))),
-            "ReadFile": sfunc(sdata(externalTypeReference("fs", "AnnotatedReadFileError")), bldr(builderReference("common", "String"))),
-            "Unlink": sfunc(sdata(externalTypeReference("fs", "AnnotatedUnlinkError")), bldr(builderReference("common", "String"))),
-            "WriteFile": sfunc(sdata(externalTypeReference("fs", "AnnotatedWriteFileError")), bldr(builderReference("common", "String"))),
-        }),
-    }]
+        'algorithms': d({}),
+        
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'algorithms': d({}),
+        
+    },
+
 }

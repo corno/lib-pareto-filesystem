@@ -3,17 +3,22 @@ import * as pt from 'pareto-core-types'
 import * as g_fs from "res-pareto-filesystem"
 import * as g_this from "./glossary"
 
-export type createReadDirectoryOrAbort = ($d: {
-    readonly 'onError': g_this.F.TempHandleAnnotatedReadDirError
-    readonly 'readDirectory': g_fs.F.ReadDirectory
-}) => g_this.F.ReadDirectoryOrAbort
-
-export type createReadOptionalDirectory = ($d: {
-    readonly 'onError': g_this.F.TempHandleAnnotatedReadDirError
-    readonly 'readDirectory': g_fs.F.ReadDirectory
-}) => g_this.F.ReadOptionalDirectory
+export namespace A {
+    
+    export type createReadDirectoryOrAbort = ($d: {
+        readonly 'readDirectory': g_fs.ASYNC.A.F.ReadDirectory
+    }, $se: {
+        readonly 'onError': g_this.ASYNC.I.HandleAnnotatedReadDirError
+    }) => g_this.ASYNC.A.F.ReadDirectoryOrAbort
+    
+    export type createReadOptionalDirectory = ($d: {
+        readonly 'readDirectory': g_fs.ASYNC.A.F.ReadDirectory
+    }, $se: {
+        readonly 'onError': g_this.ASYNC.I.HandleAnnotatedReadDirError
+    }) => g_this.ASYNC.A.F.ReadOptionalDirectory
+}
 
 export type API = {
-    createReadDirectoryOrAbort: createReadDirectoryOrAbort
-    createReadOptionalDirectory: createReadOptionalDirectory
+    createReadDirectoryOrAbort: A.createReadDirectoryOrAbort
+    createReadOptionalDirectory: A.createReadOptionalDirectory
 }

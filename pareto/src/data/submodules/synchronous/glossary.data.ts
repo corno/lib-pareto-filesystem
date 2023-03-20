@@ -6,12 +6,10 @@ import {
     boolean,
     type,
     optional,
-    sfunc,
-    builderMethod,
-    builderReference,
     ref,
     externalTypeReference,
     imp,
+    aInterfaceMethod,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -37,16 +35,19 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "data": member(string()),
         }))
     }),
-    'type': ['synchronous', {
-        'builders': d({
-            "UnlinkFireAndForget": builderMethod(externalTypeReference("fs", "Unlink_Data"), null),
-            "WriteFile": builderMethod(typeReference("WriteFileData"), null),
+    'asynchronous': {
+        'interfaces': d({
+            "UnlinkFireAndForget": aInterfaceMethod(externalTypeReference("fs", "Unlink_Data"), null),
+            "WriteFile": aInterfaceMethod(typeReference("WriteFileData"), null),
 
 
-            "HandleAnnotatedUnlinkError": builderMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
-            "HandleAnnotatedWriteFileError": builderMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
+            "HandleAnnotatedUnlinkError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
+            "HandleAnnotatedWriteFileError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
         }),
-        'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
-
-    }],
+        'algorithms': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'algorithms': d({}),
+    },
 }

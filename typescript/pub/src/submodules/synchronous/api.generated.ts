@@ -3,17 +3,22 @@ import * as pt from 'pareto-core-types'
 import * as g_fs from "res-pareto-filesystem"
 import * as g_this from "./glossary"
 
-export type createUnlinkFireAndForget = ($d: {
-    readonly 'onError': g_this.B.HandleAnnotatedUnlinkError
-    readonly 'unlink': g_fs.F.Unlink
-}) => ($c: g_this.C.UnlinkFireAndForget) => void
-
-export type createWriteFileFireAndForget = ($d: {
-    readonly 'createFileWriter': g_fs.F.CreateFileWriter
-    readonly 'onError': g_this.B.HandleAnnotatedWriteFileError
-}) => ($c: g_this.C.WriteFile) => void
+export namespace A {
+    
+    export type createUnlinkFireAndForget = ($d: {
+        readonly 'unlink': g_fs.ASYNC.A.F.Unlink
+    }, $se: {
+        readonly 'onError': g_this.ASYNC.I.HandleAnnotatedUnlinkError
+    }) => g_this.ASYNC.A.C.UnlinkFireAndForget
+    
+    export type createWriteFileFireAndForget = ($d: {
+        readonly 'createFileWriter': g_fs.ASYNC.A.F.CreateFileWriter
+    }, $se: {
+        readonly 'onError': g_this.ASYNC.I.HandleAnnotatedWriteFileError
+    }) => g_this.ASYNC.A.C.WriteFile
+}
 
 export type API = {
-    createUnlinkFireAndForget: createUnlinkFireAndForget
-    createWriteFileFireAndForget: createWriteFileFireAndForget
+    createUnlinkFireAndForget: A.createUnlinkFireAndForget
+    createWriteFileFireAndForget: A.createWriteFileFireAndForget
 }

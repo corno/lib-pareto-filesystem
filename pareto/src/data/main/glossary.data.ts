@@ -1,24 +1,9 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
-    array,
-    typeReference,
-    adata,
-    boolean,
-    afunc,
-    type,
-    optional,
-    number,
-    interfaceMethod,
-    interfaceReference,
-    inf,
-    ref,
-    externalTypeReference,
-    imp,
+    afunction,
+    aInterfaceMethod,
+    boolean, data, externalTypeReference, group, imp, inf, member, optional, ref, string, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -44,22 +29,21 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "data": member(string()),
         }))
     }),
-    'type': ['asynchronous', {
+    'asynchronous': {
         'interfaces': d({
-            "HandleAnnotatedReadDirError": interfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"), null),
-            "HandleAnnotatedUnlinkError": interfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
-            "HandleAnnotatedWriteFileError": interfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
+            "HandleAnnotatedReadDirError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"), null),
+            "HandleAnnotatedUnlinkError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
+            "HandleAnnotatedWriteFileError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
         }),
-        'functions': d({
-            "TempHandleAnnotatedReadDirError": afunc(externalTypeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedReadDirError"))),
-            "TempHandleAnnotatedUnlinkError": afunc(externalTypeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedUnlinkError"))),
-            "TempHandleAnnotatedWriteFileError": afunc(externalTypeReference("common", "Null"), null, inf(interfaceReference("HandleAnnotatedWriteFileError"))),
-
-            "ReadFileOrAbort": afunc(externalTypeReference("fs", "ReadFile_Data"), null, adata(externalTypeReference("common", "String"))),
-            "ReadDirectoryOrAbort": afunc(externalTypeReference("fs", "ReadDirectory_Data"), null, adata(externalTypeReference("fs", "ReadDirectory_Success"))),
-            "ReadOptionalDirectory": afunc(typeReference("ReadOptionalDirectoryData"), null, adata(typeReference("ReadOptionalDirectoryResult"))),
-
+        'algorithms': d({
+            "ReadFileOrAbort": afunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "ReadFile_Data"))),
+            "ReadDirectoryOrAbort": afunction(externalTypeReference("fs", "ReadDirectory_Success"), data(externalTypeReference("fs", "ReadDirectory_Data"))),
+            "ReadOptionalDirectory": afunction(typeReference("ReadOptionalDirectoryResult"), data(typeReference("ReadOptionalDirectoryData"))),
         }),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'algorithms': d({}),
+    },
 
-    }],
 }

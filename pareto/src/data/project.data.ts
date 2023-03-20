@@ -24,19 +24,21 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
     }),
     'type': ['library', {
         'main': {
-            'glossary': {
-                'root': glossary,
-                'imports': d({
-                    "fs": external("res-pareto-filesystem"),
-                    "common": external("glo-pareto-common"),
-                }),
-            },
-            'api': {
-                'root': api,
-                'imports': d({
-                    "fs": external("res-pareto-filesystem"),
-                    "this": this_(),
-                }),
+            'definition': {
+                'glossary': {
+                    'root': glossary,
+                    'imports': d({
+                        "fs": external("res-pareto-filesystem"),
+                        "common": external("glo-pareto-common"),
+                    }),
+                },
+                'api': {
+                    'root': api,
+                    'imports': d({
+                        "fs": external("res-pareto-filesystem"),
+                        "this": this_(),
+                    }),
+                },
             },
             'implementation': ['typescript', null],
 
@@ -52,17 +54,33 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
             'dependencies': d({
                 "res-pareto-tostring": null,
             }),
-            'glossary': {
-                'parameters': d({}),
-                'imports': d({}),
-                'types': d({}),
-                'type': ['synchronous', {
-                    'builders': d({}),
-                    'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
-                }],
+            'definition': {
+                'glossary': {
+                    'root': {
+                        'parameters': d({}),
+                        'imports': d({}),
+                        'types': d({}),
+                        'asynchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                            
+                        },
+                        'synchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                            
+                        },
+                    },
+                    'imports': d({}),
+                },
+                'api': {
+                    'root': {
+                        'algorithms': d({}),
+                    },
+                    'imports': d({}),
+                },
             },
             'imports': d({}),
-
         }
     }],
 }

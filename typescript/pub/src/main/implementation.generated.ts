@@ -1,6 +1,6 @@
 import { API } from "./api.generated"
-import { $$ as icreateReadDirectoryOrAbort } from "./implementations/createReadDirectoryOrAbort.p"
-import { $$ as icreateReadOptionalDirectory } from "./implementations/createReadOptionalDirectory.p"
+import { $$ as icreateReadDirectoryOrAbort } from "./implementations/createReadDirectoryOrAbort.a.f"
+import { $$ as icreateReadOptionalDirectory } from "./implementations/createReadOptionalDirectory.a.f"
 
 export const $api: API = {
     'createReadDirectoryOrAbort': icreateReadDirectoryOrAbort,

@@ -9,19 +9,21 @@ import { $ as glossary } from "./glossary.data"
 
 const d = pd.d
 
-export const $: g_project.T.Project._ltype.library.submodules.D<pd.SourceLocation> = {
-    'glossary': {
-        'root': glossary,
-        'imports': d({
-            "fs": external("res-pareto-filesystem"),
-            "common": external("glo-pareto-common"),
-        }),
-    },
-    'api': {
-        'root': api,
-        'imports': d({
-            "this": this_(),
-        }),
+export const $: g_project.T.Module<pd.SourceLocation> = {
+    'definition': {
+        'glossary': {
+            'root': glossary,
+            'imports': d({
+                "fs": external("res-pareto-filesystem"),
+                "common": external("glo-pareto-common"),
+            }),
+        },
+        'api': {
+            'root': api,
+            'imports': d({
+                "this": this_(),
+            }),
+        },
     },
     'implementation': ['typescript', null],
 }

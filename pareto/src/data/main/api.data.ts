@@ -1,11 +1,11 @@
 import * as pd from 'pareto-core-data'
 
-import { functionReference, constructor, algorithm, typeReference } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+import {  afunction, algorithm, aSideEffect, dependent } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
 import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 const d = pd.d
 
-export const $: g_project.T.Module.api.root<pd.SourceLocation> = {
+export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         // "createReadFileOrAbort": ['foo', {
         //     data: ['null', null],
@@ -22,18 +22,20 @@ export const $: g_project.T.Module.api.root<pd.SourceLocation> = {
         //         }],
         //     }
         // }],
-        "createReadOptionalDirectory": algorithm(functionReference("this", {}, "ReadOptionalDirectory"), constructor(null, {
-            "onError": functionReference("this", {}, "TempHandleAnnotatedReadDirError"),
-            "readDirectory": functionReference("fs", {}, "ReadDirectory"),
+        "createReadOptionalDirectory": algorithm(afunction("this", {}, "ReadOptionalDirectory"), dependent(null, {
+            "readDirectory": afunction("fs", {}, "ReadDirectory"),
+        }, {
+            "onError": aSideEffect("this", {}, "HandleAnnotatedReadDirError"),
         })),
         // "createReadOptionalFile": ['algorithm', {
         //     type: ['function', {
         //         'function': "XX"
         //     }],
         // }],
-        "createReadDirectoryOrAbort": algorithm(functionReference("this", {}, "ReadDirectoryOrAbort"), constructor(null, {
-            "onError": functionReference("this", {}, "TempHandleAnnotatedReadDirError"),
-            "readDirectory": functionReference("fs", {}, "ReadDirectory"),
+        "createReadDirectoryOrAbort": algorithm(afunction("this", {}, "ReadDirectoryOrAbort"), dependent(null, {
+            "readDirectory": afunction("fs", {}, "ReadDirectory"),
+        }, {
+            "onError": aSideEffect("this", {}, "HandleAnnotatedReadDirError"),
         })),
 
     }),

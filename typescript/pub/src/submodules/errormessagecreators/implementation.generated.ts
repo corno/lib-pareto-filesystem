@@ -1,10 +1,10 @@
 import { API } from "./api.generated"
-import { $$ as imkdir } from "./implementations/mkdir.p"
-import { $$ as ireadDir } from "./implementations/readDir.p"
-import { $$ as ireadFile } from "./implementations/readFile.p"
-import { $$ as irmdir } from "./implementations/rmdir.p"
-import { $$ as iunlink } from "./implementations/unlink.p"
-import { $$ as iwriteFile } from "./implementations/writeFile.p"
+import { $$ as imkdir } from "./implementations/mkdir.a.c"
+import { $$ as ireadDir } from "./implementations/readDir.a.c"
+import { $$ as ireadFile } from "./implementations/readFile.a.c"
+import { $$ as irmdir } from "./implementations/rmdir.a.c"
+import { $$ as iunlink } from "./implementations/unlink.a.c"
+import { $$ as iwriteFile } from "./implementations/writeFile.a.c"
 
 export const $api: API = {
     'mkdir': imkdir,

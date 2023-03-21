@@ -4,7 +4,7 @@ import * as pa from 'pareto-core-async'
 
 import * as g_fs from "res-pareto-filesystem"
 
-import { createReadDirectoryOrAbort } from "../api.generated"
+import { A } from "../api.generated"
 
 
 function filter<T>($: pt.AsyncValue<pt.OptionalValue<T>>) {
@@ -17,7 +17,7 @@ function filter<T>($: pt.AsyncValue<pt.OptionalValue<T>>) {
     })
 }
 
-export const $$: createReadDirectoryOrAbort = ($d) => {
+export const $$: A.createReadDirectoryOrAbort = ($d, $se) => {
     return ($) => {
 
         return filter(
@@ -25,7 +25,7 @@ export const $$: createReadDirectoryOrAbort = ($d) => {
                 switch ($[0]) {
                     case 'error':
                         return pi.cc($[1], ($) => {
-                            $d.onError(null)($)
+                            $se.onError($)
                             return pa.asyncValue([false])
                         })
                     case 'success':

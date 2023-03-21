@@ -16,9 +16,21 @@ export namespace A {
     }, $se: {
         readonly 'onError': g_this.ASYNC.I.HandleAnnotatedReadDirError
     }) => g_this.ASYNC.A.F.ReadOptionalDirectory
+    
+    export type createUnlinkFireAndForget = ($d: {
+        readonly 'unlink': g_fs.ASYNC.A.F.Unlink
+    }, $se: null) => g_this.ASYNC.A.C.CreateUnlinkFireAndForget
+    
+    export type createWriteFileFireAndForget = ($d: {
+        readonly 'createFileWriter': g_fs.ASYNC.A.C.CreateFileWriter
+    }, $se: {
+        readonly 'onError': g_this.ASYNC.I.HandleAnnotatedWriteFileError
+    }) => g_this.ASYNC.A.C.CreateWriteFileFireAndForget
 }
 
 export type API = {
-    createReadDirectoryOrAbort: A.createReadDirectoryOrAbort
-    createReadOptionalDirectory: A.createReadOptionalDirectory
+    readonly 'createReadDirectoryOrAbort': A.createReadDirectoryOrAbort
+    readonly 'createReadOptionalDirectory': A.createReadOptionalDirectory
+    readonly 'createUnlinkFireAndForget': A.createUnlinkFireAndForget
+    readonly 'createWriteFileFireAndForget': A.createWriteFileFireAndForget
 }

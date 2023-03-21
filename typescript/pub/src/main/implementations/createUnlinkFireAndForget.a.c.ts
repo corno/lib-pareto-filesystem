@@ -1,11 +1,11 @@
 import * as pl from 'pareto-core-lib'
 import * as pa from 'pareto-core-async'
 
-import { createUnlinkFireAndForget } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: createUnlinkFireAndForget = ($d) => {
-    return ($b) => {
-        $b(($) => {
+export const $$: A.createUnlinkFireAndForget = ($d) => {
+    return ($is) => {
+        return ($) => {
             pl.processAsyncValue(
                 $d.unlink(
                     $,
@@ -14,7 +14,7 @@ export const $$: createUnlinkFireAndForget = ($d) => {
                     switch ($[0]) {
                         case 'error':
                             return pl.cc($[1], ($) => {
-                                $d.onError($)
+                                $is.errorHandler($)
                                 return undefined
                             })
                         case 'success':
@@ -25,6 +25,6 @@ export const $$: createUnlinkFireAndForget = ($d) => {
                     }
                 }
             )
-        })
+        }
     }
 }

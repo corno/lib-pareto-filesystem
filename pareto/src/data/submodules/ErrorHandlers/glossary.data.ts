@@ -1,9 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    data,
-    imp,
-    externalTypeReference,
+    aconstructor, aInterfaceMethod, aInterfaceReference, externalTypeReference, imp
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -20,14 +18,35 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            // "Mkdir": ainterface(data(externalTypeReference("fs", "AnnotatedMkdirError")), bldr(builderReference("common", "String"))),
-            // //"Rmdir": sfunction(typeReference("fs", "AnnotatedRmdirError"), null, bldr(builderReference("common", "String"))),
-            // "ReadDir": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedReadDirError"))),
-            // "ReadFile": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedReadFileError"))),
-            // "Unlink": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedUnlinkError"))),
-            // "WriteFile": sfunction(bldr(builderReference("common", "String")), data(externalTypeReference("fs", "AnnotatedWriteFileError"))),
+            "String": aInterfaceMethod(externalTypeReference("common", "String")),
+
+            "Mkdir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedMkdirError")),
+            //"Rmdir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedRmdirError")),
+            "ReadDir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError")),
+            "ReadFile": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadFileError")),
+            "Unlink": aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError")),
+            "WriteFile": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError")),
         }),
-        'algorithms': d({}),
+        'algorithms': d({
+            "Mkdir": aconstructor(aInterfaceReference("Mkdir"), {
+                "handler": aInterfaceReference("String")
+            }),
+            // "Rmdir": aconstructor(aInterfaceReference("Rmdir"), {
+            //     "handler": aInterfaceReference("String")
+            // }),
+            "ReadDir": aconstructor(aInterfaceReference("ReadDir"), {
+                "handler": aInterfaceReference("String")
+            }),
+            "ReadFile": aconstructor(aInterfaceReference("ReadFile"), {
+                "handler": aInterfaceReference("String")
+            }),
+            "Unlink": aconstructor(aInterfaceReference("Unlink"), {
+                "handler": aInterfaceReference("String")
+            }),
+            "WriteFile": aconstructor(aInterfaceReference("WriteFile"), {
+                "handler": aInterfaceReference("String")
+            }),
+        }),
         
     },
     'synchronous': {

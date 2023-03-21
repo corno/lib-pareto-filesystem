@@ -9,7 +9,6 @@ const d = pd.d
 
 import { $ as errormessagecreators } from "./submodules/ErrorMessagesCreators/module.data"
 import { $ as errorhandlers } from "./submodules/ErrorHandlers/module.data"
-import { $ as synchronous } from "./submodules/synchronous/module.data"
 
 import { $ as api } from "./main/api.data"
 import { $ as glossary } from "./main/glossary.data"
@@ -47,7 +46,6 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
         'submodules': d({
             "errormessagecreators": errormessagecreators,
             "errorhandlers": errorhandlers,
-            "synchronous": synchronous,
         }),
         'executables': d({}),
         'test': {

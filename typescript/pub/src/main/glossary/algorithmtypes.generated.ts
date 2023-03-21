@@ -14,9 +14,27 @@ export namespace ASYNC {
         export type HandleAnnotatedUnlinkError = ($: g_fs.T.AnnotatedUnlinkError, ) => void
         
         export type HandleAnnotatedWriteFileError = ($: g_fs.T.AnnotatedWriteFileError, ) => void
+        
+        export type UnlinkFireAndForget = ($: g_fs.T.Unlink_$Data, ) => void
+        
+        export type WriteFileFireAndForget = ($: T.WriteFileData, ) => void
     }
     
     export namespace A {
+        
+        
+        export namespace C {
+            export type CreateUnlinkFireAndForget = ($is: {
+                readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
+            }) => ASYNC.I.UnlinkFireAndForget
+        }
+        
+        
+        export namespace C {
+            export type CreateWriteFileFireAndForget = ($is: {
+                readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
+            }) => ASYNC.I.WriteFileFireAndForget
+        }
         
         
         export namespace F {

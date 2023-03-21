@@ -44,8 +44,6 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         })),
         "createWriteFileFireAndForget": algorithm(aconstructor("this", {}, "CreateWriteFileFireAndForget"), {}, dependent(null, {
             "createFileWriter": aconstructor("fs", {}, "CreateFileWriter"),
-        }, {
-            "onError": aSideEffect("this", {}, "HandleAnnotatedWriteFileError"),
-        })),
+        }, {})),
     }),
 }

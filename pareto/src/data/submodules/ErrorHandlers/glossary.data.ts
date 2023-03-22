@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    aconstructor, aInterfaceMethod, aInterfaceReference, externalTypeReference, imp
+    constructor, aInterfaceMethod, aInterfaceReference, externalTypeReference, imp
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -28,22 +28,22 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "WriteFile": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError")),
         }),
         'algorithms': d({
-            "Mkdir": aconstructor(aInterfaceReference("Mkdir"), {
+            "Mkdir": constructor(aInterfaceReference("Mkdir"), {
                 "handler": aInterfaceReference("String")
             }),
-            // "Rmdir": aconstructor(aInterfaceReference("Rmdir"), {
+            // "Rmdir": constructor(aInterfaceReference("Rmdir"), {
             //     "handler": aInterfaceReference("String")
             // }),
-            "ReadDir": aconstructor(aInterfaceReference("ReadDir"), {
+            "ReadDir": constructor(aInterfaceReference("ReadDir"), {
                 "handler": aInterfaceReference("String")
             }),
-            "ReadFile": aconstructor(aInterfaceReference("ReadFile"), {
+            "ReadFile": constructor(aInterfaceReference("ReadFile"), {
                 "handler": aInterfaceReference("String")
             }),
-            "Unlink": aconstructor(aInterfaceReference("Unlink"), {
+            "Unlink": constructor(aInterfaceReference("Unlink"), {
                 "handler": aInterfaceReference("String")
             }),
-            "WriteFile": aconstructor(aInterfaceReference("WriteFile"), {
+            "WriteFile": constructor(aInterfaceReference("WriteFile"), {
                 "handler": aInterfaceReference("String")
             }),
         }),

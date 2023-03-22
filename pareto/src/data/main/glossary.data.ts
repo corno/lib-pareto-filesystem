@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    aconstructor,
+    constructor,
     afunction,
     aInterfaceMethod,
     aInterfaceReference,
@@ -43,15 +43,15 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
 
         }),
         'algorithms': d({
-            "CreateUnlinkFireAndForget": aconstructor(aInterfaceReference("UnlinkFireAndForget"), {
+            "CreateUnlinkFireAndForget": constructor(aInterfaceReference("UnlinkFireAndForget"), {
                 "errorHandler": aInterfaceReference("HandleAnnotatedUnlinkError")
             }),
-            "CreateWriteFileFireAndForget": aconstructor(aInterfaceReference("WriteFileFireAndForget"), {
+            "CreateWriteFileFireAndForget": constructor(aInterfaceReference("WriteFileFireAndForget"), {
                 "errorHandler": aInterfaceReference("HandleAnnotatedUnlinkError")
             }),
-            "ReadFileOrAbort": afunction(externalTypeReference("common", "String"), data(externalTypeReference("fs", "ReadFile_Data"))),
-            "ReadDirectoryOrAbort": afunction(externalTypeReference("fs", "ReadDirectory_Success"), data(externalTypeReference("fs", "ReadDirectory_Data"))),
-            "ReadOptionalDirectory": afunction(typeReference("ReadOptionalDirectoryResult"), data(typeReference("ReadOptionalDirectoryData"))),
+            "ReadFileOrAbort": afunction(externalTypeReference("common", "String"), externalTypeReference("fs", "ReadFile_Data")),
+            "ReadDirectoryOrAbort": afunction(externalTypeReference("fs", "ReadDirectory_Success"), externalTypeReference("fs", "ReadDirectory_Data")),
+            "ReadOptionalDirectory": afunction(typeReference("ReadOptionalDirectoryResult"), typeReference("ReadOptionalDirectoryData")),
         }),
     },
     'synchronous': {

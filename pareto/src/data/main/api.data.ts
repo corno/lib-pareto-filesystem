@@ -1,6 +1,6 @@
 import * as pd from 'pareto-core-data'
 
-import { aconstructor, afunction, algorithm, aSideEffect, dependent } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+import { constructor, afunction, algorithm, aSideEffect, dependent } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
 import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 const d = pd.d
@@ -38,12 +38,12 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
             "onError": aSideEffect("this", {}, "HandleAnnotatedReadDirError"),
         })),
 
-        "createUnlinkFireAndForget": algorithm(aconstructor("this", {}, "CreateUnlinkFireAndForget"), {}, dependent(null, {
+        "createUnlinkFireAndForget": algorithm(constructor("this", {}, "CreateUnlinkFireAndForget"), {}, dependent(null, {
             "unlink": afunction("fs", {}, "Unlink"),
         }, {
         })),
-        "createWriteFileFireAndForget": algorithm(aconstructor("this", {}, "CreateWriteFileFireAndForget"), {}, dependent(null, {
-            "createFileWriter": aconstructor("fs", {}, "CreateFileWriter"),
+        "createWriteFileFireAndForget": algorithm(constructor("this", {}, "CreateWriteFileFireAndForget"), {}, dependent(null, {
+            "createFileWriter": constructor("fs", {}, "CreateFileWriter"),
         }, {})),
     }),
 }

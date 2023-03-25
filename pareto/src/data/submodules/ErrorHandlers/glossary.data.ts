@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    constructor, aInterfaceMethod, aInterfaceReference, externalTypeReference, imp
+    constructor, aInterfaceMethod, aInterfaceReference, externalTypeReference, imp, aInterface
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -18,14 +18,14 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            "String": aInterfaceMethod(externalTypeReference("common", "String")),
+            "String": aInterface( aInterfaceMethod(externalTypeReference("common", "String"))),
 
-            "Mkdir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedMkdirError")),
-            //"Rmdir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedRmdirError")),
-            "ReadDir": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError")),
-            "ReadFile": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadFileError")),
-            "Unlink": aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError")),
-            "WriteFile": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError")),
+            "Mkdir": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedMkdirError"))),
+            //"Rmdir":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedRmdirError"))),
+            "ReadDir":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"))),
+            "ReadFile":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadFileError"))),
+            "Unlink": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"))),
+            "WriteFile": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"))),
         }),
         'algorithms': d({
             "Mkdir": constructor(aInterfaceReference("Mkdir"), {

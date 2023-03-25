@@ -5,7 +5,7 @@ import {
     afunction,
     aInterfaceMethod,
     aInterfaceReference,
-    boolean, data, externalTypeReference, group, imp, inf, member, optional, ref, string, type, typeReference
+    boolean, data, externalTypeReference, group, imp, inf, member, optional, ref, string, type, typeReference, aInterface
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -33,13 +33,13 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            "HandleAnnotatedReadDirError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"), null),
-            "HandleAnnotatedUnlinkError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null),
-            "HandleAnnotatedWriteFileError": aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null),
+            "HandleAnnotatedReadDirError": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"), null)),
+            "HandleAnnotatedUnlinkError": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"), null)),
+            "HandleAnnotatedWriteFileError": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"), null)),
 
 
-            "UnlinkFireAndForget": aInterfaceMethod(externalTypeReference("fs", "Unlink_Data"), null),
-            "WriteFileFireAndForget": aInterfaceMethod(typeReference("WriteFileData"), null),
+            "UnlinkFireAndForget": aInterface(aInterfaceMethod(externalTypeReference("fs", "Unlink_Data"), null)),
+            "WriteFileFireAndForget": aInterface(aInterfaceMethod(typeReference("WriteFileData"), null)),
 
         }),
         'algorithms': d({

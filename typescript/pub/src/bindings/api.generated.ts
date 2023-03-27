@@ -4,15 +4,22 @@ import * as g_common from "glo-pareto-common"
 import * as g_main from "../main"
 import * as g_this from "./glossary"
 
+export namespace D {
+    
+    
+    
+    
+}
+
 export namespace A {
     
     export type createReadDirectoryOrAbort = ($se: {
         readonly 'onError': g_common.ASYNC.I.String
-    }, ) => g_main.ASYNC.A.F.ReadDirectoryOrAbort
+    }) => g_main.ASYNC.A.F.ReadDirectoryOrAbort
     
     export type createReadOptionalDirectory = ($se: {
         readonly 'onError': g_common.ASYNC.I.String
-    }, ) => g_main.ASYNC.A.F.ReadOptionalDirectory
+    }) => g_main.ASYNC.A.F.ReadOptionalDirectory
     
     export type createUnlinkFireAndForget = () => g_this.ASYNC.A.C.CreateUnlinkFireAndForget
     

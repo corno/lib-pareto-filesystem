@@ -17,20 +17,23 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "fs": imp({}),
         "common": imp({}),
     }),
-    'types': d({
-        "ReadOptionalDirectoryResult": type(optional(ref(externalTypeReference("fs", "ReadDirectory_Success")))),
-        "ReadOptionalDirectoryData": type(group({
-            "fs": member(ref(externalTypeReference("fs", "ReadDirectory_Data"))),
-            "allow": member(group({
-                "noEntity": member(boolean()),
-                "isNotADirectory": member(boolean()),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "ReadOptionalDirectoryResult": type(optional(ref(externalTypeReference("fs", "ReadDirectory_Success")))),
+            "ReadOptionalDirectoryData": type(group({
+                "fs": member(ref(externalTypeReference("fs", "ReadDirectory_Data"))),
+                "allow": member(group({
+                    "noEntity": member(boolean()),
+                    "isNotADirectory": member(boolean()),
+                })),
             })),
-        })),
-        "WriteFileData": type(group({
-            "settings": member(ref(externalTypeReference("fs", "WriteFileData"))),
-            "data": member(string()),
-        }))
-    }),
+            "WriteFileData": type(group({
+                "settings": member(ref(externalTypeReference("fs", "WriteFileData"))),
+                "data": member(string()),
+            }))
+        }),
+    },
     'asynchronous': {
         'interfaces': d({
             "HandleAnnotatedReadDirError": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"), null)),

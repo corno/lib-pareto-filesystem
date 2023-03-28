@@ -14,16 +14,19 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "common": imp({}),
         "fs": imp({}),
     }),
-    'types': d({
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+        }),
+    },
     'asynchronous': {
         'interfaces': d({
-            "String": aInterface( aInterfaceMethod(externalTypeReference("common", "String"))),
+            "String": aInterface(aInterfaceMethod(externalTypeReference("common", "String"))),
 
             "Mkdir": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedMkdirError"))),
             //"Rmdir":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedRmdirError"))),
-            "ReadDir":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"))),
-            "ReadFile":aInterface( aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadFileError"))),
+            "ReadDir": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadDirError"))),
+            "ReadFile": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedReadFileError"))),
             "Unlink": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedUnlinkError"))),
             "WriteFile": aInterface(aInterfaceMethod(externalTypeReference("fs", "AnnotatedWriteFileError"))),
         }),
@@ -47,12 +50,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "handler": aInterfaceReference("String")
             }),
         }),
-        
+
     },
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
 
 }

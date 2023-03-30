@@ -26,37 +26,47 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type Mkdir = ($is: {
-                readonly 'handler': ASYNC.I.String
-            }) => ASYNC.I.Mkdir
+            export type Mkdir = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.String
+                }) => ASYNC.I.Mkdir
+            }
         }
         
         
         export namespace C {
-            export type ReadDir = ($is: {
-                readonly 'handler': ASYNC.I.String
-            }) => ASYNC.I.ReadDir
+            export type ReadDir = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.String
+                }) => ASYNC.I.ReadDir
+            }
         }
         
         
         export namespace C {
-            export type ReadFile = ($is: {
-                readonly 'handler': ASYNC.I.String
-            }) => ASYNC.I.ReadFile
+            export type ReadFile = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.String
+                }) => ASYNC.I.ReadFile
+            }
         }
         
         
         export namespace C {
-            export type Unlink = ($is: {
-                readonly 'handler': ASYNC.I.String
-            }) => ASYNC.I.Unlink
+            export type Unlink = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.String
+                }) => ASYNC.I.Unlink
+            }
         }
         
         
         export namespace C {
-            export type WriteFile = ($is: {
-                readonly 'handler': ASYNC.I.String
-            }) => ASYNC.I.WriteFile
+            export type WriteFile = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.String
+                }) => ASYNC.I.WriteFile
+            }
         }
     }
 }

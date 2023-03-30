@@ -24,16 +24,20 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateUnlinkFireAndForget = ($is: {
-                readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
-            }) => ASYNC.I.UnlinkFireAndForget
+            export type CreateUnlinkFireAndForget = {
+                'construct': ($is: {
+                    readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
+                }) => ASYNC.I.UnlinkFireAndForget
+            }
         }
         
         
         export namespace C {
-            export type CreateWriteFileFireAndForget = ($is: {
-                readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
-            }) => ASYNC.I.WriteFileFireAndForget
+            export type CreateWriteFileFireAndForget = {
+                'construct': ($is: {
+                    readonly 'errorHandler': ASYNC.I.HandleAnnotatedUnlinkError
+                }) => ASYNC.I.WriteFileFireAndForget
+            }
         }
         
         

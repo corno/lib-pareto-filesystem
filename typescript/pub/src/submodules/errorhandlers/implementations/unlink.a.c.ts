@@ -5,9 +5,11 @@ import * as g_creators from "../../errormessagecreators"
 import { A } from "../api.generated"
 
 export const $$: A.unlink = () => {
-    return ($is) => {
-        return ($) => {
-            $is.handler(`${$.path}: ${g_creators.$a.unlink()($.error)}`)
+    return {
+        'construct': ($is) => {
+            return ($) => {
+                $is.handler(`${$.path}: ${g_creators.$a.unlink()($.error)}`)
+            }
         }
     }
 }

@@ -5,13 +5,15 @@ import * as a_err from "../../submodules/errormessagecreators"
 import { A } from "../api.generated"
 
 export const $$: A.createWriteFileFireAndForget = () => {
-    return ($is) => {
-        return a_main.$a.createWriteFileFireAndForget({
-            'createFileWriter': a_fs.$r.createFileWriter()
-        })({
-            'errorHandler': ($) => {
-                $is.errorHandler(`${$.path}: ${a_err.$a.writeFile()($.error)}`)
-            }
-        })
+    return {
+        'construct': ($is) => {
+            return a_main.$a.createWriteFileFireAndForget({
+                'createFileWriter': a_fs.$r.createFileWriter()
+            }).construct({
+                'errorHandler': ($) => {
+                    $is.errorHandler(`${$.path}: ${a_err.$a.writeFile()($.error)}`)
+                }
+            })
+        }
     }
 }

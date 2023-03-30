@@ -13,16 +13,20 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateUnlinkFireAndForget = ($is: {
-                readonly 'errorHandler': g_common.ASYNC.I.String
-            }) => g_main.ASYNC.I.UnlinkFireAndForget
+            export type CreateUnlinkFireAndForget = {
+                'construct': ($is: {
+                    readonly 'errorHandler': g_common.ASYNC.I.String
+                }) => g_main.ASYNC.I.UnlinkFireAndForget
+            }
         }
         
         
         export namespace C {
-            export type CreateWriteFileFireAndForget = ($is: {
-                readonly 'errorHandler': g_common.ASYNC.I.String
-            }) => g_main.ASYNC.I.WriteFileFireAndForget
+            export type CreateWriteFileFireAndForget = {
+                'construct': ($is: {
+                    readonly 'errorHandler': g_common.ASYNC.I.String
+                }) => g_main.ASYNC.I.WriteFileFireAndForget
+            }
         }
     }
 }

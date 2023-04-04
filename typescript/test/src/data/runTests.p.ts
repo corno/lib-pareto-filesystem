@@ -19,7 +19,7 @@
 // //     ) {
 // //     switch ($[0]) {
 // //         case 'set':
-// //             pl.cc($[1], ($) => {
+// //             pl.ss($, ($) => {
 // //                 console.log(`SET`)
 // //                 $.children.forEach((v, k) => {
 // //                     console.log(`${indentation}${k}`)
@@ -28,7 +28,7 @@
 // //             })
 // //             break
 // //         case 'test':
-// //             pl.cc($[1], ($) => {
+// //             pl.ss($, ($) => {
 // //                 console.log(`TEST`)
 
 // //             })

@@ -23,15 +23,11 @@ export const $$: A.createReadDirectoryOrAbort = ($d, $se) => {
         return filter(
             $d.readDirectory($).map<pt.OptionalValue<g_fs.T.ReadDirectory_$Success>>(($) => {
                 switch ($[0]) {
-                    case 'error':
-                        return pi.cc($[1], ($) => {
+                    case 'error': return pi.cc($[1], ($) => {
                             $se.onError($)
                             return pa.asyncValue([false])
                         })
-                    case 'success':
-                        return pi.cc($[1], ($) => {
-                            return pa.asyncValue([true, $])
-                        })
+                    case 'success': return pi.cc($[1], ($) =>  pa.asyncValue([true, $]))
                     default: return pi.au($[0])
                 }
             })

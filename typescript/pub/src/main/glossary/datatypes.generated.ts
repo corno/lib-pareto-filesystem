@@ -43,11 +43,11 @@ export namespace T {
         
         export type data = string
         
-        export type settings = g_fs.T.WriteFileData
+        export type settings = g_fs.T.WriteFileParameters
     }
     
     export type WriteFileData = {
         readonly 'data': string
-        readonly 'settings': g_fs.T.WriteFileData
+        readonly 'settings': g_fs.T.WriteFileParameters
     }
 }

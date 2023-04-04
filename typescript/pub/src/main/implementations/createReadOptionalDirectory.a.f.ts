@@ -11,11 +11,11 @@ export const $$: A.createReadOptionalDirectory = ($d) => {
         // ).setCondition(($) => {
         //     switch ($[0]) {
         //         case 'error':
-        //             return pl.cc($[1], ($) => {
+        //             return pl.ss($, ($) => {
         //                 const err = $
         //                 switch ($.error[0]) {
         //                     case 'is not directory':
-        //                         return pl.cc($.error[1], ($) => {
+        //                         return pl.ss($.error, ($) => {
         //                             if (allow.isNotADirectory) {
         //                                 return pa.asyncValue([false])
         //                             } else {
@@ -24,7 +24,7 @@ export const $$: A.createReadOptionalDirectory = ($d) => {
         //                             }
         //                         })
         //                     case 'no entity':
-        //                         return pl.cc($.error[1], ($) => {
+        //                         return pl.ss($.error, ($) => {
         //                             if (allow.noEntity) {
         //                                 return pa.asyncValue([false])
         //                             } else {
@@ -33,7 +33,7 @@ export const $$: A.createReadOptionalDirectory = ($d) => {
         //                             }
         //                         })
         //                     case 'unknown':
-        //                         return pl.cc($.error[1], ($) => {
+        //                         return pl.ss($.error, ($) => {
         //                             $d.onError(err)
         //                             return undefined
         //                         })
@@ -41,7 +41,7 @@ export const $$: A.createReadOptionalDirectory = ($d) => {
         //                 }
         //             })
         //         case 'success':
-        //             return pl.cc($[1], ($) => {
+        //             return pl.ss($, ($) => {
         //                 return pa.asyncValue([true, $])
         //             })
         //         default: return pl.au($[0])

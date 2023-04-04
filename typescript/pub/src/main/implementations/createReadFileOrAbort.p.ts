@@ -28,12 +28,12 @@ import * as g_fsres from "res-pareto-filesystem"
 //         // ).setCondition(($) => {
 //         //     switch ($[0]) {
 //         //         case 'error':
-//         //             return pl.cc($[1], ($) => {
+//         //             return pl.ss($, ($) => {
 //         //                 $i.onError($)
 //         //                 return undefined
 //         //             })
 //         //         case 'success':
-//         //             return pl.cc($[1], ($) => {
+//         //             return pl.ss($, ($) => {
 //         //                 return pa.asyncValue($)
 //         //             })
 //         //         default: return pl.au($[0])

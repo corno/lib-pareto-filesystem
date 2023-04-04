@@ -9,11 +9,11 @@ import * as pl from 'pareto-core-lib'
 //         ).setCondition(($) => {
 //             switch ($[0]) {
 //                 case 'error':
-//                     return pl.cc($[1], ($) => {
+//                     return pl.ss($, ($) => {
 //                         const err = $
 //                         switch ($.error[0]) {
 //                             case 'is directory':
-//                                 return pl.cc($.error[1], ($) => {
+//                                 return pl.ss($.error, ($) => {
 //                                     if (allow.isDirectory) {
 //                                         return pa.asyncValue(null)
 //                                     } else {
@@ -22,7 +22,7 @@ import * as pl from 'pareto-core-lib'
 //                                     }
 //                                 })
 //                             case 'no entity':
-//                                 return pl.cc($.error[1], ($) => {
+//                                 return pl.ss($.error, ($) => {
 //                                     if (allow.noEntity) {
 //                                         return pa.asyncValue(null)
 //                                     } else {
@@ -31,7 +31,7 @@ import * as pl from 'pareto-core-lib'
 //                                     }
 //                                 })
 //                             case 'unknown':
-//                                 return pl.cc($.error[1], ($) => {
+//                                 return pl.ss($.error, ($) => {
 //                                     $i.onError(err)
 //                                     return undefined
 //                                 })
@@ -39,7 +39,7 @@ import * as pl from 'pareto-core-lib'
 //                         }
 //                     })
 //                 case 'success':
-//                     return pl.cc($[1], ($) => {
+//                     return pl.ss($, ($) => {
 //                         return pa.asyncValue($)
 //                     })
 //                 default: return pl.au($[0])

@@ -29,7 +29,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 })),
             })),
             "WriteFileData": type(group({
-                "settings": member(ref(externalTypeReference("fs", "WriteFileData"))),
+                "settings": member(ref(externalTypeReference("fs", "WriteFileParameters"))),
                 "data": member(string()),
             }))
         }),

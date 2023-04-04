@@ -14,15 +14,14 @@ export const $$: A.createUnlinkFireAndForget = ($d) => {
                     ($) => {
                         switch ($[0]) {
                             case 'error':
-                                return pl.cc($[1], ($) => {
+                                pl.ss($, ($) => {
                                     $is.errorHandler($)
-                                    return undefined
                                 })
+                                break
                             case 'success':
-                                return pl.cc($[1], ($) => {
-                                    return pa.asyncValue($)
-                                })
-                            default: return pl.au($[0])
+                                pl.ss($, ($) => pa.asyncValue($))
+                                break
+                            default: pl.au($[0])
                         }
                     }
                 )

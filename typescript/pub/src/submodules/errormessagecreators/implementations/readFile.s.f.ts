@@ -5,20 +5,9 @@ import { A } from "../api.generated"
 export const $$: A.readFile = () => {
     return ($) => {
         switch ($[0]) {
-            case 'is directory':
-                return pl.cc($[1], ($) => {
-                    return `read error: is directory`
-
-                })
-            case 'no entity':
-                return pl.cc($[1], ($) => {
-                    return `read error: no entity`
-
-                })
-            case 'unknown':
-                return pl.cc($[1], ($) => {
-                    return `unknown read error: ${$.message}`
-                })
+            case 'is directory': return pl.ss($, ($) => `read error: is directory`)
+            case 'no entity': return pl.ss($, ($) => `read error: no entity`)
+            case 'unknown': return pl.ss($, ($) => `unknown read error: ${$.message}`)
             default: return pl.au($[0])
         }
     }

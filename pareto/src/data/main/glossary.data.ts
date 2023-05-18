@@ -5,17 +5,17 @@ import {
     afunction,
     aInterfaceMethod,
     aInterfaceReference,
-    boolean, data, externalTypeReference, group, imp, inf, member, optional, ref, string, type, typeReference, aInterface
+    boolean, data, externalTypeReference, group, imp, member, optional, ref, string, type, typeReference, aInterface
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
-    'parameters': d({}),
+    'glossary parameters':d({}),
     'imports': d({
-        "fs": imp({}),
-        "common": imp({}),
+        "fs": imp(),
+        "common": imp(),
     }),
     'root': {
         'namespaces': d({}),

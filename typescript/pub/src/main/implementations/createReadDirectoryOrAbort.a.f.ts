@@ -10,9 +10,10 @@ import { A } from "../api.generated"
 function filter<T>($: pt.AsyncValue<pt.OptionalValue<T>>) {
     return pi.wrapAsyncValueImp<T>(($i) => {
         $.__execute(($) => {
-            if ($[0] === true) {
-                $i($[1])
-            }
+            $.map(
+                ($) => $i($),
+                () => {}
+            )
         })
     })
 }
@@ -25,9 +26,9 @@ export const $$: A.createReadDirectoryOrAbort = ($d, $se) => {
                 switch ($[0]) {
                     case 'error': return pi.cc($[1], ($) => {
                             $se.onError($)
-                            return pa.asyncValue([false])
+                            return pa.asyncValue(pi.notSet())
                         })
-                    case 'success': return pi.cc($[1], ($) =>  pa.asyncValue([true, $]))
+                    case 'success': return pi.cc($[1], ($) =>  pa.asyncValue(pi.set($)))
                     default: return pi.au($[0])
                 }
             })
